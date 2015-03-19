@@ -1,0 +1,76 @@
+package controllers;
+
+import play._;
+import play.mvc._;
+
+import play.api.data._
+import play.api.data.Forms._
+import com.fasterxml.jackson.databind.JsonNode;
+
+import views.html._;
+import views.formdata._;
+
+object Application extends Controller {
+
+    def index = Action { request =>
+        Ok(index.render())
+    }
+
+    // def index() = {
+    //     Ok(index.render())
+    // }
+
+    def ethics_triage() = Action { request = {
+        val triageForm = Form(
+            tuple(
+                "interventions_and_therapies" -> Boolean,
+                "human_genetics" -> Boolean,
+                "pregnant_women_or_fetuses" -> Boolean,
+                "medically_dependant" -> Boolean,
+                "cognitively_impaired" -> Boolean,
+                "aboriginal_or_torres_strait_islander" -> Boolean,
+                "illegal_activities" -> Boolean,
+                "justification" -> text
+            )
+        );
+
+        // val triageForm : Form[EthicsTriageForm] = form(EthicsTriageForm.class);
+        return ok(ethics_triage.render(triageForm()));
+    }}
+
+    def ethics_triage_post = Action { request = {
+        val triageForm = Form(
+            tuple(
+                "interventions_and_therapies" -> Boolean,
+                "human_genetics" -> Boolean,
+                "pregnant_women_or_fetuses" -> Boolean,
+                "medically_dependant" -> Boolean,
+                "cognitively_impaired" -> Boolean,
+                "aboriginal_or_torres_strait_islander" -> Boolean,
+                "illegal_activities" -> Boolean,
+                "justification" -> text
+            )
+        );
+
+        val data = triageForm.bindFromRequest().get();
+
+        System.out.println("justification: " + data.justification);
+        System.out.println("illegal_activities: " + data.illegal_activities);
+
+        return ethics_triage();
+    }}
+
+    def general_information = Action { request =>
+        return ok(general_information.render());
+    }
+
+    // @BodyParser.Of(BodyParser.Json.class)
+    def sayHello = Action(parse.json) { request = {
+        JsonNode json = request().body().asJson();
+
+        String name = json.findPath("name").textValue();
+        if (name == null) return badRequest("Missing parameter [name]");
+
+        return ok("Hello " + name);
+    }}
+}

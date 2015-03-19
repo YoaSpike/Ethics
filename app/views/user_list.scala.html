@@ -1,0 +1,11 @@
+@(users: List[models.UserModel])
+
+@base("User list") {
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="panel">
+                @users.map(user => user.name).mkString("</br>")
+            </div>
+        </div>
+    </div>
+}

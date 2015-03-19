@@ -1,0 +1,28 @@
+@(title: String)(content: Html)
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@title | Ethics</title>
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/foundation.css")" />
+    <script src="@routes.Assets.at("javascripts/vendor/modernizr.js")"></script>
+  </head>
+  <body>
+
+    @content
+
+    <script src="@routes.Assets.at("javascripts/vendor/jquery.js")"></script>
+    <script src="@routes.Assets.at("javascripts/foundation.min.js")"></script>
+    <script>
+      $(document).foundation({
+        abide: {
+          patterns: {
+            staff_id: /[0-9]+[A-Za-z]/
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

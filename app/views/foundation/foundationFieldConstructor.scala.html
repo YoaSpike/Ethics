@@ -1,0 +1,39 @@
+@* foundationFieldConstructor Template File *@
+@(elements: views.html.helper.FieldElements)
+
+@import play.api.i18n._
+@import views.html.helper._
+@import views.foundation.Helpers._
+
+<div class="small-@elements.args.get('_size).getOrElse(12)">
+    <div class="row">
+        @if(elements.label != "") {
+            @System.out.println(elements)
+            @swapIf(elements.args.get('swapInputAndLabel).getOrElse(false)) {
+                <div class="small-@if(elements.args.get('swapInputAndLabel) == true){3} else {9} columns">
+                @if(elements.args.contains('_help)) {
+                    <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="@elements.args.get('_help)">
+                        <label for="@elements.id" class="@elements.args.get('_align).getOrElse("right inline")">@elements.label(elements.lang)</label>
+                    </span>
+                } else {
+                    <label for="@elements.id" class="@elements.args.get('_align).getOrElse("right inline")">@elements.label(elements.lang)</label>
+                }
+                </div>
+            } {
+                <div class="small-@if(elements.args.get('swapInputAndLabel) == true){9} else {3} columns error">
+                    @elements.input
+                    @if(elements.hasErrors) {
+                        <small class="error">@elements.errors(elements.lang).mkString(", ")</small>
+                    }
+                </div>
+            }
+        } else {
+            <div class="small-12 columns error">
+                @elements.input
+                @if(elements.hasErrors) {
+                    <small class="error">@elements.errors(elements.lang).mkString(", ")</small>
+                }
+            </div>
+        }
+    </div>
+</div>

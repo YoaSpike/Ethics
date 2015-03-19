@@ -1,0 +1,162 @@
+@()
+
+
+@base("General Information") {
+  @partials.header("General Information")
+  <div class="row">
+    <div class="large-6 columns">
+      <div class="large-2 columns">
+        <label for="project_title"><h5>Project title:</h5></label>
+      </div>
+      <div class="large-10 columns">
+        <input id="project_title" type="text" />
+      </div>
+    </div>
+
+    <div class="large-6 columns">
+      <div class="large-2 columns">
+        <label for="project_type"><h5>Project type:<h5></label>
+      </div>
+      <div class="large-10 columns">
+        <select id="project_type">
+          <option></option>
+          <option value="research">Research</option>
+          <option value="custom">Custom</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" id="custom_project_type" style="display:none;">
+    <div class="large-12 columns">
+      You selected custom project type, please enter below the type of project you wish to undertake;
+      <input type="text" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <h3>Project Summary</h3>
+      <div class="panel">
+        <label for="background">Background:</label>
+        <textarea id="background"></textarea>
+        </br>
+
+        <label for="aims_and_hypothesis">Aims and hypothesis:</label>
+        <textarea id="aims_and_hypothesis"></textarea>
+        </br>
+
+        <label for="methods">Methods:</label>
+        <textarea id="methods"></textarea>
+        </br>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <h3>Principal Investigator</h3>
+
+      <div class="panel">
+        <div class="row">
+          <div class="large-6 medium-6 columns">
+            <label for="principal_investigator_name">Name (with title):</label>
+            <input id="principal_investigator_name" type="text" />
+          </div>
+
+          <div class="large-6 medium-6 columns" data-abide>
+            <label for="principal_investigator">Staff ID:</label>
+            <input id="principal_investigator" type="text" pattern="staff_id" />
+            <small class="error">A staff id is required</small>
+          </div>
+        </div>
+        </br>
+
+        <label for="school_centre_or_area">School, Centre, or Area:</label>
+        <input id="school_centre_or_area" type="text" />
+        </br>
+
+        <label for="telephone">Telephone:</label>
+        <input id="telephone" type="text" />
+        </br>
+
+        <div data-abide>
+          <label for="email">Email:</label>
+          <input id="email" type="email" pattern="email" />
+          <small class="error">Email address must be valid</small>
+        </div>
+        </br>
+
+        <input id="sol" type="checkbox" />
+        <label for="sol">SOL Research Integrity Professional Development Program training complete</label>
+        </br>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <h3>Co-Investigators</h3>
+
+      <div class="panel">
+        <label for="principal_investigator_name">Name (with title):</label>
+        <input id="principal_investigator_name" type="text" />
+        </br>
+
+        <label for="school_centre_or_area">School, Centre, or Area:</label>
+        <input id="school_centre_or_area" type="text" />
+        </br>
+
+        <div data-abide>
+          <label for="principal_investigator">Staff ID:</label>
+          <input id="principal_investigator" type="text" pattern="curtin_id" />
+          <small class="error">Must be a valid Curtin ID</small>
+        </div>
+        </br>
+
+        <label for="role">Role:</label>
+        <select id="role">
+          <option></option>
+          <option>CI</option>
+          <option>supervisor</option>
+          <option>student</option>
+        </select>
+        </br>
+
+        <input id="candidacy" type="checkbox" />
+        <label for="candidacy">Candidacy approved</label>
+        </br>
+
+        <input id="sol" type="checkbox" />
+        <label for="sol">SOL Research Integrity Professional Development Program training complete</label>
+        </br>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <h3>Contact Person</h3>
+
+      <div class="panel">
+        <input id="use_principal_details" type="checkbox" />
+        <label for="use_principal_details">Use Principal Investigators details</label>
+        </br>
+
+        <p>Templating will be required to reduce duplication</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function show_hide_custom(value) {
+      var el = document.getElementById('custom_project_type');
+
+      el.style.display = value == "custom" ? "inherit" : "none";
+    }
+
+    document.getElementById('project_type').onchange = function(ev) {
+      show_hide_custom(ev.target.value);
+    }
+  </script>
+}

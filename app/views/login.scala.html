@@ -1,0 +1,39 @@
+@(loginForm: Form[views.formdata.LoginForm])
+
+@base("Login") {
+  @partials.header("Login")
+
+  <div class="center row">
+    <p class="title" data-section-title><a href="#">Sign In</a></p>
+    <div class="content" data-section-content>
+      <p>
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="signup-panel">
+              <p class="welcome">Welcome back!</p>
+              @helper.form(action=routes.Accounts.login_post()) {
+                <div class="row collapse">
+                  <div class="small-2 columns">
+                    <span class="prefix"><i class="fi-mail"></i></span>
+                  </div>
+                  <div class="small-10 columns">
+                    <input type="text" placeholder="Curtin ID">
+                  </div>
+                </div>
+                <div class="row collapse">
+                  <div class="small-2 columns">
+                    <span class="prefix"><i class="fi-lock"></i></span>
+                  </div>
+                  <div class="small-10 columns">
+                    <input type="text" placeholder="Password">
+                  </div>
+                </div>
+                <input type="submit" value="Login" />
+              }
+            </div>
+          </div>
+         </div>
+       </p>
+    </div>
+  <div>
+}

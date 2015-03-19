@@ -1,0 +1,14 @@
+UserModel(mashpan):
+  curtin_id: '17690579'
+  name: 'Dominic May'
+  # first_name: "Mash"
+  # last_name: "Pan"
+  # email: "tester@gmail.com"
+  # signupDate: 2012-03-08
+  # passwordHash: "NOTFORYOU"
+  # isAdmin: No
+  # confirmationCode: ""
+  # activationSent: Yes
+  # recoverPasswordCode: !!null
+  # lastLogin: !!null
+  # referralCode: !!null
