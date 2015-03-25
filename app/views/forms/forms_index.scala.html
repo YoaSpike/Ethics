@@ -1,0 +1,10 @@
+@(forms: List[models.EthicsFormModel])
+
+@base("Your submitted forms") {
+    @for(form <- forms) {
+        @form.owner - @form.state - @form.ethicsTriage
+        <br/>
+    }
+} {
+    @* postScript *@
+}

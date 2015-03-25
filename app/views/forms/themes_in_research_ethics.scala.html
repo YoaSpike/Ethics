@@ -1,0 +1,130 @@
+@(themesForm: play.data.Form[views.formdata.ThemesForm])
+
+@import partials._
+
+@data_source(name: String, description: String, placeholder: String = null) = {
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="panel">
+        <label for="@name">
+          <div class="large-4 columns">@description</div>
+          <div class="large-8 columns">
+            <textarea id="@name" @if(placeholder != null) { placeholder="@placeholder" }></textarea>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+}
+
+@base("Themes in research ethics") {
+  @helper.form(action=routes.Application.themes_in_research_ethics_post()) {
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Potential harm or risk to participants</h3>
+
+        <div class="panel">
+          <textarea name="potential_harm" id="potential_harm"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Risk management strategy</h3>
+
+        <div class="panel">
+          <textarea name="risk_management_strategy" id="risk_management_strategy"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Will participants be given financial or non-financial incentives?</h3>
+
+        <div class="panel">
+          @yes_or_no("given_incentives")
+          </br>
+
+          <textarea name="incentive_details" id="incentive_details"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Please select how you are going to recruit participant (select all that apply) and in the space below describe your recruitment process.</h3>
+
+        <div class="panel">
+          <div class="row">
+            <div class="large-12 columns">
+              @checkboxes(
+                themesForm,
+                Seq[Tuple2[String,String]](
+                  ("data_medical_records_checkbox", "Database/medical records"),
+                  ("snowball_recruitment_checkbox", "Snowball recruitment or word mouth etc"),
+                  ("social_media_checkbox", "Social media including Facebook, Yammer, LinkedIn, Twitter etc."),
+                  ("print_media_checkbox", "Print media including flyers, newspapers, newsletters etc."),
+                  ("classroom_or_hospital_checkbox", "Classroom or hospital or clinic or community groups etc."),
+                  ("radio_television_checkbox", "Radio/television etc."),
+                  ("other_checkbox", "Other")
+                )
+              )
+            </div>
+          </div>
+
+          @data_source("data_medical_records", "Database/medical records", "Please describe the source")
+          @data_source("snowball_recruitment", "Snowball recruitment or word mouth etc", "Please list")
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h3>Will particiants provide consent?</h3>
+
+        <div class="panel">
+          <div class="row">
+            <div class="large-12">
+              @yes_or_no("participant_consent")
+
+              <textarea id="participant_consent_description" name="participant_consent_description"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+
+  <style type="text/css">
+    #incentive_details { display: none; }
+  </style>
+
+} {
+
+  @* postScript :P *@
+  <script type="text/javascript">
+    function bind_vis(radiobox, textarea) {
+      'use strict';
+      var form = document.forms[0],
+          textarea = $(form[textarea]),
+          radiobox  = form[radiobox];
+
+      $(radiobox).change(function(ev) {
+        if (radiobox.value == "yes") {
+          // textarea.show();
+          textarea.slideDown();
+        } else {
+          textarea.slideUp();
+          // textarea.hide();
+        }
+      });
+    }
+
+    $(document).ready(function() {
+      bind_vis("given_incentives", "incentive_details");
+    });
+  </script>
+}
