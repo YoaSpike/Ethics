@@ -1,0 +1,5 @@
+@(form: Form[_ <: Any], boxes: Seq[Tuple2[String,String]])
+
+@for(box <- boxes) {
+  @checkbox(form, box._1, box._2)
+}
