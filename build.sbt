@@ -10,5 +10,7 @@ libraryDependencies ++= Seq(
   javaJdbc,
   javaEbean,
   cache,
-  javaWs
+  javaWs,
+  "org.xerial" % "sqlite-jdbc" % "3.8.7",
+  "com.github.t3hnar" % "scala-bcrypt_2.11" % "2.4"
 )
