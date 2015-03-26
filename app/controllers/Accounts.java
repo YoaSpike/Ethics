@@ -2,34 +2,62 @@ package controllers;
 
 import play.*;
 import play.mvc.*;
+import play.Logger;
 import play.data.Form;
+import play.data.validation.*;
 import static play.data.Form.*;
-
-import com.avaje.ebean.Ebean;
-import com.fasterxml.jackson.databind.JsonNode;
 
 import views.html.*;
 import views.formdata.*;
+import models.*;
 
 
 public class Accounts extends Controller {
+    public static UserModel getCurrentUser() {
+        return UserModel.find.byId(getCurtinID());
+    }
+
+    public static String getCurtinID() {
+        return session().get("curtin_id");
+    }
+
+    public static boolean isLoggedIn() {
+        return getCurtinID() != null;
+    }
+
     public static Result login() {
-        return ok(login.render(form(LoginForm.class)));
+        if (isLoggedIn()) {
+            return redirect(routes.Application.index());
+        } else {
+            return ok(login.render(form(LoginForm.class)));
+        }
     }
 
     public static Result login_post() {
+        if (request().body().isMaxSizeExceeded()) {
+            return badRequest("Too much data!");
+        }
+
         Form<LoginForm> loginForm = form(LoginForm.class).bindFromRequest();
 
         if (loginForm.hasErrors()) {
-            session().clear();
-            session("username", loginForm.get().username);
-            return redirect(routes.Application.index());
+            Logger.debug("Login failed");
+            return badRequest(login.render(loginForm));
+
         } else {
-            return ok(login.render(loginForm));
+            LoginForm data = loginForm.get();
+            Logger.debug("Login succeeded for " + data.curtin_id);
+
+            session().clear();
+            session("curtin_id", data.curtin_id.toString());
+
+            return redirect(routes.Application.index());
         }
     }
 
     public static Result logout() {
+        Logger.debug("Logged out of " + getCurtinID());
+
         session().clear();
         return redirect(routes.Application.index());
     }
