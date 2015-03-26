@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String)(content: Html)(postScript: Html = null)
 
 <!doctype html>
 <html class="no-js" lang="en">
@@ -24,5 +24,8 @@
         }
       });
     </script>
+
+    @postScript
+
   </body>
 </html>
