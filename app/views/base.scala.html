@@ -7,9 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@title | Ethics</title>
     <link rel="stylesheet" href="@routes.Assets.at("stylesheets/foundation.css")" />
+    <link rel="stylesheet" href="@routes.Assets.at("stylesheets/app.css")" />
     <script src="@routes.Assets.at("javascripts/vendor/modernizr.js")"></script>
   </head>
   <body>
+    <div class="row">
+      <div class="large-8 medium-6 columns">
+        <h1>@title</h1>
+      </div>
+      <div class="large-4 medium-6 columns text-right loginHeaderCube">
+        <h5>
+          @if(controllers.Accounts.isLoggedIn()) {
+            Logged in as @controllers.Accounts.getCurtinID() - <a href="@routes.Accounts.logout()">Logout</a>
+          } else {
+            <a href="@routes.Accounts.login()">Login</a>
+          }
+        </h5>
+      </div>
+      <hr/>
+    </div>
 
     @content
 
