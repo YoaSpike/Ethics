@@ -3,10 +3,13 @@ package models;
 import java.util.*;
 import javax.persistence.*;
 
+import play.*;
 import play.db.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
 import com.avaje.ebean.Expr;
+
+import org.mindrot.jbcrypt.BCrypt;
 
 
 @Entity
@@ -21,30 +24,37 @@ public class UserModel extends Model {
     public String name;
 
     @Constraints.Required
-    public String encrypted_password;
+    public String hashed_password;
 
     public static Finder<String,UserModel> find = new Finder<String,UserModel>(
         String.class, UserModel.class
     );
 
     public static UserModel authenticate(String curtin_id, String password) {
-        if (curtin_id == null || password == null) return null;
-
         HashMap<String,Object> props = new HashMap<String,Object>();
-        props.put("curtin_id", curtin_id);
-        props.put("encrypted_password", password);
 
-        com.avaje.ebean.Query<UserModel> query = UserModel.find.where(Expr.allEq(props));
-
-        System.out.println(query.getGeneratedSql());
-
-        query.getFirstRow();
-        List<UserModel> lst = query.findList();
+        List<UserModel> lst = (
+            UserModel.find
+            .where()
+                .eq("curtin_id", curtin_id)
+            .query()
+            .setMaxRows(1)
+            .findList()
+        );
 
         if (lst == null || lst.size() == 0) {
             return null;
+
         } else {
-            return lst.get(0);
+            UserModel found = lst.get(0);
+            String hashed_password = found.hashed_password;
+
+            if (BCrypt.checkpw(password, hashed_password)) {
+                return found;
+
+            } else {
+                return null;
+            }
         }
     }
 }
