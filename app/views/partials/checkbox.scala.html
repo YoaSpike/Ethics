@@ -1,5 +1,0 @@
-@(form: Form[_ <: Any], name: String, description: String)
-
-<input name="@name" id="@name" type="checkbox" @if(form(name).value == "true") { checked } />
-<label for="@name">@description</label>
-</br>
