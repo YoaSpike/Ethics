@@ -1,170 +1,177 @@
 @(infoForm: Form[views.formdata.InfoForm])
 
+@import b3.vertical.fieldConstructor
+
+@investigatorForm(fieldPrefix: String, form_type: String) = {
+  @{
+    if (!form_type.equals("co") && !form_type.equals("pi") && !form_type.equals("cp")) {
+      throw new Error(form_type);
+    }
+  }
+  <div class="panel">
+    <div class="row">
+      <div class="col-md-6">
+        @b3.text(infoForm(fieldPrefix + "principal_investigator_name"), '_label -> "Name (with title)")
+      </div>
+
+      <div class="col-md-6" data-abide>
+        @b3.text(infoForm(fieldPrefix + "principal_investigator"), '_label -> "Curtin ID")
+        <!-- <small class="error">A staff id is required</small> -->
+      </div>
+    </div>
+    </br>
+
+    <div class="row">
+      <div class="col-md-6">
+        @b3.text(infoForm(fieldPrefix + "school_centre_or_area"), '_label -> "School, Centre, or Area")
+      </div>
+
+      <div class="col-md-6">
+        @if(form_type.equals("co")) {
+            @b3.select(
+              infoForm("role"),
+              options = Seq("" -> "", "CI" -> "CI", "supervisor" -> "Supervisor", "student" -> "Student"),
+              '_label -> "Role"
+            )
+        } else {
+            @b3.text(infoForm(fieldPrefix + "telephone"), '_label -> "Telephone")
+        }
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        @if(form_type.equals("co")) {
+          @b3.checkbox(infoForm(fieldPrefix + "candidacy_approved"), '_text -> "Candidacy approved")
+        } else {
+          @b3.email(infoForm(fieldPrefix + "email"), '_label -> "Email")
+          <!-- <small class="error">Email address must be valid</small> -->
+        }
+      </div>
+
+      <div class="col-lg-6">
+        @if(!form_type.equals("cp")) {
+          @b3.checkbox(infoForm(fieldPrefix + "sol"), '_text -> "SOL Research Integrity Professional Development Program training complete")
+        }
+      </div>
+    </div>
+  </div>
+}
+
+
 @base("General Information") {
-  @partials.header("General Information")
-  <div class="row">
-    <div class="large-6 columns">
-      <div class="large-2 columns">
-        <label for="project_title"><h5>Project title:</h5></label>
+  @b3.form(routes.Application.general_information_post) {
+    <div class="row">
+      <div class="col-md-6">
+        @b3.text(infoForm("project_title"), '_label -> "Project title")
       </div>
-      <div class="large-10 columns">
-        <input id="project_title" name="project_title" type="text" />
+
+      <div class="col-md-6">
+        @b3.select(
+          infoForm("project_type"),
+          options = Seq("" -> "", "research" -> "Research", "custom" -> "Custom"),
+          '_label -> "Project type"
+        )
+      </div>
+    </div>
+
+    <div class="row" id="custom_project_type" name="custom_project_type" style="display:none;">
+      <div class="col-md-12">
+        @b3.text(
+          infoForm("custom_project"),
+          '_label -> "You selected custom project type, please enter below the type of project you wish to undertake;"
+        )
       </div>
     </div>
 
-    <div class="large-6 columns">
-      <div class="large-2 columns">
-        <label for="project_type"><h5>Project type:<h5></label>
-      </div>
-      <div class="large-10 columns">
-        <select id="project_type" name="project_type">
-          <option></option>
-          <option value="research">Research</option>
-          <option value="custom">Custom</option>
-        </select>
-      </div>
-    </div>
-  </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Project Summary</h3>
+        <div class="panel">
+          @b3.textarea(infoForm("background"), '_label -> "Background")
+          </br>
 
-  <div class="row" id="custom_project_type" name="custom_project_type" style="display:none;">
-    <div class="large-12 columns">
-      You selected custom project type, please enter below the type of project you wish to undertake;
-      <input type="text" />
-    </div>
-  </div>
+          @b3.textarea(infoForm("aims_and_hypothesis"), '_label -> "Aims and hypothesis")
+          </br>
 
-  <div class="row">
-    <div class="large-12 columns">
-      <h3>Project Summary</h3>
-      <div class="panel">
-        <label for="background">Background:</label>
-        <textarea id="background" name="background"></textarea>
-        </br>
-
-        <label for="aims_and_hypothesis">Aims and hypothesis:</label>
-        <textarea id="aims_and_hypothesis" name="aims_and_hypothesis"></textarea>
-        </br>
-
-        <label for="methods">Methods:</label>
-        <textarea id="methods" name="methods"></textarea>
-        </br>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="large-12 columns">
-      <h3>Principal Investigator</h3>
-
-      <div class="panel">
-        <div class="row">
-          <div class="large-6 medium-6 columns">
-            <label for="principal_investigator_name">Name (with title):</label>
-            <input id="principal_investigator_name" name="principal_investigator_name" type="text" />
-          </div>
-
-          <div class="large-6 medium-6 columns" data-abide>
-            <label for="principal_investigator">Staff ID:</label>
-            <input id="principal_investigator" name="principal_investigator" type="text" pattern="staff_id" />
-            <small class="error">A staff id is required</small>
-          </div>
+          @b3.textarea(infoForm("methods"), '_label -> "Methods")
+          </br>
         </div>
-        </br>
+      </div>
+    </div>
 
-        <label for="school_centre_or_area">School, Centre, or Area:</label>
-        <input id="school_centre_or_area" name="school_centre_or_area" type="text" />
-        </br>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Principal Investigator</h3>
 
-        <label for="telephone">Telephone:</label>
-        <input id="telephone" name="telephone" type="text" />
-        </br>
+        @investigatorForm("pi-", "pi")
+      </div>
+    </div>
 
-        <div data-abide>
-          <label for="email">Email:</label>
-          <input id="email" name="email" type="email" pattern="email" />
-          <small class="error">Email address must be valid</small>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Co-Investigators</h3>
+
+        @*
+        each one thereafter will be "ci[x].", that way we can easily pull the data from them.
+        will probably use Handlebars or similar rendering system
+        *@
+        <a id="co_investigator_adder" class="btn btn-default">Add another co-investigator</a>
+        <br/>
+
+        <div id="co_investigators">
+          @investigatorForm("ci[0].", "co")
         </div>
-        </br>
-
-        <input id="sol" name="sol" type="checkbox" />
-        <label for="sol">SOL Research Integrity Professional Development Program training complete</label>
-        </br>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="large-12 columns">
-      <h3>Co-Investigators</h3>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>Contact Person</h3>
 
-      <div class="panel">
-        <label for="principal_investigator_name">Name (with title):</label>
-        <input id="principal_investigator_name" name="principal_investigator_name" type="text" />
-        </br>
-
-        <label for="school_centre_or_area">School, Centre, or Area:</label>
-        <input id="school_centre_or_area" name="school_centre_or_area" type="text" />
-        </br>
-
-        <div data-abide>
-          <label for="principal_investigator">Staff ID:</label>
-          <input id="principal_investigator" name="principal_investigator" type="text" pattern="curtin_id" />
-          <small class="error">Must be a valid Curtin ID</small>
+        <div class="panel">
+          @b3.checkbox(infoForm("use_principal_details"), '_text -> "Use Principal Investigators details")
+          </br>
         </div>
-        </br>
 
-        <label for="role">Role:</label>
-        <select id="role" name="role">
-          <option></option>
-          <option>CI</option>
-          <option>supervisor</option>
-          <option>student</option>
-        </select>
-        </br>
-
-        <input id="candidacy" name="candidacy" type="checkbox" />
-        <label for="candidacy">Candidacy approved</label>
-        </br>
-
-        <input id="sol" name="sol" type="checkbox" />
-        <label for="sol">SOL Research Integrity Professional Development Program training complete</label>
-        </br>
+        <div id="contact_person_div">
+          @investigatorForm("cp", "cp")
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="large-12 columns">
-      <h3>Contact Person</h3>
-
-      <div class="panel">
-        <input id="use_principal_details" name="use_principal_details" type="checkbox" />
-        <label for="use_principal_details">Use Principal Investigators details</label>
-        </br>
-
-        <p>Templating will be required to reduce duplication</p>
-      </div>
-    </div>
-  </div>
+    @b3.submit('class -> "btn btn-default") { Save }
+  }
 
 } {
   @* postScript *@
+
+  <script type="text/javascript" src="@routes.Assets.at("javascripts/vendor/handlebars-v3.0.0.js")"></script>
+
+  <script type="text/handlebars" id="co_investigator_form_template">
+    @investigatorForm("co[{{ co_num }}].", "co")
+  </script>
+
   <script type="text/javascript">
-    function show_hide_custom(value) {
-      var el = document.getElementById('custom_project_type');
+    var custom_project_type = document.getElementById('custom_project_type'),
+        contact_person_div = document.getElementById('contact_person_div'),
+        co_investigators = document.getElementById('co_investigators'),
+        co_investigator_form_template = (Handlebars.compile($("#co_investigator_form_template").html())),
+        co_investigator_num = 0;
 
-      el.style.display = value == "custom" ? "inherit" : "none";
-    }
+    $('#co_investigator_adder').click(function() {
+      co_investigator_num += 1;
+      var el = document.createElement('div'),
+          contents = co_investigator_form_template({"co_num": co_investigator_num});
 
-    document.getElementById('project_type').onchange = function(ev) {
-      show_hide_custom(ev.target.value);
-    }
-    $(document).foundation({
-      abide: {
-        patterns: {
-          staff_id: /[0-9]+[A-Za-z]/
-        }
-      }
+      el.innerHTML = contents;
+      co_investigators.appendChild(el);
+    });
+    $('#project_type').change(function(ev) {
+      custom_project_type.style.display = ev.target.value == "custom" ? "inherit" : "none";
+    })
+    $('#use_principal_details').change(function(ev) {
+      contact_person_div.style.display = ev.target.checked ? "none" : "inherit";
     });
   </script>
 }
