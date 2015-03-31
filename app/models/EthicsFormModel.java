@@ -14,6 +14,17 @@ import business.EthicsFormState;
 public class EthicsFormModel extends Model {
     public static final long serialVersionUID = 0;
 
+    public EthicsFormModel(String id) { this(Integer.parseInt(id)); }
+    public EthicsFormModel(int id)    { this.id = id; }
+    public EthicsFormModel()          { super(); }
+    public EthicsFormModel(EthicsFormModel other) {
+        super();
+        this.id = other.id;
+        this.owner = other.owner;
+        this.state = other.state;
+        this.ethicsTriage = other.ethicsTriage;
+    }
+
     @Id
     @Constraints.Required
     public int id;
