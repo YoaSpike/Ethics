@@ -2,29 +2,45 @@
 
 @import b3.vertical.fieldConstructor
 
+
 @base("Login") {
-  <div class="center row">
-    <div class="content">
-      <div class="row">
-        <div class="col-md-4 columns">
-          <div class="signup-panel">
-            @b3.form(routes.Accounts.login_post, 'class -> (if(loginForm.hasGlobalErrors) { "has-error" } else { "" })) {
-              @b3.text(loginForm("curtin_id"), '_label -> "Curtin ID")
-              @b3.password(loginForm("encrypted_password"), '_label -> "Password")
+  <div class="row">
+      <div class="container" style="width:40%;">
+          <div class="panel panel-default" style="margin-top:70px; margin-bottom:70px;">
+              <div class="panel-heading">
+                  <div class="panel-title">Login</div>
+              </div>
+              <div class="panel-body">
+                  @b3.form(routes.Accounts.login_post, 'class -> (if(loginForm.hasGlobalErrors) { "has-error" } else { "" })) {
+                      <div class="form-group" style="margin:2em;">
+                          <div class="input-group">
+                              <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+                              @b3.text(loginForm("curtin_id"), '_label -> null, 'class -> "form-control", 'placeholder -> "ID")
+                          </div>
+                      </div>
+                      <div class="form-group" style="margin:2em;">
+                          <div class="input-group">
+                              <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                              @b3.password(loginForm("encrypted_password"), '_label -> null, 'class -> "form-control", 'placeholder -> "password")
+                          </div>
+                      </div>
 
-              @if(loginForm.hasGlobalErrors) {
-                <p>
-                  @loginForm.globalError.message
-                </p>
-              }
+                      <div class="form-group">
+                        @if(loginForm.hasGlobalErrors) {
+                          <p>
+                            @loginForm.globalError.message
+                          </p>
+                        }
+                      </div>
 
-              @b3.submit('class -> "btn btn-default") { Login }
-            }
+                      <div class="form-group">
+                          @b3.submit('class -> "btn btn-success pull-right") { Login }
+                      </div>
+                  }
+              </div>
           </div>
-        </div>
-       </div>
-    </div>
-  <div>
+      </div>
+  </div>
 } {
     @* postScript *@
 }
