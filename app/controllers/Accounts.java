@@ -7,6 +7,8 @@ import play.data.Form;
 import play.data.validation.*;
 import static play.data.Form.*;
 
+import org.mindrot.jbcrypt.BCrypt;
+
 import views.html.*;
 import views.formdata.*;
 import models.*;
@@ -68,34 +70,39 @@ public class Accounts extends Controller {
         ));
     }
 
-    // @BodyParser.Of(BodyParser.Json.class)
+    // this is really just for debugging purposes :P
+    // there is a nice simple python script in the root directory you can to add
+    // users via this route
+    public static class AddUserForm {
+        @Constraints.Required
+        public String curtin_id;
+
+        @Constraints.Required
+        public String password;
+    }
+
     public static Result add_user() {
-        String curtin_id, name;
+        Form<AddUserForm> loginForm = form(AddUserForm.class).bindFromRequest();
 
-        System.out.println(request());
-        System.out.println(request().body());
-        System.out.println(request().body().asText());
-        System.out.println(request().body().asJson());
-        // System.out.println(request().body().asString());
+        if (loginForm.hasErrors()) {
+            return badRequest(loginForm.errorsAsJson());
 
-        JsonNode json = request().body().asJson(), curtin_id_j, name_j;
-        if (json == null) return badRequest("Json not supplied as required");
+        } else {
+            models.UserModel mod = new models.UserModel();
+            AddUserForm data = loginForm.get();
+            mod.name = data.curtin_id;
+            mod.curtin_id = data.curtin_id;
 
-        curtin_id_j = json.findPath("curtin_id");
-        curtin_id = curtin_id_j.textValue();
+            String password = data.password;
 
-        name_j = json.findPath("name");
-        name = name_j.textValue();
+            mod.hashed_password = BCrypt.hashpw(
+                data.password,
+                BCrypt.gensalt()
+            );
 
-        if (curtin_id == null) return badRequest("Missing parameter [curtin_id]");
-        if (name == null) return badRequest("Missing parameter [name]");
+            mod.save();
 
-        models.UserModel mod = new models.UserModel();
-        mod.name = name;
-        mod.curtin_id = curtin_id;
-
-        Ebean.save(mod);
-
-        return ok("Saved to db");
+            return ok("Saved to db");
+        }
     }
 }
