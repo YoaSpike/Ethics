@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Curtin University</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="./main.css">
+</head>
+<body>
+
+<!-- START header -->
+<nav class="navbar navbar-default" id="header">
+    <div class="container">
+        <div class="navbar-brand">Curtin University</div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><div class="btn btn-success btn-xs">+ New application</div></a></li>
+                <li><a href="./viewall.html">(name or ID)</a></li>
+                <li class="active"><a href="./login.html">Login</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END header -->
+
+<!-- START main content -->
+<div class="row">
+    <div class="container" style="width:40%;">
+        <div class="panel panel-default" style="margin-top:70px;margin-bottom:70px;">
+            <div class="panel-heading">
+                <div class="panel-title">Login</div>
+            </div>
+            <div class="panel-body">
+                <form action="">
+                    <div class="form-group" style="margin:2em;">
+                        <div class="input-group">
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+                            <input type="text" class="form-control" placeholder="ID">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin:2em;">
+                        <div class="input-group">
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
+                            <input type="text" class="form-control" placeholder="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success pull-right" value="Login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END main content -->
+
+<!-- START footer -->
+<div class="navbar navbar-default" id="footer">
+    <div class="container">
+        <ul>
+            <li>Curtin University</li>
+            <li>Human Ethics Office</li>
+            <li>Help</li>
+            <li>About</li>
+        </ul>
+    </div>
+</div>
+<!-- END footer -->
+
+<script src="jquery-2.1.3.min.js"></script>
+</body>
+</html>
