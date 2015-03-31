@@ -22,7 +22,19 @@ public class Application extends Controller {
     }
 
     public static Result ethics_triage() {
+        return ethics_triage(null);
+    }
+
+    public static Result ethics_triage(EthicsTriageForm data) {
         Form<EthicsTriageForm> triageForm = form(EthicsTriageForm.class);
+
+        if (data != null) {
+            triageForm.fill(data);
+            // re-fill with data for editing...
+        } else {
+            // here we would retrieve a filled form from the database, if available
+        }
+
         return ok(views.html.forms.ethics_triage.render(triageForm));
     }
 
@@ -41,11 +53,7 @@ public class Application extends Controller {
         EthicsTriageForm data = triageForm.get();
         System.out.println(data);
 
-        // re-fill with data for editing...
-        triageForm = form(EthicsTriageForm.class).fill(data);
-
-        // render the data back the in form for future editing
-        return ok(views.html.forms.ethics_triage.render(triageForm));
+        return ethics_triage(data);
     }
 
     public static Result general_information() {
