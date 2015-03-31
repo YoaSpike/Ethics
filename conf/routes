@@ -6,6 +6,7 @@
 GET     /                           controllers.Application.index()
 
 GET     /forms                      controllers.Forms.index()
+GET     /viewall                    controllers.Forms.viewall()
 GET     /forms/:id                  controllers.Forms.display_form_progress(id: Long)
 GET     /ethics_triage              controllers.Forms.ethics_triage()
 POST    /ethics_triage              controllers.Forms.ethics_triage_post()

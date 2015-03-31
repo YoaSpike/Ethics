@@ -27,6 +27,12 @@ public class Forms extends Controller {
         return ok(forms_index.render(things));
     }
 
+    public static Result viewall() {
+        List<EthicsFormModel> forms = EthicsFormModel.find.all();
+
+        return ok(views.html.viewall.render(forms));
+    }
+
     public static Result display_form_progress(Long id) {
         return ok(id.toString());
     }
