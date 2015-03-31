@@ -31,6 +31,14 @@ public class UserModel extends Model {
         System.out.println(this);
     }
 
+    public String toString() {
+        return String.format(
+            "<User %s %s>",
+            this.curtin_id,
+            this.name
+        );
+    }
+
     @Id
     @Constraints.Required
     public String curtin_id;
