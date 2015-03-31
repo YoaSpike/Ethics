@@ -15,17 +15,21 @@ public class EthicsFormModel extends Model {
     public static final long serialVersionUID = 0;
 
     @Id
-    @Constraints.Min(10)
+    @Constraints.Required
     public int id;
+
+    @ManyToOne()
+    public UserModel owner;
 
     @Constraints.Required
     public EthicsFormState state = EthicsFormState.DRAFT;
 
-    // @Constraints.Required
-    // public String name;
+    @Constraints.Required
+    @OneToOne(mappedBy="form", optional=true)
+    public EthicsTriageModel ethicsTriage = null;
 
-    public static Finder<String,EthicsFormModel> find = new Finder<String,EthicsFormModel>(
-        String.class, EthicsFormModel.class
+    public static Finder<Integer,EthicsFormModel> find = new Finder<Integer,EthicsFormModel>(
+        Integer.class, EthicsFormModel.class
     );
 
     public void transitionTo(String stateName) {

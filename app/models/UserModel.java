@@ -17,7 +17,7 @@ public class UserModel extends Model {
     public static final long serialVersionUID = 0;
 
     @Id
-    @Constraints.Min(10)
+    @Constraints.Required
     public String curtin_id;
 
     @Constraints.Required
