@@ -12,5 +12,6 @@ libraryDependencies ++= Seq(
   cache,
   javaWs,
   "org.xerial" % "sqlite-jdbc" % "3.8.7",
-  "org.mindrot" % "jbcrypt" % "0.3m"
+  "org.mindrot" % "jbcrypt" % "0.3m",
+  "com.adrianhurt" % "play-bootstrap3_2.11" % "0.4"
 )
