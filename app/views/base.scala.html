@@ -32,9 +32,9 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#"><div class="btn btn-success btn-xs">+ New application</div></a></li>
-                    <li><a href="./viewall.html">(name or ID)</a></li>
 
                     @if(controllers.Accounts.isLoggedIn()) {
+                      <li><a href="./viewall.html">@controllers.Accounts.getCurtinID</a></li>
                       <li><a href="@routes.Accounts.logout()">Logout</a></li>
                     } else {
                       <li><a href="@routes.Accounts.login()">Login</a></li>
