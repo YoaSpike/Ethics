@@ -34,7 +34,7 @@
                     <li><a href="#"><div class="btn btn-success btn-xs">+ New application</div></a></li>
 
                     @if(controllers.Accounts.isLoggedIn()) {
-                      <li><a href="./viewall.html">@controllers.Accounts.getCurtinID</a></li>
+                      <li><a href="@routes.Application.viewall()">@controllers.Accounts.getCurtinID</a></li>
                       <li><a href="@routes.Accounts.logout()">Logout</a></li>
                     } else {
                       <li><a href="@routes.Accounts.login()">Login</a></li>
