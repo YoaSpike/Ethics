@@ -1,14 +1,29 @@
-UserModel(mashpan):
-  curtin_id: '17690579'
-  name: 'Dominic May'
-  # first_name: "Mash"
-  # last_name: "Pan"
-  # email: "tester@gmail.com"
-  # signupDate: 2012-03-08
-  # passwordHash: "NOTFORYOU"
-  # isAdmin: No
-  # confirmationCode: ""
-  # activationSent: Yes
-  # recoverPasswordCode: !!null
-  # lastLogin: !!null
-  # referralCode: !!null
+UserModel:
+     - !!models.UserModel
+         curtin_id: "17690579"
+         name: "Dominic May"
+         hashed_password: "$2a$10$XXpyix5todjGfqfaky7TX.rBC83va922CgJlqwjDIsa/i7sfgRqcm"
+
+     - !!models.UserModel
+         curtin_id: "1769079L"
+         name: "John Snow"
+         hashed_password: "$2a$10$XXpyix5todjGfqfaky7TX.rBC83va922CgJlqwjDIsa/i7sfgRqcm"
+
+EthicsFormModel:
+     - !!models.EthicsFormModel
+        id: 0
+        owner: "17690579"
+        ethicsTriage: 0
+
+EthicsTriageModel:
+     - !!models.EthicsTriageModel
+        id: 0
+        form: 0
+        interventions_and_therapies: false
+        human_genetics: true
+        pregnant_women_or_fetuses: false
+        medically_dependant: true
+        cognitively_impaired: false
+        aboriginal_or_torres_strait_islander: true
+        illegal_activities: false
+        justification: "This is totally valid justification"
