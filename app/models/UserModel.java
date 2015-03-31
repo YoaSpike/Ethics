@@ -58,6 +58,7 @@ public class UserModel extends Model {
         );
 
         if (lst == null || lst.size() == 0) {
+            Logger.info("No such user as {}", curtin_id);
             return null;
 
         } else {
@@ -68,6 +69,8 @@ public class UserModel extends Model {
                 return found;
 
             } else {
+                Logger.info("Invalid password for {}", curtin_id);
+
                 return null;
             }
         }
