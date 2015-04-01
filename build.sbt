@@ -11,9 +11,10 @@ libraryDependencies ++= Seq(
   javaEbean,
   cache,
   javaWs,
-  "org.xerial" % "sqlite-jdbc" % "3.8.7",
-  "org.mindrot" % "jbcrypt" % "0.3m",
-  "com.adrianhurt" % "play-bootstrap3_2.11" % "0.4",
-  "com.google.code.maven-play-plugin.org.allcolor.yahp" % "yahp" % "1.3",
-  "com.google.code.maven-play-plugin.org.allcolor.yahp" % "yahp-internal" % "1.3"
+  "org.xerial" % "sqlite-jdbc" % "3.8.7",       // development database
+  "org.mindrot" % "jbcrypt" % "0.3m",           // password encryption
+  "com.adrianhurt" % "play-bootstrap3_2.11" % "0.4",    // bootstrap integration
+  "com.google.code.maven-play-plugin.org.allcolor.yahp" % "yahp" % "1.3",           // pdf generation
+  "com.google.code.maven-play-plugin.org.allcolor.yahp" % "yahp-internal" % "1.3",  // pdf generation internals
+  "org.xhtmlrenderer" % "flying-saucer-pdf" % "9.0.7"                               // pdf generation dependencies
 )
