@@ -16,5 +16,7 @@ libraryDependencies ++= Seq(
   "com.adrianhurt" % "play-bootstrap3_2.11" % "0.4",    // bootstrap integration
   "com.google.code.maven-play-plugin.org.allcolor.yahp" % "yahp" % "1.3",           // pdf generation
   "com.google.code.maven-play-plugin.org.allcolor.yahp" % "yahp-internal" % "1.3",  // pdf generation internals
-  "org.xhtmlrenderer" % "flying-saucer-pdf" % "9.0.7"                               // pdf generation dependencies
+  "org.xhtmlrenderer" % "flying-saucer-pdf" % "9.0.7",                              // pdf generation dependencies
+
+  "com.typesafe.play" %% "play-mailer" % "2.4.0"
 )

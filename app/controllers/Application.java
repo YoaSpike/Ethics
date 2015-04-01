@@ -16,6 +16,9 @@ import views.html.forms.*;
 import views.formdata.*;
 import models.*;
 
+import play.libs.mailer.Email;
+import play.libs.mailer.MailerPlugin;
+
 
 public class Application extends Controller {
     public static Result index() {
@@ -30,5 +33,20 @@ public class Application extends Controller {
         if (name == null) return badRequest("Missing parameter [name]");
 
         return ok("Hello " + name);
+    }
+
+    public static Result emailtest() {
+        Email email = new Email();
+
+        email.setSubject("Simple email");
+        email.setFrom("Mister FROM <ethics@lysdev.com>");
+        email.addTo("Miss TO <me@mause.me>");
+
+        email.setBodyText("A text message");
+        // email.setBodyHTML(views.html.index.render()); or whatever
+
+        MailerPlugin.send(email);
+
+        return ok("Sent " + email);
     }
 }
