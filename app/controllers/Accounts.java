@@ -16,15 +16,22 @@ import models.*;
 
 public class Accounts extends Controller {
     public static UserModel getCurrentUser() {
-        return UserModel.find.byId(getCurtinID());
+        return getEmail() == null ? null : (
+            UserModel.find
+            .where()
+                .eq("email", getEmail())
+            .query()
+            .findList()
+            .get(0)
+        );
     }
 
-    public static String getCurtinID() {
-        return session().get("curtin_id");
+    public static String getEmail() {
+        return session().get("email");
     }
 
     public static boolean isLoggedIn() {
-        return getCurtinID() != null;
+        return getEmail() != null;
     }
 
     public static Result login() {
@@ -48,17 +55,17 @@ public class Accounts extends Controller {
 
         } else {
             LoginForm data = loginForm.get();
-            Logger.debug("Login succeeded for " + data.curtin_id);
+            Logger.debug("Login succeeded for " + data.email);
 
             session().clear();
-            session("curtin_id", data.curtin_id.toString());
+            session("email", data.email.toString());
 
             return redirect(routes.Application.index());
         }
     }
 
     public static Result logout() {
-        Logger.debug("Logged out of " + getCurtinID());
+        Logger.debug("Logged out of " + getEmail());
 
         session().clear();
         return redirect(routes.Application.index());
@@ -75,7 +82,7 @@ public class Accounts extends Controller {
     // users via this route
     public static class AddUserForm {
         @Constraints.Required
-        public String curtin_id;
+        public String email;
 
         @Constraints.Required
         public String password;
@@ -90,8 +97,7 @@ public class Accounts extends Controller {
         } else {
             models.UserModel mod = new models.UserModel();
             AddUserForm data = loginForm.get();
-            mod.name = data.curtin_id;
-            mod.curtin_id = data.curtin_id;
+            mod.email = data.email;
 
             String password = data.password;
 

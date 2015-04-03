@@ -1,10 +1,12 @@
 UserModel:
      - !!models.UserModel
+         email: me@mause.me
          curtin_id: "17690579"
          name: "Dominic May"
          hashed_password: "$2a$10$XXpyix5todjGfqfaky7TX.rBC83va922CgJlqwjDIsa/i7sfgRqcm"
 
      - !!models.UserModel
+         email: john@got.com
          curtin_id: "1769079L"
          name: "John Snow"
          hashed_password: "$2a$10$XXpyix5todjGfqfaky7TX.rBC83va922CgJlqwjDIsa/i7sfgRqcm"
