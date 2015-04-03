@@ -13,17 +13,17 @@ public class LoginForm {
     public String getEmail() {  return this.email; }
 
     @Constraints.Required
-    public String encrypted_password;
-    public void setEncrypted_password(String val) { this.encrypted_password = val; }
-    public String getEncrypted_password() {  return this.encrypted_password; }
+    public String password;
+    public void setPassword(String val) { this.password = val; }
+    public String getPassword() {  return this.password; }
 
     // methods
     public String toString() {
-        return "<LoginForm \"" + curtin_id + "\" \"" + encrypted_password + "\">";
+        return String.format("<LoginForm \"%s\" \"%s\">", this.email, this.password);
     }
 
     public String validate() {
-        if (models.UserModel.authenticate(this.curtin_id, this.encrypted_password) == null) {
+        if (models.UserModel.authenticate(this.email, this.password) == null) {
               return "Invalid Curtin ID or password";
         }
         return null; // no error

@@ -21,7 +21,9 @@
                       <div class="form-group" style="margin:2em;">
                           <div class="input-group">
                               <div class="input-group-addon"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></div>
-                              @b3.password(loginForm("encrypted_password"), '_label -> null, 'class -> "form-control", 'placeholder -> "password")
+                              @b3.password(loginForm("password"), '_label -> null, 'class -> "form-control", 'placeholder -> "password", 'errors -> None)
+
+                              @loginForm.errors.get("password")
                           </div>
                       </div>
 
