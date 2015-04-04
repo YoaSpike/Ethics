@@ -7,7 +7,7 @@ public class LoginForm {
 
     // fields
     @Constraints.Required
-    // @Constraints.Pattern(value="^[0-9]+[A-Za-z]?$", message="A valid Curtin ID is required")
+    @Constraints.Email
     public String email;
     public void setEmail(String val) { this.email = val; }
     public String getEmail() {  return this.email; }

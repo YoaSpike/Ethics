@@ -49,6 +49,7 @@ public class UserModel extends Model {
     @Constraints.Required
     public String name;
 
+    @Constraints.Email
     public String email;
 
     @Constraints.Required
