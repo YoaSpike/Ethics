@@ -41,6 +41,8 @@ public class UserModel extends Model {
     }
 
     @Id
+    public Integer id;
+
     @Constraints.Required
     public String curtin_id;
 
