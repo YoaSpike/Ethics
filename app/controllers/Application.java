@@ -49,4 +49,12 @@ public class Application extends Controller {
 
         return ok("Sent " + email);
     }
+
+    public static Result demo(String demo_name) {
+        if (demo_name.equals("section1")) {
+            return ok(views.html.demos.section1.render());
+        } else {
+            return badRequest();
+        }
+    }
 }

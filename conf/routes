@@ -5,9 +5,9 @@
 # Home page
 GET     /                           controllers.Application.index()
 
-
 GET     /pdftest                    controllers.PDF.pdftest()
 GET     /emailtest                  controllers.Application.emailtest()
+GET     /demos/:demo_name           controllers.Application.demo(demo_name: String)
 
 GET     /forms                      controllers.Forms.index()
 GET     /viewall                    controllers.Forms.viewall()
