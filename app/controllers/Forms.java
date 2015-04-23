@@ -28,7 +28,13 @@ public class Forms extends Controller {
     }
 
     public static Result viewall() {
-        List<EthicsFormModel> forms = EthicsFormModel.find.all();
+        List<EthicsFormModel> forms = (
+            EthicsFormModel.find
+            .where()
+                .eq("owner", controllers.Accounts.getCurrentUser())
+            .query()
+            .findList()
+        );
 
         return ok(views.html.viewall.render(forms));
     }
