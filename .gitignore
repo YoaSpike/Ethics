@@ -19,3 +19,4 @@ blog.md
 *parser.out*
 *lextab.py*
 *.sublime-workspace*
+*.db
