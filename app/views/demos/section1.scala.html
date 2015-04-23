@@ -1,12 +1,5 @@
 @()
 
-@* section in the sidebar *@
-@section(section_num: Integer, section_name: String, active: Boolean = false) = {
-    <li class="@if(active) { active }">
-        <a href="#"><b>Section @section_num</b><br /><div style="margin-left:1em;">@section_name</div></a>
-    </li>
-}
-
 
 @base("Section 1 - Human Research Ethics application - Curtin University") {
 
@@ -202,28 +195,7 @@
             </div>
             <!-- END form -->
 
-            <!-- START Sidebar -->
-            <div class="col-sm-2">
-                <div class="panel panel-default affix" id="nav-sidebar">
-                        <ul class="nav nav-stacked nav-pills">
-                            <li><a href="#"><b>Ethics triage</b></a></li>
-                            @defining(Seq(
-                                    1 -> "General information",
-                                    2 -> "Themes in research ethics: Risk and benefits, consent",
-                                    3 -> "Ethical considerations specific to research methods or fields",
-                                    4 -> "Ethical considerations specific to participants",
-                                    5 -> "Processes of research governance and ethical review",
-                                    6 -> "Attachments",
-                                    7 -> "Certification and signatures"
-                            )) { sections =>
-                                @for(a_section <- sections) {
-                                    @section(a_section._1, a_section._2, a_section._1 == 3)
-                                }
-                            }
-                        </ul>
-                </div>
-            </div>
-            <!-- END Sidebar -->
+            @partials.sidebar(1)
 
         </div>
     </div>
