@@ -70,4 +70,8 @@ public class Application extends Controller {
             return badRequest("Bad in general");
         }
     }
+
+    public static String get_section_link(Integer num) {
+        return "/demos/" + (num == 0 ? "ethics_triage" : "section" + num);
+    }
 }

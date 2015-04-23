@@ -1,0 +1,12 @@
+@(current: Integer)
+
+@if(current != 0) {
+    <a
+        href="@controllers.Application.get_section_link(current - 1)"
+        class="btn btn-info pull-left">&#60; Previous section</a>
+}
+@if(current != 7) {
+    <a
+        href="@controllers.Application.get_section_link(current + 1)"
+        class="btn btn-info pull-right">Next section &#62;</a>
+}
