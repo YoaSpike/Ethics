@@ -25,6 +25,15 @@ public class EthicsFormModel extends Model {
         this.ethicsTriage = other.ethicsTriage;
     }
 
+    public String toString() {
+        return String.format(
+            "<EthicsFormModel %d by %s>",
+            this.id,
+            this.owner == null ?
+            "unknown user" : this.owner.name
+        );
+    }
+
     @Id
     @Constraints.Required
     public int id;

@@ -28,6 +28,17 @@ public class EthicsTriageModel extends Model {
         this.illegal_activities = other.illegal_activities;
         this.justification = other.justification;
     }
+    public String toString() {
+        String s_form = (
+            this.form == null ?
+            "no form" : this.form.toString()
+        );
+
+        return String.format(
+            "<EthicsTriageModel %d attached to %s>",
+            this.id, s_form
+        );
+    }
 
     @Id
     @Constraints.Required
