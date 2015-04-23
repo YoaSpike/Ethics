@@ -16,14 +16,18 @@ import models.*;
 
 public class Accounts extends Controller {
     public static UserModel getCurrentUser() {
-        return getEmail() == null ? null : (
-            UserModel.find
-            .where()
-                .eq("email", getEmail())
-            .query()
-            .findList()
-            .get(0)
-        );
+        if (isLoggedIn()) {
+            return (
+                UserModel.find
+                .where()
+                    .eq("email", getEmail())
+                .query()
+                .findList()
+                .get(0)
+            );
+        } else {
+            return null;
+        }
     }
 
     public static String getEmail() {
