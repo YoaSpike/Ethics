@@ -53,8 +53,21 @@ public class Application extends Controller {
     public static Result demo(String demo_name) {
         if (demo_name.equals("section1")) {
             return ok(views.html.demos.section1.render());
+
+        } else if (demo_name.equals("section6")) {
+            return ok(views.html.demos.section6.render(
+                form(views.formdata.Section6Form.class)
+            ));
+
+        } else if (demo_name.length() > 7 && demo_name.substring(0, 7).equals("section")) {
+            String section_num = demo_name.substring(7);
+
+            return ok(views.html.demos.unimplemented.render(
+                Integer.parseInt(section_num)
+            ));
+
         } else {
-            return badRequest();
+            return badRequest("Bad in general");
         }
     }
 }
