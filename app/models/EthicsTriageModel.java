@@ -41,7 +41,6 @@ public class EthicsTriageModel extends Model {
     }
 
     @Id
-    @Constraints.Required
     public int id;
 
     @OneToOne(optional=false)

@@ -16,21 +16,9 @@ import org.mindrot.jbcrypt.BCrypt;
 public class UserModel extends Model {
     public static final long serialVersionUID = 0;
 
-    // for
-    public UserModel(String curtin_id) {
-        this.curtin_id = curtin_id;
-    }
-    public UserModel() { super(); }
-
-    // copy constructor, required for fixtures
-    public UserModel(UserModel other) {
-        super();
-        this.curtin_id = other.curtin_id;
-        this.email = other.email;
-        this.name = other.name;
-        this.hashed_password = other.hashed_password;
-        System.out.println(this);
-    }
+    public UserModel(String id) { this(Integer.parseInt(id)); }
+    public UserModel(int    id) { this.id = id; }
+    public UserModel()          { super(); }
 
     public String toString() {
         return String.format(

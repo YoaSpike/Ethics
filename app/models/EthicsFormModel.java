@@ -35,16 +35,13 @@ public class EthicsFormModel extends Model {
     }
 
     @Id
-    @Constraints.Required
     public int id;
 
     @ManyToOne()
     public UserModel owner;
 
-    @Constraints.Required
     public EthicsFormState state = EthicsFormState.DRAFT;
 
-    @Constraints.Required
     @OneToOne(mappedBy="form", optional=true)
     public EthicsTriageModel ethicsTriage = null;
 
