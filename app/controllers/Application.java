@@ -74,4 +74,8 @@ public class Application extends Controller {
     public static String get_section_link(Integer num) {
         return "/demos/" + (num == 0 ? "ethics_triage" : "section" + num);
     }
+
+    public static String slugify(String raw) {
+        return raw.toLowerCase().replace("/", "_").replace(" ", "_");
+    }
 }

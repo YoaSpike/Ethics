@@ -1,0 +1,78 @@
+@(section6Form: Form[views.formdata.Section6Form])
+
+@import b3.vertical.fieldConstructor
+
+@attachment(attachment_name: String) = {
+    @defining(controllers.Application.slugify(attachment_name)) { slug =>
+    <tr>
+        <td>@attachment_name</td>
+        <td>@b3.radio(section6Form(slug + "_provided"),
+                      options=Seq("na" -> "N/A", "no" -> "No", "yes" -> "Yes"))</td>
+        <td>@b3.text(section6Form(slug + "_version"), '_label -> None)</td>
+        <td>@b3.date(section6Form(slug + "_date"), '_label -> None)</td>
+    </tr>
+    }
+}
+
+@base("Section 6 - Attachments - Curtin University") {
+    <!-- START main content -->
+    <div class="row">
+        <div class="container">
+
+            <!-- START form -->
+            <div class="col-sm-10">
+                <form>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title"><b>Section 6 - Attachments</b></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="">
+                                <table class="table table-condensed table-responsive table-center">
+                                    <thead>
+                                        <tr>
+                                            <td width="54%">Item</td>
+                                            <td width="11">Applicable</td>
+                                            <td width="15%">Version</td>
+                                            <td width="20%">Date</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @defining(Seq(
+                                            "Protocol/research proposal",
+                                            "Recruitment material",
+                                            "Participant Information statement and consent form/s",
+                                            "Parent Information statement and consent form/s",
+                                            "Child Information statement and assent form/s",
+                                            "Questionnaires/survey instruments (list below)",
+                                            "Translations where languages other than English are used",
+                                            "Recruitment materials (list below)",
+                                            "Investigator brochure or Product Information (for drug intervention studies)",
+                                            "Working with Children's Card",
+                                            "SOL Research Integrity Professional Development Program training certificate/s"
+                                        )) { attachments =>
+                                            @for(attachment_name <- attachments) {
+                                                @attachment(attachment_name)
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                            @partials.section_buttons(6)
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- END form -->
+
+            @partials.sidebar(6)
+
+        </div>
+    </div>
+    <!-- END main content -->
+
+} {
+    @* postScript *@
+}
