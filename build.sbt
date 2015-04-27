@@ -2,13 +2,12 @@ name := """yoaspike_ethics"""
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava)
+lazy val root = (project in file(".")).enablePlugins(PlayJava, SbtEbean)
 
 scalaVersion := "2.11.1"
 
 libraryDependencies ++= Seq(
   javaJdbc,
-  javaEbean,
   cache,
   javaWs,
   "org.xerial" % "sqlite-jdbc" % "3.8.7",       // development database
