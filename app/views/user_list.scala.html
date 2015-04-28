@@ -2,23 +2,29 @@
 
 @base("User list") {
   <div class="row">
-    <div class="large-12 columns">
-      <div class="panel">
-        @controllers.Accounts.getCurtinID()
-      </div>
-    </div>
-  </div>
+      <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel">
+                @controllers.Accounts.getEmail()
+              </div>
+            </div>
+          </div>
 
-
-  <div class="row">
-    <div class="large-12 columns">
-      <div class="panel">
-        @for(user <- users) {
-          @user.curtin_id @user.hashed_password
-          <br/>
-        }
+          <div class="row">
+            <div class="col-md-12">
+              <div class="panel">
+                @for(user <- users) {
+                  @user.name<br/>
+                  @user.email<br/>
+                  @user.curtin_id<br/>
+                  @user.hashed_password<br/>
+                  <br/>
+                }
+              </div>
+            </div>
+          </div>
       </div>
-    </div>
   </div>
 } {
     @* postScript *@
