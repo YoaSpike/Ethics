@@ -7,10 +7,11 @@
     background: none;
     border: none;
     border-top: 1px solid #EEEEEE;
+    margin-top: 20px;
 }
 
 #footer>.container {
-    padding-top: 15px;
+    margin-top: 15px;
 }
 
 #footer .container ul {
@@ -22,24 +23,85 @@
     padding-right: 10px;
 }
 
+/************ START Nav-siderbar ************/
+
 #nav-sidebar {
     width: 20em;
 }
 
-#nav-sidebar>.nav {
-    padding: 5px;
+#nav-sidebar .panel-body {
+    padding: 0px;
+    overflow-y: scroll;
+}
+
+#nav-sidebar .nav-main {
+    padding: 7px 0px 7px 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.nav-main a:link,
+.nav-main a:visited,
+.nav-main a:hover,
+.nav-main a:active {
+    color: #000;
+    text-decoration: none;
+}
+
+#nav-sidebar .nav-main-desc {
+    padding-left: 1em;
+    font-size: 12px;
+    font-weight: normal;
+    color: #555;
+}
+
+.nav-active {
+    background-color: #FFF4C5;
+}
+
+.nav-sub {
+    font-weight: normal;
+    font-size: 13px;
+    margin-left: 2em;
+}
+
+.incomplete a:link,
+.incomplete a:visited,
+.incomplete a:hover,
+.incomplete a:active {
+    color: #999;
+}
+
+.incomplete a:hover,
+.incomplete a:active {
+    text-decoration: underline;
+}
+
+/************ END Nav-sidebar ************/
+
+
+.panel-title {
+    text-align: center;
+    font-weight: 600;
 }
 
 .main-q {
-    font-weight: bold;
+    font-weight: 600;
     font-size: 16px;
     margin: 2em 0em 0em 0em;
 }
 
 .main-q-desc {
     margin: 0em 0em 1em 2em;
+    padding: 0px 5px 0px 5px;
     font-size: 13px;
     color: #555;
+    border-style: double;
+    border-width: 3px;
+    border-color: #eee;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
 }
 
 .sub-q {
@@ -64,4 +126,10 @@
 
 .table-smallertext td,th {
     font-size: 14px;
+}
+
+.has-error .error-msg {
+    color: red;
+    font-size: 12px;
+    padding-left: 1em;
 }
