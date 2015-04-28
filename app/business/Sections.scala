@@ -8,15 +8,20 @@ import scala.beans.BeanProperty
 import scala.collection.JavaConverters._
 import scala.collection.JavaConversions._
 
-class ThingSorter extends Object with scala.math.Ordering[String] {
-    val RE = "(\\d+)([a-z])?".r
+object QuestionEntryOrdering extends scala.math.Ordering[java.util.Map.Entry[String,String]] {
+    def compare(xx: java.util.Map.Entry[String,String], yy: java.util.Map.Entry[String,String]) : Int = {
+        QuestionOrdering.compare(xx.getKey, yy.getKey)
+    }
+}
+
+object QuestionOrdering extends scala.math.Ordering[String] {
+    val RE = "(\\d+)([A-Za-z])?".r
     val ALPHA = "abcdefghijklmnopqrstuvwxyz"
 
     def compare(x: String, y: String) : Int = {
         if (x == null || y == null) {
             0
         } else {
-            println(x, y, get_val(x), get_val(y))
             get_val(x) - get_val(y)
         }
     }
@@ -26,7 +31,7 @@ class ThingSorter extends Object with scala.math.Ordering[String] {
 
         q match {
             case RE(int, null)  => inter(int)
-            case RE(int, alpha) => inter(int) + ALPHA.indexOf(alpha) + 1
+            case RE(int, alpha) => inter(int) + ALPHA.toLowerCase.indexOf(alpha) + 1
             case _              => 0
         }
     }
@@ -60,11 +65,18 @@ object Sections {
         _sections
     }
 
-    def get_questions(section_name: String) : List[String] = {
+    def get_questions(section_name: String) : List[(String,String)] = {
         Sections.load_sections()
 
         _section_map.get(section_name) match {
-            case Some(value) => value.questions.entrySet.toList.sorted(new ThingSorter())
+            case Some(value) => {
+                (
+                    value.questions
+                    .entrySet.toList
+                    .sorted(QuestionEntryOrdering)
+                    .map(entry => (entry.getKey, entry.getValue))
+                )
+            }
             case None        => List()
         }
     }
