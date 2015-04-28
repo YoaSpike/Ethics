@@ -122,6 +122,11 @@
 
 #ciTable td {
     font-size: 12px;
+    vertical-align: middle;
+}
+
+th {
+    vertical-align: middle;
 }
 
 .table-smallertext td,th {
