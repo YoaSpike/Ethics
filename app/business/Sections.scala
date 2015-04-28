@@ -41,7 +41,7 @@ object QuestionOrdering extends scala.math.Ordering[String] {
 case class Section(name: String, questions: Map[String,String])
 
 object Sections {
-    val SECTIONS = "app\\sections.yaml"
+    val SECTIONS = "app" + java.io.File.separator + "sections.yaml"
     var _sections : List[Section] = null
     var _section_map : Map[String,Section] = null
 

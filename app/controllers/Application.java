@@ -42,8 +42,8 @@ public class Application extends Controller {
         email.setFrom("Mister FROM <ethics@lysdev.com>");
         email.addTo("Miss TO <me@mause.me>");
 
-        email.setBodyText("A text message");
-        // email.setBodyHTML(views.html.index.render()); or whatever
+        // email.setBodyText("A text message");
+        email.setBodyHtml(views.html.index.render().body());
 
         MailerPlugin.send(email);
 
