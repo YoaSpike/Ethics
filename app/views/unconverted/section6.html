@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Section 6 - Attachments</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<!-- START header -->
+<nav class="navbar navbar-default" id="header">
+    <div class="container">
+        <div class="navbar-brand">Curtin University</div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><div class="btn btn-success btn-xs">+ New application</div></a></li>
+                <li><a href="./viewall.html">(name or ID)</a></li>
+                <li><a href="./login.html">Login</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END header -->
+
+<!-- START main content -->
+<div class="row">
+    <div class="container">
+        
+        <!-- START form -->
+        <div class="col-sm-9">
+            <form>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title">Section 6 - Attachments</div>
+                    </div>
+                    <div class="panel-body">
+                        
+                        <div class="main-q">Please select the attachments to include as part of your application:</div>
+                        <table class="table table-default" id="attachmentTable">
+                            <thead>
+                                <tr>
+                                    <th style="width:60%;">Type</th>
+                                    <th style="width:10%;">Version</th>
+                                    <th style="width:10%;">Date</th>
+                                    <th style="width:20%">Attachment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr name="attachment" id="attachment1">
+                                    <td  class="input-group-sm">
+                                        <select name="type" class="form-control">
+                                            <option value="1">Protocol/research proposal</option>
+                                            <option value="2">Recruitment material</option>
+                                            <option value="3">Participant Information statement and consent form/s</option>
+                                            <option value="4">Parent Information statement and consent form/s</option>
+                                            <option value="5">Child Information statement and assent form/s</option>
+                                            <option value="6">Questionaires/survey instrucments</option>
+                                            <option value="7">Translations where languages other than English are used</option>
+                                            <option value="8">Recruitment materials</option>
+                                            <option value="9">Investigator brochure or Product Information (for drug intervention studies)</option>
+                                            <option value="10">Working with Children's Card</option>
+                                            <option value="11">SOL Research Integrity Professional Development Program training certificate/s</option>
+                                        </select>
+                                    </td>
+                                    <td class="input-group-sm">
+                                        <input type="text" name="version" class="form-control" placeholder="Version">
+                                    </td>
+                                    <td class="input-group-sm">
+                                        <input type="date" name="date" class="form-control">
+                                    </td>
+                                    <td style="font-size:11px;vertical-align:middle;">
+                                        <input type="file" name="file">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4" style="text-align:center;"><a class="btn btn-default btn-sm" onclick="addAttachment();">Click to add one more attachment</a></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+
+                        <hr />
+                        <a class="btn btn-info pull-right" href="section7.html">Next section &#62;</a>
+                        <a class="btn btn-info pull-left" href="section5.html">&#60; Previous section</a>
+
+                    </div> <!-- END main panel body -->
+                </div>
+            </form>
+        </div>
+        <!-- END form panel -->
+
+        <!-- START Sidebar -->
+        <div class="col-sm-3">
+            <div class="panel panel-default" id="nav-sidebar">
+                <div class="panel-heading">
+                    <div class="panel-title">Navigation</div>
+                </div>
+                <div class="nav-main"><a href="#">
+                    Ethics Triage
+                </a></div>
+                <div class="nav-main"><a href="section1.html">
+                    Section 1<div class="nav-main-desc">General Information</div>
+                </a></div>
+                <div class="nav-main"><a href="section2.html">
+                    Section 2<div class="nav-main-desc">Themes in research ethics: Risk and benefits, consent</div>
+                </a></div>
+                <div class="nav-main"><a href="section3.html">
+                    Section 3<div class="nav-main-desc">Ethical considerations specific to research methods or fields</div></a>
+                </a></div>
+                <div class="nav-main"><a href="section4.html">
+                    Section 4<div class="nav-main-desc">Ethical considerations specific to participants</div>
+                </a></div>
+                <div class="nav-main"><a href="section5.html">
+                    Section 5<div class="nav-main-desc">Processes of research governance and ethical review</div>
+                </a></div>
+                <div class="nav-main nav-active"><a href="#">
+                    Section 6<div class="nav-main-desc">Attachments</div>
+                </a></div>
+                <div class="nav-main"><a href="section7.html">
+                    Section 7<div class="nav-main-desc">Certification and signatures</div>
+                </a></div>
+            </div>
+        </div>
+        <!-- END Sidebar -->
+
+    </div>
+</div>
+<!-- END main content -->
+
+<!-- START footer -->
+<div class="navbar navbar-default" id="footer">
+    <div class="container">
+        <ul>
+            <li>Curtin University</li>
+            <li>Human Ethics Office</li>
+            <li>Help</li>
+            <li>About</li>
+        </ul>
+    </div>
+</div>
+<!-- END footer -->
+
+<script src="jquery-2.1.3.min.js"></script>
+<script src="global_postscript.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+    /* Check if each field has filled in. Set the nav-link as red and bold if incomplete. */
+    $(".compulsory").focusout(function() {
+        var qname = $(this).attr("name");
+        if ($(this).val() != "") {
+            $(this).closest("div").removeClass('has-error');
+            $(this).next(".error-msg").remove();
+        } else {
+            $(this).closest("div").addClass('has-error');
+            if ($(this).next(".error-msg").length == 0)
+                $('<div class="error-msg">Please fill in the blank.</div>').insertAfter($(this));
+        }
+        if (($(this).attr("name") === "projectTitle") || ($(this).attr("name") === "projectType")) {
+            if ($(this).val() != "") {
+                $("#"+qname+"Link").removeClass("incomplete");
+            } else {
+                $("#"+qname+"Link").addClass("incomplete");
+            }
+        } else {
+            var hasCompleted = true;
+            $("[name="+$(this).attr("name")+"]").each(function() {
+                hasCompleted = hasCompleted & ($(this).val() != "");
+            });
+            if (hasCompleted) {
+                $("#"+qname+"Link").removeClass("incomplete");
+            } else {
+                $("#"+qname+"Link").addClass("incomplete");
+            }
+        }
+    });
+});
+
+function addAttachment() {
+    console.log($("#attachmentTable > tbody > tr").length+1);
+    $("#attachmentTable > tbody").append("<tr name='attachment' id='" + $("#attachmentTable > tbody > tr").length+1 + "'>" + $("[name=attachment]").html() + "</tr>");
+}
+</script>
+</body>
+</html>
