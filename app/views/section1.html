@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Section 1 - Human Research Ethics application - Curtin University</title>
@@ -28,7 +29,7 @@
     <div class="container">
         
         <!-- START form -->
-        <div class="col-sm-10">
+        <div class="col-sm-9">
             <form>
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -36,13 +37,13 @@
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
-                            <label class="main-q" for="projectTitle">1. Project Title</label>
-                            <input type="text" class="form-control" id="projectTitle">
+                            <label class="main-q" for="projectTitle" id="q1">1. Project Title</label>
+                            <input type="text" class="form-control compulsory" id="projectTitle" name="q1">
                         </div>
 
                         <div class="form-group">
-                            <label class="main-q" for="projectType">2. Please indicate the type of project</label>
-                            <select class="form-control" id="projectType">
+                            <label class="main-q" for="projectType" id="q2">2. Please indicate the type of project</label>
+                            <select class="form-control compulsory" id="projectType" name="q2">
                                 <option value="0">Staff project</option>
                                 <option value="1">Undergaduate other than honours (no candidacy required)</option>
                                 <option value="2">Honours (no candidacy required)</option>
@@ -57,54 +58,55 @@
                             <input type="text" class="form-control" id="typeOthers">
                         </div>
 
-                        <div class="main-q">3. Project Summary</div>
+                        <div class="main-q" id="q3">3. Project Summary</div>
                             <div class="main-q-desc">Give a concise and simple description, in plain language, or the study in each of the sections below.</div>
                             <div class="form-group sub-q">
                                 <label for="background">3a. Background</label>
-                                <textarea class="form-control" rows="5" id="background"></textarea>
+                                <textarea class="form-control compulsory" rows="5" id="background" name="q3"></textarea>
                             </div>
 
                             <div class="form-group sub-q">
                                 <label for="aims">3b. Aims and hypothesis</label>
-                                <textarea class="form-control" rows="3" id="aims"></textarea>
+                                <textarea class="form-control compulsory" rows="3" id="aims" name="q3"></textarea>
                             </div>
 
                             <div class="form-group sub-q">
                                 <label for="methods">3c. Methods</label>
-                                <textarea class="form-control" rows="5" id="methods"></textarea>
+                                <textarea class="form-control compulsory" rows="5" id="methods" name="q3"></textarea>
                             </div>
 
-                        <div class="main-q">4. Principle Investigator</div>
+                        <div class="main-q" id="q4">4. Principle Investigator</div>
+                            <div class="main-q-desc">The principal investigator must be a Curtin staff member. If this application is for a student project the principal investigator must be one of the student's supervisors.</div>
                             <div class="sub-q">
                                 <div class="row">
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="piName">Name (include title)</label>
-                                            <input type="text" class="form-control" id="piName">
+                                            <input type="text" class="form-control compulsory" id="piName" name="q4">
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="piId">Staff ID</label>
-                                            <input type="text" class="form-control" id="piId">
+                                            <input type="text" class="form-control compulsory" id="piId" name="q4">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="piArea">School, Center or Area</label>
-                                    <input type="text" class="form-control" id="piArea">
+                                    <input type="text" class="form-control compulsory" id="piArea" name="q4">
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="piTel">Telephone</label>
-                                            <input type="text" class="form-control" id="piTel">
+                                            <input type="text" class="form-control compulsory" id="piTel" name="q4">
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="piEmail">Email</label>
-                                            <input type="text" class="form-control" id="piEmail">
+                                            <input type="text" class="form-control compulsory" id="piEmail" name="q4">
                                         </div>
                                     </div>
                                 </div>
@@ -121,7 +123,7 @@
                             </div>
                         </div>
 
-                    <div class="main-q">5. Co-Investigators</div>
+                    <div class="main-q" id="q5">5. Co-Investigators</div>
                         <div class="sub-q">
                             <table class="table table-condensed table-responsive table-center" id="ciTable">
                                 <thead>
@@ -132,22 +134,24 @@
                                         <td width="17%">Role</td>
                                         <td width="10%">Candidacy approved</td>
                                         <td width="15%">Research Integrity training complete</td>
+                                        <td></td>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr id="0">
-                                        <td><input type="text" id="ciName" style="width:100%;"></td>
-                                        <td><input type="text" id="ciArea" style="width:100%"></td>
-                                        <td><input type="text" id="ciId" style="width:100%"></td>
+                                    <tr name="ciRow">
+                                        <td><input type="text" id="ciName" style="width:100%;" name="q5"></td>
+                                        <td><input type="text" id="ciArea" style="width:100%" name="q5"></td>
+                                        <td><input type="text" id="ciId" style="width:100%" name="q5"></td>
                                         <td><select style="width:100%">
                                             <option value="CI">CI</option>
-                                            <option value="Supervisor">Supervisor</option>
-                                            <option value="Student">Student</option>
+                                            <option value="Supervisor" name="q5">Supervisor</option>
+                                            <option value="Student" name="q5">Student</option>
                                         </select></td>
                                         <td align="center"><input type="checkbox" id="ciConApproved"></td>
                                         <td align="center"><input type="checkbox" id="ciTrainCompleted"></td>
+                                        <td><a onclick="removeCIRow(this)" style="cursor:pointer;text-decoration:none;">X</a></td>
                                     </tr>
-                                    <tr id="1">
+                                    <tr name="ciRow">
                                         <td><input type="text" id="ciName" style="width:100%;"></td>
                                         <td><input type="text" id="ciArea" style="width:100%"></td>
                                         <td><input type="text" id="ciId" style="width:100%"></td>
@@ -158,54 +162,56 @@
                                         </select></td>
                                         <td align="center"><input type="checkbox" id="ciConApproved"></td>
                                         <td align="center"><input type="checkbox" id="ciTrainCompleted"></td>
+                                        <td><a onclick="removeCIRow(this)" style="cursor:pointer;text-decoration:none;">X</a></td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td colspan="6"><center><div class="btn btn-default btn-xs" onclick="addCIRow();">Click to add one more Co-Investigator</div></center></td>
+                                        <td colspan="7"><center><div class="btn btn-default btn-xs" onclick="addCIRow();">Click to add one more Co-Investigator</div></center></td>
                                     </tr>
                                 </tfoot>
                             </table>
                         </div>
 
-                    <div class="main-q inline">6. Contact Person</div>
+                    <div class="main-q inline" id="q6">6. Contact Person</div>
                         <input type="checkbox" id="piAsCP" value="yes" onchange="fillCP();"> <label for="piAsCP" class="option-label">Tick to use Principal Investigator details</label>
                         <div class="sub-q" id="cp">
                             <div class="row">
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label for="cpName">Name (include title)</label>
-                                        <input type="text" class="form-control" id="cpName">
+                                        <input type="text" class="form-control compulsory" id="cpName" name="q6">
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label for="cpId">Staff ID</label>
-                                        <input type="text" class="form-control" id="cpId">
+                                        <input type="text" class="form-control compulsory" id="cpId" name="q6">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="cpArea">School, Centre or Area</label>
-                                <input type="text" class="form-control" id="cpArea">
+                                <input type="text" class="form-control compulsory" id="cpArea" name="q6">
                             </div>
                             <div class="row">
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label for="cpTel">Telephone</label>
-                                        <input type="text" class="form-control" id="cpTel">
+                                        <input type="text" class="form-control compulsory" id="cpTel" name="q6">
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form-group">
                                         <label for="cpEmail">Email</label>
-                                        <input type="text" class="form-control" id="cpEmail">
+                                        <input type="text" class="form-control compulsory" id="cpEmail" name="q6">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-info pull-left">&#60; Previous section</button>
-                        <button class="btn btn-info pull-right">Next section &#62;</button>
+                        <hr />
+                        <a class="btn btn-info pull-right" href="section2.html">Next section &#62;</a>
+                        <a class="btn btn-info pull-left" href="#">&#60; Previous section</a>
                     </div>
                 </div>
             </form>
@@ -213,20 +219,55 @@
         <!-- END form -->
 
         <!-- START Sidebar -->
-        <div class="col-sm-2">
-            <div class="panel panel-default affix" id="nav-sidebar">
-                    <ul class="nav nav-stacked nav-pills">
-                        <li><a href="#"><b>Ethics triage</b></a></li>
-                        <li class="active">
-                            <a href="#"><b>Section 1</b><br /><div style="margin-left:1em;">General information</div></a>
-                        </li>
-                        <li><a href="#"><b>Section 2</b><br /><div style="margin-left:1em;">Themes in research ethics: Risk and benefits, consent</div></a></li>
-                        <li><a href="#"><b>Section 3</b><br /><div style="margin-left:1em;">Ethical considerations specific to research methods or fields</div></a></li>
-                        <li><a href="#"><b>Section 4</b><br /><div style="margin-left:1em;">Ethical considerations specific to participants</div></a></li>
-                        <li><a href="#"><b>Section 5</b><br /><div style="margin-left:1em;">Processes of research governance and ethical review</div></a></li>
-                        <li><a href="#"><b>Section 6</b><br /><div style="margin-left:1em;">Attachments</div></a></li>
-                        <li><a href="#"><b>Section 7</b><br /><div style="margin-left:1em;">Certification and signatures</div></a></li>
-                    </ul>
+        <div class="col-sm-3">
+            <div class="panel panel-default" id="nav-sidebar">
+                <div class="panel-heading">
+                    <div class="panel-title">Navigation</div>
+                </div>
+                <div class="panel-body">
+                <div class="nav-main"><a href="#">
+                    Ethics Triage
+                </a></div>
+                    <div class="nav-main nav-active">
+                        <a href="section1.html">Section 1<div class="nav-main-desc">General Information</div></a>
+                        <div class="nav-sub incomplete" id="q1Link"><a href="#q1">
+                            1. Project Title
+                        </a></div>
+                        <div class="nav-sub incomplete" id="q2Link"><a href="#q2">
+                            2. Type of project
+                        </a></div>
+                        <div class="nav-sub incomplete" id="q3Link"><a href="#q3">
+                            3. Project Summary
+                        </a></div>
+                        <div class="nav-sub incomplete" id="q4Link"><a href="#q4">
+                            4. Principal Investigator
+                        </a></div>
+                        <div class="nav-sub incomplete" id="q5Link"><a href="#q5">
+                            5. Co-Investigator
+                        </a></div>
+                        <div class="nav-sub incomplete" id="q6Link"><a href="#q6">
+                            6. Contact Person
+                        </a></div>
+                    </div>
+                    <div class="nav-main"><a href="section2.html">
+                        Section 2<div class="nav-main-desc">Themes in research ethics: Risk and benefits, consent</div>
+                    </a></div>
+                    <div class="nav-main"><a href="#">
+                        Section 3<div class="nav-main-desc">Ethical considerations specific to research methods or fields</div>
+                    </a></div>
+                    <div class="nav-main"><a href="#">
+                        Section 4<div class="nav-main-desc">Ethical considerations specific to participants</div>
+                    </a></div>
+                    <div class="nav-main"><a href="#">
+                        Section 5<div class="nav-main-desc">Processes of research governance and ethical review</div>
+                    </a></div>
+                    <div class="nav-main"><a href="#">
+                        Section 6<div class="nav-main-desc">Attachments</div>
+                    </a></div>
+                    <div class="nav-main"><a href="#">
+                        Section 7<div class="nav-main-desc">Certification and signatures</div>
+                    </a></div>
+                </div>
             </div>
         </div>
         <!-- END Sidebar -->
@@ -249,14 +290,46 @@
 <!-- END footer -->
 
 <script src="jquery-2.1.3.min.js"></script>
+<script src="global_postscript.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+    /* Show "Other types" if project type is "Other". */
     $('#projectTypeOthers').hide();
     $('#projectType').change(function() {
         if ($(this).val() == 6) {
             $('#projectTypeOthers').show();
         } else {
             $('#projectTypeOthers').hide();
+        }
+    });
+
+    /* Check if each field has filled in. Set the nav-link as red and bold if incomplete. */
+    $(".compulsory").focusout(function() {
+        var qname = $(this).attr("name");
+        if ($(this).val() != "") {
+            $(this).closest("div").removeClass('has-error');
+            $(this).next(".error-msg").remove();
+        } else {
+            $(this).closest("div").addClass('has-error');
+            if ($(this).next(".error-msg").length == 0)
+                $('<div class="error-msg">Please fill in the blank.</div>').insertAfter($(this));
+        }
+        if (($(this).attr("name") === "q1") || ($(this).attr("name") === "q2")) {
+            if ($(this).val() != "") {
+                $("#"+qname+"Link").removeClass("incomplete");
+            } else {
+                $("#"+qname+"Link").addClass("incomplete");
+            }
+        } else {
+            var hasCompleted = true;
+            $("[name="+$(this).attr("name")+"]").each(function() {
+                hasCompleted = hasCompleted & ($(this).val() != "");
+            });
+            if (hasCompleted) {
+                $("#"+qname+"Link").removeClass("incomplete");
+            } else {
+                $("#"+qname+"Link").addClass("incomplete");
+            }
         }
     });
 });
@@ -284,7 +357,13 @@ function fillCP() {
 }
 
 function addCIRow() {
-    $('#ciTable > tbody').append('<tr id="' + $('#ciTable tbody tr').length + '">' + $('#0').html() + '</tr>');
+    $('#ciTable > tbody').append("<tr name='ciRow'>" + $('[name=ciRow]').html() + "</tr>");
+}
+
+function removeCIRow(e) {
+    if ($(e).closest("tr").siblings("tr").length > 0) {
+        $(e).closest("tr").remove();
+    }
 }
 </script>
 </body>
