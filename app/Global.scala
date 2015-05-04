@@ -15,10 +15,17 @@ import com.avaje.ebean.Ebean
 import org.yaml.snakeyaml.Yaml
 import org.yaml.snakeyaml.constructor.CustomClassLoaderConstructor
 
+import org.joda.time.DateTime;
+import play.data.format.Formatters;
+import views.formdata.JodaDateFormatter;
+
 
 class Global extends GlobalSettings {
     override
     def onStart(app: Application) {
+
+        Formatters.register(classOf[DateTime], new JodaDateFormatter())
+
         // val users = models.UserModel.find.all
         // if (users.size != 0) throw new Error("Restart application to load new fixtures")
 
