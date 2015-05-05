@@ -13,6 +13,8 @@ GET     /application/:id/           controllers.EthicsApplication.application_su
 GET     /application/:id/ethics_triage  controllers.EthicsApplication.ethics_triage(id: Long)
 GET     /application/:id/section1   controllers.EthicsApplication.section1(id: Long)
 GET     /application/:id/section2   controllers.EthicsApplication.section2(id: Long)
+GET     /application/:id/section6   controllers.EthicsApplication.section6(id: Long)
+POST    /application/:id/section6   controllers.EthicsApplication.section6_post(id: Long)
 
 GET     /forms                      controllers.Forms.index()
 GET     /viewall                    controllers.Forms.viewall()
