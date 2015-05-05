@@ -95,6 +95,33 @@ public class EthicsApplication extends Controller {
                 fp.getFilename(),
                 bdata.length
             ));
+
+            // Pseudocode follows
+            /*
+            // first we find the section6 record we need to attach this attachment to
+            List<Section6Model> models = (
+                Section6Model.find
+                .where()
+                    .eq("application.id", id)
+                .query()
+                .findList()
+            );
+
+            if (models.size() == 0) {
+                throw new Error("bugger");
+            }
+
+            Section6AttachmentModel new_model = new Section6AttachmentModel();
+            new_model.type = attach.type;
+            new_model.version = attach.version;
+            new_model.date = attach.date;
+            new_model.mimetype = fp.getContentType();
+            new_model.filename = fp.getFilename();
+            new_model.data = bdata;
+            new_model.section6 = models.get(0); // oh goody
+
+            Ebean.save(new_model); // hopefully this works
+            */
         }
     }
 }
