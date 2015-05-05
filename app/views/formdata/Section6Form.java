@@ -43,9 +43,6 @@ public class Section6Form {
         @Valid
         public DateTime date;
 
-        @Required
-        @Valid
-        public String file; // filename only, we retrieve the file another way
 
         @Valid
         public int idx; // we need to know so we can match up the file data later
