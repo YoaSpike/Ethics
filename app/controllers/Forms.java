@@ -41,39 +41,4 @@ public class Forms extends Controller {
     public static Result display_form_progress(Long id) {
         return ok(id.toString());
     }
-
-    public static Result ethics_triage() {
-        return ethics_triage(null);
-    }
-
-    public static Result ethics_triage(EthicsTriageForm data) {
-        Form<EthicsTriageForm> triageForm = form(EthicsTriageForm.class);
-
-        if (data != null) {
-            triageForm.fill(data);
-            // re-fill with data for editing...
-        } else {
-            // here we would retrieve a filled form from the database, if available
-        }
-
-        return ok(views.html.forms.ethics_triage.render(triageForm));
-    }
-
-    public static Result ethics_triage_post() {
-        if (request().body().isMaxSizeExceeded()) {
-            return badRequest("Too much data!");
-        }
-
-        Form<EthicsTriageForm> triageForm = form(EthicsTriageForm.class).bindFromRequest();
-
-        if (triageForm.hasErrors()) {
-            System.out.println(triageForm.errorsAsJson());
-            return badRequest(views.html.forms.ethics_triage.render(triageForm));
-        }
-
-        EthicsTriageForm data = triageForm.get();
-        System.out.println(data);
-
-        return ethics_triage(data);
-    }
 }

@@ -9,7 +9,7 @@
         <div class="">
           <h4>Does the study include any of the ten following types of research and/or participants?</h4>
 
-          @b3.form(routes.Forms.ethics_triage_post) {
+          @b3.form(controllers.application.routes.Section0.section0_post(0)) {
             <div class="panel">
               @b3.checkbox(triageForm("interventions_and_therapies"),          '_text -> "Interventions and therapies, including clinical and non-clinical trials")
               @b3.checkbox(triageForm("human_genetics"),                       '_text -> "Human genetics")
