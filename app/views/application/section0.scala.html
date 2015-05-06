@@ -3,36 +3,44 @@
 @import b3.vertical.fieldConstructor
 
 @base("Ethics Triage") {
+    <!-- START main content -->
     <div class="row">
         <div class="container">
-            <div class="colmd-12 columns">
-                <div class="">
-                    <h4>Does the study include any of the ten following types of research and/or participants?</h4>
-
-                    @b3.form(controllers.application.routes.Section0.section0_post(0)) {
-                        <div class="panel">
-                            @b3.checkbox(triageForm("interventions_and_therapies"),          '_text -> "Interventions and therapies, including clinical and non-clinical trials")
-                            @b3.checkbox(triageForm("human_genetics"),                       '_text -> "Human genetics")
-                            @b3.checkbox(triageForm("pregnant_women_or_fetuses"),            '_text -> "Women who are pregnant and/or the human fetus")
-                            @b3.checkbox(triageForm("medically_dependant"),                  '_text -> "People who are highly dependent on medical care who may be unable to give consent")
-                            @b3.checkbox(triageForm("cognitively_impaired"),                 '_text -> "People with a cognitive impairment, intellectual disability or a mental illness")
-                            @b3.checkbox(triageForm("aboriginal_or_torres_strait_islander"), '_text -> "Research specifically targeting Aboriginal or Torres Strait Islanders")
-                            @b3.checkbox(triageForm("illegal_activities"),                   '_text -> "People who may be involved in illegal activities")
+            <!-- START form -->
+            <div class="col-sm-9">
+                @b3.form(controllers.application.routes.Section0.section0_post(0)) {
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">Section 0 - Ethics Triage</div>
                         </div>
+                        <div class="panel-body">
 
-                        <div class="panel" id="justification_panel">
-                            @b3.textarea(triageForm("justification"), '_label -> "You responded \"yes\" to one of the above queries. If you can, please indicate below why you believe your project qualifies to still be considered a Low or Negligible Risk research project.")
+                            <div class="form-group">
+                                <label class="main-q">Does the study include any of the ten following types of research and/or participants?</label>
+
+                                @b3.checkbox(triageForm("interventions_and_therapies"),          '_text -> "Interventions and therapies, including clinical and non-clinical trials")
+                                @b3.checkbox(triageForm("human_genetics"),                       '_text -> "Human genetics")
+                                @b3.checkbox(triageForm("pregnant_women_or_fetuses"),            '_text -> "Women who are pregnant and/or the human fetus")
+                                @b3.checkbox(triageForm("medically_dependant"),                  '_text -> "People who are highly dependent on medical care who may be unable to give consent")
+                                @b3.checkbox(triageForm("cognitively_impaired"),                 '_text -> "People with a cognitive impairment, intellectual disability or a mental illness")
+                                @b3.checkbox(triageForm("aboriginal_or_torres_strait_islander"), '_text -> "Research specifically targeting Aboriginal or Torres Strait Islanders")
+                                @b3.checkbox(triageForm("illegal_activities"),                   '_text -> "People who may be involved in illegal activities")
+                            </div>
+
+                            <div class="panel" id="justification_panel">
+                                @b3.textarea(triageForm("justification"), '_label -> "You responded \"yes\" to one of the above queries. If you can, please indicate below why you believe your project qualifies to still be considered a Low or Negligible Risk research project.")
+                            </div>
+
+                            @if(triageForm.hasGlobalErrors) {
+                                <p class="error">
+                                    @triageForm.globalError.message
+                                </p>
+                            }
+
+                            @b3.submit('class -> "btn btn-default") { Save }
                         </div>
-
-                        @if(triageForm.hasGlobalErrors) {
-                            <p class="error">
-                                @triageForm.globalError.message
-                            </p>
-                        }
-
-                        @b3.submit('class -> "btn btn-default") { Save }
-                    }
-                </div>
+                    </div>
+                }
             </div>
         </div>
 
