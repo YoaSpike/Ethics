@@ -10,13 +10,18 @@ GET     /emailtest                  controllers.Application.emailtest()
 GET     /demos/:demo_name           controllers.Application.demo(demo_name: String)
 
 GET     /application/:id/           controllers.EthicsApplication.application_summary(id: Long)
-GET     /application/:id/ethics_triage  controllers.EthicsApplication.ethics_triage(id: Long)
 GET     /application/:id/section0   controllers.application.Section0.section0(id: Long)
-POST    /application/:id/section0   controllers.application.Section0.section0_post(id: Long)
-GET     /application/:id/section1   controllers.EthicsApplication.section1(id: Long)
-GET     /application/:id/section2   controllers.EthicsApplication.section2(id: Long)
+GET     /application/:id/section1   controllers.application.Section1.section1(id: Long)
+GET     /application/:id/section2   controllers.application.Section2.section2(id: Long)
+GET     /application/:id/section3   controllers.application.Section3.section3(id: Long)
+GET     /application/:id/section4   controllers.application.Section4.section4(id: Long)
+GET     /application/:id/section5   controllers.application.Section5.section5(id: Long)
 GET     /application/:id/section6   controllers.application.Section6.section6(id: Long)
+GET     /application/:id/section7   controllers.application.Section7.section7(id: Long)
+
+POST    /application/:id/section0   controllers.application.Section0.section0_post(id: Long)
 POST    /application/:id/section6   controllers.application.Section6.section6_post(id: Long)
+
 
 GET     /forms                      controllers.Forms.index()
 GET     /viewall                    controllers.Forms.viewall()
