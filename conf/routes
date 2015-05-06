@@ -20,12 +20,6 @@ GET     /forms                      controllers.Forms.index()
 GET     /viewall                    controllers.Forms.viewall()
 GET     /ethics_triage              controllers.Forms.ethics_triage()
 POST    /ethics_triage              controllers.Forms.ethics_triage_post()
-GET     /general_information        controllers.Forms.general_information()
-POST    /general_information        controllers.Forms.general_information_post()
-GET     /themes_in_research_ethics  controllers.Forms.themes_in_research_ethics()
-POST    /themes_in_research_ethics_post  controllers.Forms.themes_in_research_ethics_post()
-
-POST    /hello                      controllers.Application.sayHello()
 
 GET     /add_user                   controllers.Accounts.add_user()
 GET     /login                      controllers.Accounts.login()

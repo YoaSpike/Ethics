@@ -7,7 +7,6 @@ import play.*;
 import play.db.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
-import com.avaje.ebean.Expr;
 
 import org.mindrot.jbcrypt.BCrypt;
 

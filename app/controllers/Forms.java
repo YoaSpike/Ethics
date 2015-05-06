@@ -7,7 +7,6 @@ import play.*;
 import play.mvc.*;
 import play.data.Form;
 import static play.data.Form.*;
-// import com.fasterxml.jackson.databind.JsonNode;
 
 import views.html.forms.*;
 import views.formdata.*;
@@ -76,40 +75,5 @@ public class Forms extends Controller {
         System.out.println(data);
 
         return ethics_triage(data);
-    }
-
-    public static Result general_information() {
-        Form<InfoForm> infoForm = form(InfoForm.class);
-
-        return ok(views.html.forms.general_information.render(infoForm));
-    }
-
-    public static Result general_information_post() {
-        Form<InfoForm> infoForm = form(InfoForm.class);
-
-        System.out.println(request().body().asRaw());
-
-        // Map<String,String[]> formatted = request().body().asFormUrlEncoded();
-        // Map<String,List<String>> reformatted = new HashMap<String,List<String>>();
-
-        // for (Map.Entry<String,String[]> entry : formatted.entrySet()) {
-        //     reformatted.put(
-        //         entry.getKey(),
-        //         new ArrayList<String>(Arrays.asList(entry.getValue()))
-        //     );
-        // }
-
-        // System.out.println(reformatted);
-
-        return ok(views.html.forms.general_information.render(infoForm));
-    }
-
-    public static Result themes_in_research_ethics() {
-        Form<ThemesForm> themesForm = form(ThemesForm.class);
-        return ok(themes_in_research_ethics.render(themesForm));
-    }
-
-    public static Result themes_in_research_ethics_post() {
-        return badRequest();
     }
 }

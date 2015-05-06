@@ -25,16 +25,6 @@ public class Application extends Controller {
         return ok(views.html.index.render());
     }
 
-    @BodyParser.Of(BodyParser.Json.class)
-    public static Result sayHello() {
-        JsonNode json = request().body().asJson();
-
-        String name = json.findPath("name").textValue();
-        if (name == null) return badRequest("Missing parameter [name]");
-
-        return ok("Hello " + name);
-    }
-
     public static Result emailtest() {
         Email email = new Email();
 
