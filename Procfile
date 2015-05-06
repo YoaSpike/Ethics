@@ -1,1 +1,1 @@
-web: target/start -Dhttp.port=${PORT} -Ddb.default.url=${DATABASE_URL} -Ddb.default.driver=org.postgresql.Driver -DapplyEvolutions.default=true
+web: target/universal/stage/bin/yoaspike_ethics -Dhttp.port=${PORT} -DapplyEvolutions.default=true -Ddb.default.driver=org.postgresql.Driver -Ddb.default.url=${DATABASE_URL} ${JAVA_OPTS}
