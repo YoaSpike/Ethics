@@ -17,13 +17,11 @@ import views.formdata.*;
 
 
 public class Section6 extends Controller {
-    public static Result section6(Long id) {
-        return ok(views.html.application.section6.render(
-            form(Section6Form.class)
-        ));
-    }
-
     private static final Form<Section6Form> section6Form = form(Section6Form.class);
+
+    public static Result section6(Long id) {
+        return ok(views.html.application.section6.render(section6Form));
+    }
 
     public static Result section6_post(Long id) {
         // if we want a file in a form, we need to do extra work
