@@ -1,4 +1,4 @@
-@()
+@(applicationId: Long)
 
 
 @base("Section 1 - Human Research Ethics application - Curtin University") {
@@ -189,7 +189,7 @@
                             </div>
                         </div>
                         <hr />
-                        @partials.section_buttons(1)
+                        @partials.section_buttons(applicationId, 1)
                     </div>
                 </div>
             </form>

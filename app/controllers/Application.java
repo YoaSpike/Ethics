@@ -40,8 +40,12 @@ public class Application extends Controller {
         return ok("Sent " + email);
     }
 
-    public static String get_section_link(Integer num) {
-        return "/demos/" + (num == 0 ? "ethics_triage" : "section" + num);
+    public static String get_section_link(Long id, Integer num) {
+        return String.format(
+            "/application/%d/section%d",
+            id,
+            num
+        );
     }
 
     public static String slugify(String raw) {
