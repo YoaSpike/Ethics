@@ -11,10 +11,10 @@ public class Section0 extends Controller {
     private static final Form<EthicsTriageForm> triageForm = form(EthicsTriageForm.class);
 
     public static Result section0(Long id) {
-        return section0((EthicsTriageForm) null);
+        return section0(id, (EthicsTriageForm) null);
     }
 
-    public static Result section0(EthicsTriageForm data) {
+    public static Result section0(Long applicationId, EthicsTriageForm data) {
         Form<EthicsTriageForm> filledTriageForm = triageForm;
 
         if (data != null) {
@@ -24,7 +24,7 @@ public class Section0 extends Controller {
             // here we would retrieve a filled form from the database, if available
         }
 
-        return ok(views.html.application.section0.render(filledTriageForm));
+        return ok(views.html.application.section0.render(applicationId, filledTriageForm));
     }
 
     public static Result section0_post(Long id) {
@@ -35,13 +35,13 @@ public class Section0 extends Controller {
         Form<EthicsTriageForm> filledForm = triageForm.bindFromRequest();
         if(filledForm.hasErrors()) {
             System.out.println(triageForm.errorsAsJson());
-            return badRequest(views.html.application.section0.render(triageForm));
+            return badRequest(views.html.application.section0.render(id, triageForm));
 
         } else {
             EthicsTriageForm data = filledForm.get();
             System.out.println(data);
 
-            return section0(data);
+            return section0(id, data);
         }
     }
 }
