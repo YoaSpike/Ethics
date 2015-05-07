@@ -8,12 +8,14 @@ import views.formdata.*;
 
 
 public class Section0 extends Controller {
+    private static final Form<EthicsTriageForm> triageForm = form(EthicsTriageForm.class);
+
     public static Result section0(Long id) {
         return section0((EthicsTriageForm) null);
     }
 
     public static Result section0(EthicsTriageForm data) {
-        Form<EthicsTriageForm> triageForm = form(EthicsTriageForm.class);
+        Form<EthicsTriageForm> triageForm = this.triageForm;
 
         if (data != null) {
             triageForm.fill(data);
@@ -30,7 +32,7 @@ public class Section0 extends Controller {
             return badRequest("Too much data!");
         }
 
-        Form<EthicsTriageForm> triageForm = form(EthicsTriageForm.class).bindFromRequest();
+        Form<EthicsTriageForm> triageForm = triageForm.bindFromRequest();
 
         if (triageForm.hasErrors()) {
             System.out.println(triageForm.errorsAsJson());
