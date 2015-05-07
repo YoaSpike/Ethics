@@ -15,16 +15,16 @@ public class Section0 extends Controller {
     }
 
     public static Result section0(EthicsTriageForm data) {
-        Form<EthicsTriageForm> triageForm = this.triageForm;
+        Form<EthicsTriageForm> filledTriageForm = triageForm;
 
         if (data != null) {
-            triageForm.fill(data);
+            filledTriageForm = filledTriageForm.fill(data);
             // re-fill with data for editing...
         } else {
             // here we would retrieve a filled form from the database, if available
         }
 
-        return ok(views.html.application.section0.render(triageForm));
+        return ok(views.html.application.section0.render(filledTriageForm));
     }
 
     public static Result section0_post(Long id) {
@@ -32,16 +32,16 @@ public class Section0 extends Controller {
             return badRequest("Too much data!");
         }
 
-        Form<EthicsTriageForm> triageForm = triageForm.bindFromRequest();
-
-        if (triageForm.hasErrors()) {
+        Form<EthicsTriageForm> filledForm = triageForm.bindFromRequest();
+        if(filledForm.hasErrors()) {
             System.out.println(triageForm.errorsAsJson());
             return badRequest(views.html.application.section0.render(triageForm));
+
+        } else {
+            EthicsTriageForm data = filledForm.get();
+            System.out.println(data);
+
+            return section0(data);
         }
-
-        EthicsTriageForm data = triageForm.get();
-        System.out.println(data);
-
-        return section0(data);
     }
 }
