@@ -1,1 +1,333 @@
-ECHO is on.
+@()
+
+
+@base("Section 1 - Human Research Ethics application - Curtin University") {
+
+    <!-- START main content -->
+<div class="row">
+    <div class="container">
+        
+        <!-- START form -->
+        <div class="col-sm-9">
+            <form>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="panel-title"><b>Section 1 - General information</b></div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="main-q" for="projectTitle" id="q1">1. Project Title</label>
+                            <input type="text" class="form-control compulsory" id="projectTitle" name="q1">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="main-q" for="projectType" id="q2">2. Please indicate the type of project</label>
+                            <select class="form-control compulsory" id="projectType" name="q2">
+                                <option value="0">Staff project</option>
+                                <option value="1">Undergaduate other than honours (no candidacy required)</option>
+                                <option value="2">Honours (no candidacy required)</option>
+                                <option value="3">Masters by coursework (no candidacy required)</option>
+                                <option value="4">Masters by research (candidacy required)</option>
+                                <option value="5">PhD (candidacy required)</option>
+                                <option value="6">Other (Specify)</option>
+                            </select>
+                        </div>
+                        <div class="form-group sub-q" id="projectTypeOthers">
+                            <label for="typeOthers">If other specify:</label>
+                            <input type="text" class="form-control" id="typeOthers">
+                        </div>
+
+                        <div class="main-q" id="q3">3. Project Summary</div>
+                            <div class="main-q-desc">Give a concise and simple description, in plain language, or the study in each of the sections below.</div>
+                            <div class="form-group sub-q">
+                                <label for="background">3a. Background</label>
+                                <textarea class="form-control compulsory" rows="5" id="background" name="q3"></textarea>
+                            </div>
+
+                            <div class="form-group sub-q">
+                                <label for="aims">3b. Aims and hypothesis</label>
+                                <textarea class="form-control compulsory" rows="3" id="aims" name="q3"></textarea>
+                            </div>
+
+                            <div class="form-group sub-q">
+                                <label for="methods">3c. Methods</label>
+                                <textarea class="form-control compulsory" rows="5" id="methods" name="q3"></textarea>
+                            </div>
+
+                        <div class="main-q" id="q4">4. Principle Investigator</div>
+                            <div class="main-q-desc">The principal investigator must be a Curtin staff member. If this application is for a student project the principal investigator must be one of the student's supervisors.</div>
+                            <div class="sub-q">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label for="piName">Name (include title)</label>
+                                            <input type="text" class="form-control compulsory" id="piName" name="q4">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label for="piId">Staff ID</label>
+                                            <input type="text" class="form-control compulsory" id="piId" name="q4">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="piArea">School, Center or Area</label>
+                                    <input type="text" class="form-control compulsory" id="piArea" name="q4">
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label for="piTel">Telephone</label>
+                                            <input type="text" class="form-control compulsory" id="piTel" name="q4">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label for="piEmail">Email</label>
+                                            <input type="text" class="form-control compulsory" id="piEmail" name="q4">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-8">
+                                        <b>SOL Research Integrity Professional Development Program training complete</b> 
+                                        (NOTE: this is a requirement of approval)
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input type="radio" name="ripdp" id="yes" value="yes"> <label for="yes" class="option-label">Yes - certificate attached</label>
+                                        <br />
+                                        <input type="radio" name="ripdp" id="no" value="no"> <label for="no" class="option-label">No</label>
+                                    </div>
+                            </div>
+                        </div>
+
+                    <div class="main-q" id="q5">5. Co-Investigators</div>
+                        <div class="sub-q">
+                            <table class="table table-condensed table-responsive table-center" id="ciTable">
+                                <thead>
+                                    <tr>
+                                        <td width="21%">Name (include title)</td>
+                                        <td width="23%">School, Centre, Area,<br />University or Institution</td>
+                                        <td width="14%">Staff ID or Student ID</td>
+                                        <td width="17%">Role</td>
+                                        <td width="10%">Candidacy approved</td>
+                                        <td width="15%">Research Integrity training complete</td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr name="ciRow">
+                                        <td><input type="text" id="ciName" style="width:100%;" name="q5"></td>
+                                        <td><input type="text" id="ciArea" style="width:100%" name="q5"></td>
+                                        <td><input type="text" id="ciId" style="width:100%" name="q5"></td>
+                                        <td><select style="width:100%">
+                                            <option value="CI">CI</option>
+                                            <option value="Supervisor" name="q5">Supervisor</option>
+                                            <option value="Student" name="q5">Student</option>
+                                        </select></td>
+                                        <td align="center"><input type="checkbox" id="ciConApproved"></td>
+                                        <td align="center"><input type="checkbox" id="ciTrainCompleted"></td>
+                                        <td><a onclick="removeCIRow(this)" style="cursor:pointer;text-decoration:none;">X</a></td>
+                                    </tr>
+                                    <tr name="ciRow">
+                                        <td><input type="text" id="ciName" style="width:100%;"></td>
+                                        <td><input type="text" id="ciArea" style="width:100%"></td>
+                                        <td><input type="text" id="ciId" style="width:100%"></td>
+                                        <td><select style="width:100%">
+                                            <option value="CI">CI</option>
+                                            <option value="Supervisor">Supervisor</option>
+                                            <option value="Student">Student</option>
+                                        </select></td>
+                                        <td align="center"><input type="checkbox" id="ciConApproved"></td>
+                                        <td align="center"><input type="checkbox" id="ciTrainCompleted"></td>
+                                        <td><a onclick="removeCIRow(this)" style="cursor:pointer;text-decoration:none;">X</a></td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="7"><center><div class="btn btn-default btn-xs" onclick="addCIRow();">Click to add one more Co-Investigator</div></center></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                    <div class="main-q inline" id="q6">6. Contact Person</div>
+                        <input type="checkbox" id="piAsCP" value="yes" onchange="fillCP();"> <label for="piAsCP" class="option-label">Tick to use Principal Investigator details</label>
+                        <div class="sub-q" id="cp">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label for="cpName">Name (include title)</label>
+                                        <input type="text" class="form-control compulsory" id="cpName" name="q6">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label for="cpId">Staff ID</label>
+                                        <input type="text" class="form-control compulsory" id="cpId" name="q6">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cpArea">School, Centre or Area</label>
+                                <input type="text" class="form-control compulsory" id="cpArea" name="q6">
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label for="cpTel">Telephone</label>
+                                        <input type="text" class="form-control compulsory" id="cpTel" name="q6">
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                        <label for="cpEmail">Email</label>
+                                        <input type="text" class="form-control compulsory" id="cpEmail" name="q6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        @partials.section_buttons(1)
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- END form -->
+
+        <!-- START Sidebar -->
+        <div class="col-sm-3">
+            <div class="panel panel-default" id="nav-sidebar">
+                <div class="panel-heading">
+                    <div class="panel-title">Navigation</div>
+                </div>
+                <div class="nav-main"><a href="#">
+                    Ethics Triage
+                </a></div>
+                    <div class="nav-main nav-active">
+                        <a href="section1.html">Section 1<div class="nav-main-desc">General Information</div></a>
+                        <div class="nav-sub incomplete" id="q1Link"><a href="#q1">
+                            1. Project Title
+                        </a></div>
+                        <div class="nav-sub incomplete" id="q2Link"><a href="#q2">
+                            2. Type of project
+                        </a></div>
+                        <div class="nav-sub incomplete" id="q3Link"><a href="#q3">
+                            3. Project Summary
+                        </a></div>
+                        <div class="nav-sub incomplete" id="q4Link"><a href="#q4">
+                            4. Principal Investigator
+                        </a></div>
+                        <div class="nav-sub incomplete" id="q5Link"><a href="#q5">
+                            5. Co-Investigator
+                        </a></div>
+                        <div class="nav-sub incomplete" id="q6Link"><a href="#q6">
+                            6. Contact Person
+                        </a></div>
+                    </div>
+                    <div class="nav-main"><a href="section2.html">
+                        Section 2<div class="nav-main-desc">Themes in research ethics: Risk and benefits, consent</div>
+                    </a></div>
+                    <div class="nav-main"><a href="section3.html">
+                        Section 3<div class="nav-main-desc">Ethical considerations specific to research methods or fields</div>
+                    </a></div>
+                    <div class="nav-main"><a href="section4.html">
+                        Section 4<div class="nav-main-desc">Ethical considerations specific to participants</div>
+                    </a></div>
+                    <div class="nav-main"><a href="section5.html">
+                        Section 5<div class="nav-main-desc">Processes of research governance and ethical review</div>
+                    </a></div>
+                    <div class="nav-main"><a href="section6.html">
+                        Section 6<div class="nav-main-desc">Attachments</div>
+                    </a></div>
+                    <div class="nav-main"><a href="section7.html">
+                        Section 7<div class="nav-main-desc">Certification and signatures</div>
+                    </a></div>
+                </div>
+            </div>
+        </div>
+        <!-- END Sidebar -->
+
+    </div>
+</div>
+    <!-- END main content -->
+
+} {
+    <script src="../../../public/javascripts/global_postscript.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        /* Show "Other types" if project type is "Other". */
+        $('#projectTypeOthers').hide();
+        $('#projectType').change(function() {
+            if ($(this).val() == 6) {
+                $('#projectTypeOthers').show();
+            } else {
+                $('#projectTypeOthers').hide();
+            }
+        });
+
+        /* Check if each field has filled in. Set the nav-link as red and bold if incomplete. */
+        $(".compulsory").focusout(function() {
+            var qname = $(this).attr("name");
+            if ($(this).val() != "") {
+                $(this).closest("div").removeClass('has-error');
+                $(this).next(".error-msg").remove();
+            } else {
+                $(this).closest("div").addClass('has-error');
+                if ($(this).next(".error-msg").length == 0)
+                    $('<div class="error-msg">Please fill in the blank.</div>').insertAfter($(this));
+            }
+            if (($(this).attr("name") === "q1") || ($(this).attr("name") === "q2")) {
+                if ($(this).val() != "") {
+                    $("#"+qname+"Link").removeClass("incomplete");
+                } else {
+                    $("#"+qname+"Link").addClass("incomplete");
+                }
+            } else {
+                var hasCompleted = true;
+                $("[name="+$(this).attr("name")+"]").each(function() {
+                    hasCompleted = hasCompleted & ($(this).val() != "");
+                });
+                if (hasCompleted) {
+                    $("#"+qname+"Link").removeClass("incomplete");
+                } else {
+                    $("#"+qname+"Link").addClass("incomplete");
+                }
+            }
+        });
+    });
+
+    function fillCP() {
+        var checked = $('#piAsCP').is(':checked');
+        if (checked) {
+            $('#cpName').val($('#piName').val());
+            $('#cpId').val($('#piId').val());
+            $('#cpArea').val($('#piArea').val());
+            $('#cpTel').val($('#piTel').val());
+            $('#cpEmail').val($('#piEmail').val());
+        } else {
+            $('#cpName').val("");
+            $('#cpId').val("");
+            $('#cpArea').val("");
+            $('#cpTel').val("");
+            $('#cpEmail').val("");
+        }
+        $('#cpName').prop('disabled', checked);
+        $('#cpId').prop('disabled', checked);
+        $('#cpArea').prop('disabled', checked);
+        $('#cpTel').prop('disabled', checked);
+        $('#cpEmail').prop('disabled', checked);
+    }
+
+    function addCIRow() {
+        $('#ciTable > tbody').append("<tr name='ciRow'>" + $('[name=ciRow]').html() + "</tr>");
+    }
+
+    function removeCIRow(e) {
+        if ($(e).closest("tr").siblings("tr").length > 0) {
+            $(e).closest("tr").remove();
+        }
+    }
+    </script>
+}
