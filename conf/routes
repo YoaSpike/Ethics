@@ -7,7 +7,6 @@ GET     /                           controllers.Application.index()
 
 GET     /pdftest                    controllers.PDF.pdftest()
 GET     /emailtest                  controllers.Application.emailtest()
-GET     /demos/:demo_name           controllers.Application.demo(demo_name: String)
 
 GET     /application/:id/           controllers.EthicsApplication.application_summary(id: Long)
 GET     /application/:id/section0   controllers.application.Section0.section0(id: Long)
