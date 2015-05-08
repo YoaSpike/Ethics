@@ -68,17 +68,12 @@ object Sections {
     def get_questions(section_name: String) : List[(String,String)] = {
         Sections.load_sections()
 
-        _section_map.get(section_name) match {
-            case Some(value) => {
-                (
-                    value.questions
-                    .entrySet.toList
-                    .sorted(QuestionEntryOrdering)
-                    .map(entry => (entry.getKey, entry.getValue))
-                )
-            }
-            case None        => List()
-        }
+        _section_map.get(section_name).map(
+            _.questions
+            .entrySet.toList
+            .sorted(QuestionEntryOrdering)
+            .map(entry => (entry.getKey, entry.getValue))
+        ).getOrElse(List())
     }
 
     def get_sections_with_numbers() : List[(Int,String)] = {
