@@ -1,4 +1,4 @@
-@(applicationId: Long, section6Form: play.data.Form[views.formdata.Section6Form])
+@(applicationId: Long, sectionNum: Integer, section6Form: play.data.Form[views.formdata.Section6Form])
 
 @import b3.vertical.fieldConstructor
 
@@ -64,7 +64,7 @@
                             <input type="submit" />
 
                             <hr />
-                            @partials.section_buttons(applicationId, 6)
+                            @partials.section_buttons(applicationId, sectionNum)
                         </div> <!-- END main panel body -->
                     </div>
 
@@ -73,37 +73,7 @@
             <!-- END form panel -->
 
             <!-- START Sidebar -->
-            <div class="col-sm-3">
-                <div class="panel panel-default" id="nav-sidebar">
-                    <div class="panel-heading">
-                        <div class="panel-title">Navigation</div>
-                    </div>
-                    <div class="nav-main"><a href="#">
-                        Ethics Triage
-                    </a></div>
-                    <div class="nav-main"><a href="section1.html">
-                        Section 1<div class="nav-main-desc">General Information</div>
-                    </a></div>
-                    <div class="nav-main"><a href="section2.html">
-                        Section 2<div class="nav-main-desc">Themes in research ethics: Risk and benefits, consent</div>
-                    </a></div>
-                    <div class="nav-main"><a href="section3.html">
-                        Section 3<div class="nav-main-desc">Ethical considerations specific to research methods or fields</div></a>
-                    </a></div>
-                    <div class="nav-main"><a href="section4.html">
-                        Section 4<div class="nav-main-desc">Ethical considerations specific to participants</div>
-                    </a></div>
-                    <div class="nav-main"><a href="section5.html">
-                        Section 5<div class="nav-main-desc">Processes of research governance and ethical review</div>
-                    </a></div>
-                    <div class="nav-main nav-active"><a href="#">
-                        Section 6<div class="nav-main-desc">Attachments</div>
-                    </a></div>
-                    <div class="nav-main"><a href="section7.html">
-                        Section 7<div class="nav-main-desc">Certification and signatures</div>
-                    </a></div>
-                </div>
-            </div>
+            @partials.sidebar(applicationId, sectionNum)
             <!-- END Sidebar -->
 
         </div>

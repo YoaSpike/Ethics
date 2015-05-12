@@ -1,4 +1,4 @@
-@(applicationId: Long, triageForm: Form[views.formdata.EthicsTriageForm])
+@(applicationId: Long, sectionNum: Integer, triageForm: Form[views.formdata.EthicsTriageForm])
 
 @import b3.vertical.fieldConstructor
 
@@ -40,7 +40,7 @@
                             @b3.submit('class -> "btn btn-default") { Save }
 
                             <hr />
-                            @partials.section_buttons(applicationId, 0)
+                            @partials.section_buttons(applicationId, sectionNum)
                         </div>
                     </div>
                 }

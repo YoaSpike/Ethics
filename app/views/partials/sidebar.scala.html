@@ -1,34 +1,35 @@
-@(section_num: Integer)
+@(applicationId: Long, section_num: Integer)
 
 
 @section(section_num: Integer, section_name: String, active: Boolean = false) = {
-    <li class="@if(active) { active }">
-        <a href="/demos/section@{section_num}"><b>Section @section_num</b><br /><div style="margin-left:1em;">@section_name</div></a>
-        <div class="sub-q">
-            <small>
-                @defining(business.Sections.get_questions(section_name)) { questions =>
-                    @for(question <- questions) {
-                        <a href="#">@question</a>
-                        @if(question != questions.last) {, }
-                    }
+    <div class="sidebar-main @if(active) {sidebar-main-active}"><a href="@controllers.Application.get_section_link(applicationId, section_num)">
+        <div class="sidebar-section">Section @section_num</div><div class="sidebar-sectname">@section_name</div>
+        <div class="sidebar-sectq">
+            @defining(business.Sections.get_questions(section_name)) { questions =>
+                @for(question <- questions) {
+                    <a href="@controllers.Application.get_section_link(applicationId, section_num)#q@question._1" id="q@(question._1)Link" class="incomplete">@question._1</a>
+                    @if(question != questions.last) {, }
                 }
-            </small>
+            }
         </div>
-    </li>
+    </a></div>
 }
 
 
 <!-- START Sidebar -->
 <div class="col-sm-2">
-    <div class="panel panel-default affix" id="nav-sidebar">
-        <ul class="nav nav-stacked nav-pills">
-            <li><a href="/demos/ethics_triage"><b>Ethics triage</b></a></li>
-            @defining(business.Sections.get_sections_with_numbers) { sections =>
-                @for(a_section <- sections) {
-                    @section(a_section._1, a_section._2, a_section._1 == section_num)
-                }
+    <div class="panel panel-default" id="sidebar">
+        <div class="panel-heading">
+            <div class="panel-title">Navigation</div>
+        </div>
+        <div class="sidebar-main"><a href="@controllers.Application.get_section_link(applicationId, 0)">
+            <div class="sidebar-section">Ethics Triage</div>
+        </a></div>
+        @defining(business.Sections.get_sections_with_numbers) { sections =>
+            @for(a_section <- sections) {
+                @section(a_section._1, a_section._2, a_section._1 == section_num)
             }
-        </ul>
+        }
     </div>
 </div>
 <!-- END Sidebar -->

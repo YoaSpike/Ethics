@@ -20,7 +20,8 @@ public class Section6 extends Controller {
     private static final Form<Section6Form> section6Form = form(Section6Form.class);
 
     public static Result section6(Long id) {
-        return ok(views.html.application.section6.render(id, section6Form));
+        int section_num = 6;
+        return ok(views.html.application.section6.render(id, section_num, section6Form));
     }
 
     public static Result section6_post(Long id) {

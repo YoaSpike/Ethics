@@ -9,6 +9,7 @@ import views.formdata.*;
 
 public class Section2 extends Controller {
     public static Result section2(Long id) {
-        return ok(views.html.application.section2.render());
+        int section_num = 2;
+        return ok(views.html.application.section2.render(id, section_num));
     }
 }

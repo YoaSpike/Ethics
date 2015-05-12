@@ -1,1 +1,87 @@
-ECHO is on.
+@(applicationId: Long, sectionNum: Integer)
+
+@base("Section 5 - Human Research Ethics application - Curtin University") {
+    
+    <!-- START main content -->
+    <div class="row">
+        <div class="container">
+            
+            <!-- START form -->
+            <div class="col-sm-9">
+                <form>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">Section 5 - Processes of research governmance and ethical review</div>
+                        </div>
+                        <div class="panel-body">
+                            
+                            <div class="form-group">
+                                <label class="main-q" id="q23">23. Are there any potential conflicts of interest?</label>
+                                <div class="row" style="width:50%;">
+                                    <div class="col-xs-6" style="text-align:center;">
+                                        <label class="option-label"><input type="radio" name="q23" value="yes"> Yes</label>
+                                    </div>
+                                    <div class="col-xs-6" style="text-align:center;">
+                                        <label class="option-label"><input type="radio" name="q23" value="no"> No</label>
+                                    </div>
+                                </div>
+                                <div class="main-q-desc">Please describe in the space below.</div>
+                                <textarea class="form-control" rows="20" name="q23text"></textarea>
+                            </div>
+
+                            <hr />
+                            @partials.section_buttons(applicationId, sectionNum)
+
+                        </div> <!-- END main panel body -->
+                    </div>
+                </form>
+            </div>
+            <!-- END form panel -->
+
+            <!-- START Sidebar -->
+            @partials.sidebar(applicationId, sectionNum)
+            <!-- END Sidebar -->
+
+        </div>
+    </div>
+    <!-- END main content -->
+
+} {
+    
+    <script src="../../../public/javascripts/global_postscript.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        /* Check if each field has filled in. Set the nav-link as red and bold if incomplete. */
+        $(".compulsory").focusout(function() {
+            var qname = $(this).attr("name");
+            if ($(this).val() != "") {
+                $(this).closest("div").removeClass('has-error');
+                $(this).next(".error-msg").remove();
+            } else {
+                $(this).closest("div").addClass('has-error');
+                if ($(this).next(".error-msg").length == 0)
+                    $('<div class="error-msg">Please fill in the blank.</div>').insertAfter($(this));
+            }
+            if (($(this).attr("name") === "projectTitle") || ($(this).attr("name") === "projectType")) {
+                if ($(this).val() != "") {
+                    $("#"+qname+"Link").removeClass("incomplete");
+                } else {
+                    $("#"+qname+"Link").addClass("incomplete");
+                }
+            } else {
+                var hasCompleted = true;
+                $("[name="+$(this).attr("name")+"]").each(function() {
+                    hasCompleted = hasCompleted & ($(this).val() != "");
+                });
+                if (hasCompleted) {
+                    $("#"+qname+"Link").removeClass("incomplete");
+                } else {
+                    $("#"+qname+"Link").addClass("incomplete");
+                }
+            }
+        });
+    });
+    </script>
+    
+}
