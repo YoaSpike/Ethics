@@ -31,7 +31,7 @@ public class Accounts extends Controller {
     }
 
     public static String getEmail() {
-        return session().get("email");
+        return session().get("username");
     }
 
     public static boolean isLoggedIn() {
@@ -62,7 +62,7 @@ public class Accounts extends Controller {
             Logger.debug("Login succeeded for " + data.email);
 
             session().clear();
-            session("email", data.email.toString());
+            session("username", data.email.toString());
 
             return redirect(routes.Application.index());
         }
