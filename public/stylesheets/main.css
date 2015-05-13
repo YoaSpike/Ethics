@@ -29,11 +29,6 @@
     width: 20em;
 }
 
-#sidebar .panel-body {
-    padding: 0px;
-    overflow-y: scroll;
-}
-
 #sidebar .sidebar-main {
     padding: 7px 0px 7px 10px;
     font-size: 15px;
