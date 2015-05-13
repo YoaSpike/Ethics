@@ -12,4 +12,8 @@ public class Section1 extends Controller {
         int section_num = 1;
         return ok(views.html.application.section1.render(id, section_num));
     }
+
+    public static Result section1_post(long id) {
+        return ok("Hello!");
+    }
 }

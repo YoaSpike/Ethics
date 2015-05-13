@@ -19,7 +19,13 @@ GET     /application/:id/section6   controllers.application.Section6.section6(id
 GET     /application/:id/section7   controllers.application.Section7.section7(id: Long)
 
 POST    /application/:id/section0   controllers.application.Section0.section0_post(id: Long)
+POST    /application/:id/section1   controllers.application.Section1.section1_post(id: Long)
+POST    /application/:id/section2   controllers.application.Section2.section2_post(id: Long)
+POST    /application/:id/section3   controllers.application.Section3.section3_post(id: Long)
+POST    /application/:id/section4   controllers.application.Section4.section4_post(id: Long)
+POST    /application/:id/section5   controllers.application.Section5.section5_post(id: Long)
 POST    /application/:id/section6   controllers.application.Section6.section6_post(id: Long)
+POST    /application/:id/section7   controllers.application.Section7.section7_post(id: Long)
 
 
 GET     /forms                      controllers.Forms.index()
