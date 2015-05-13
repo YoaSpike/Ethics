@@ -43,12 +43,16 @@ class Global extends GlobalSettings {
         }
     }
 
+    def exec(s: String) {
+        Ebean.execute(Ebean.createSqlUpdate(s))
+    }
+
     def load_models(folder: File) = {
         val all_models = (
             folder
             .listFiles
             .map(getYaml)
-            .map(thing => thing.toList.map(thing => thing.toList))
+            .map(thing => thing.toList.map(_.toList))
         )
 
         for (model_file <- all_models) {
@@ -58,9 +62,7 @@ class Global extends GlobalSettings {
         }
     }
 
-    def integrity(set: String) = () => Ebean.execute(
-        Ebean.createSqlUpdate("SET REFERENTIAL_INTEGRITY " + set + ";")
-    )
+    def integrity(set: String) = () => exec("SET REFERENTIAL_INTEGRITY " + set + ";")
 
     val disable_integrity = integrity("FALSE")
     val  enable_integrity = integrity("TRUE")
