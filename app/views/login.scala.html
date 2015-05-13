@@ -11,7 +11,7 @@
                   <div class="panel-title">Login</div>
               </div>
               <div class="panel-body">
-                  @b3.form(routes.Accounts.login_post, 'class -> (if(loginForm.hasGlobalErrors) { "has-error" } else { "" })) {
+                  @b3.form(routes.Accounts.login_post(redirect_url), 'class -> (if(loginForm.hasGlobalErrors) { "has-error" } else { "" })) {
                       <div class="form-group" style="margin:2em;">
                           <div class="input-group">
                               <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
