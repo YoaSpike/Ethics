@@ -31,12 +31,12 @@ POST    /application/:id/section7   controllers.application.Section7.post(id: Lo
 GET     /forms                      controllers.Forms.index()
 GET     /viewall                    controllers.Forms.viewall()
 
-GET     /add_user                   controllers.Accounts.add_user()
-GET     /login                      controllers.Accounts.login()
-GET     /logout                     controllers.Accounts.logout()
-GET     /user_list                  controllers.Accounts.user_list()
-POST    /add_user                   controllers.Accounts.add_user()
-POST    /login                      controllers.Accounts.login_post()
+GET     /accounts/add_user          controllers.Accounts.add_user()
+GET     /accounts/login             controllers.Accounts.login()
+GET     /accounts/logout            controllers.Accounts.logout()
+GET     /accounts/user_list         controllers.Accounts.user_list()
+POST    /accounts/add_user          controllers.Accounts.add_user()
+POST    /accounts/login             controllers.Accounts.login_post()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
