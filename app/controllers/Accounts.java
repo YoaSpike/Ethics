@@ -40,11 +40,11 @@ public class Accounts extends Controller {
 
     public static Result login(String redirect_url) {
         if (isLoggedIn()) {
-            return redirect(
-                redirect_url == null ?
-                routes.Application.index() :
-                redirect_url
-            );
+            if (redirect_url == null) {
+                return redirect(routes.Application.index());
+            } else {
+                return redirect(redirect_url);
+            }
         } else {
             return ok(login.render(
                 form(LoginForm.class),
@@ -69,11 +69,11 @@ public class Accounts extends Controller {
             session().clear();
             session("email", data.email.toString());
 
-            return redirect(
-                redirect_url == null ?
-                routes.Application.index() :
-                redirect_url
-            );
+            if (redirect_url == null) {
+                return redirect(routes.Application.index());
+            } else {
+                return redirect(redirect_url);
+            }
         }
     }
 
