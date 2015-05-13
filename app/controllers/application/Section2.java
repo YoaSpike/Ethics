@@ -8,12 +8,12 @@ import views.formdata.*;
 
 
 public class Section2 extends Controller {
-    public static Result section2(Long id) {
+    public static Result get(Long id) {
         int section_num = 2;
         return ok(views.html.application.section2.render(id, section_num));
     }
 
-    public static Result section2_post(long id) {
+    public static Result post(long id) {
         return ok("Hello!");
     }
 }

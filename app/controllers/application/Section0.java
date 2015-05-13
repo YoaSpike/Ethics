@@ -11,11 +11,11 @@ public class Section0 extends Controller {
 
     private static final int section_num = 0;
 
-    public static Result section0(Long id) {
-        return section0(id, (EthicsTriageForm) null);
+    public static Result get(Long id) {
+        return get(id, (EthicsTriageForm) null);
     }
 
-    public static Result section0(Long applicationId, EthicsTriageForm data) {
+    public static Result get(Long applicationId, EthicsTriageForm data) {
         Form<EthicsTriageForm> filledTriageForm = triageForm;
 
         if (data != null) {
@@ -28,7 +28,7 @@ public class Section0 extends Controller {
         return ok(views.html.application.section0.render(applicationId, section_num, filledTriageForm));
     }
 
-    public static Result section0_post(Long id) {
+    public static Result post(Long id) {
         if (request().body().isMaxSizeExceeded()) {
             return badRequest("Too much data!");
         }
@@ -42,7 +42,7 @@ public class Section0 extends Controller {
             EthicsTriageForm data = filledForm.get();
             System.out.println(data);
 
-            return section0(id, data);
+            return get(id, data);
         }
     }
 }

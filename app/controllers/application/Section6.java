@@ -19,12 +19,12 @@ import views.formdata.*;
 public class Section6 extends Controller {
     private static final Form<Section6Form> section6Form = form(Section6Form.class);
 
-    public static Result section6(Long id) {
+    public static Result get(Long id) {
         int section_num = 6;
         return ok(views.html.application.section6.render(id, section_num, section6Form));
     }
 
-    public static Result section6_post(Long id) {
+    public static Result post(Long id) {
         // if we want a file in a form, we need to do extra work
 
         Form<Section6Form> filledForm = section6Form.bindFromRequest();
