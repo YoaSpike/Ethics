@@ -3,11 +3,11 @@
 @import b3.vertical.fieldConstructor
 
 @base("Section 7 - Human Research Ethics application - Curtin University") {
-    
+
     <!-- START main content -->
 <div class="row">
     <div class="container">
-        
+
         <!-- START form -->
         <div class="col-sm-9">
             @b3.form(controllers.application.routes.Section7.post(applicationId)) {
@@ -16,7 +16,7 @@
                         <div class="panel-title">Section 7 - Certification and signatures</div>
                     </div>
                     <div class="panel-body">
-                        
+
                         <table id="coinvestigator" class="table table-bordered">
                             <thead>
                                 <tr>
@@ -130,7 +130,6 @@
                                 </tr>
                         </table>
 
-
                         <hr />
                         @partials.section_buttons(applicationId, sectionNum)
 
@@ -149,7 +148,7 @@
 <!-- END main content -->
 
 } {
-    
+
     <script src="../../../public/javascripts/global_postscript.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
@@ -185,5 +184,5 @@
         });
     });
     </script>
-    
+
 }
