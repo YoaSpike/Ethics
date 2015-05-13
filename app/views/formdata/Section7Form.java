@@ -19,7 +19,7 @@ public class Section7Form {
     String pi_sig;
 
     @Valid
-    String hos_name;
+    public String hos_name;
 
     @Valid
     DateTime hos_sig_date;

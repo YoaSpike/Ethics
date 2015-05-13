@@ -22,6 +22,8 @@ public class Section7 extends Controller {
         } else {
             java.util.Map<String,String> data = filledForm.data();
 
+            play.Logger.info("HOS Name: " + filledForm.get().hos_name);
+
             return ok(play.libs.Json.toJson(data).toString());
         }
     }
