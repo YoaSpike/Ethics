@@ -1,0 +1,44 @@
+@(randForm: play.api.data.Form[controllers.Thing])
+
+@import b3.vertical.fieldConstructor
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ethics Application</title>
+
+    <!-- Bootstrap -->
+    <link href="@routes.Assets.at("stylesheets/bootstrap.pdf.css")" rel="stylesheet"></link>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="row">
+        <div class="container">
+            <div style="width: 94.6%">
+                <h2>Ethics Application</h2>
+                <p>
+                    This is an arbitrary ethics application.
+                </p>
+                <div>
+                    @b3.text(randForm("rand1"), '_label -> "Justify:")
+                    @b3.textarea(randForm("rand2"), 'rows -> 3, 'columns -> 150)
+
+                    <input type="text" value="">I might pass</input>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </body>
+</html>
