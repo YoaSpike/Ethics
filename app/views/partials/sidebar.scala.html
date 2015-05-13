@@ -1,20 +1,17 @@
 @(applicationId: Long, section_num: Integer)
 
-
 @section(section_num: Integer, section_name: String, active: Boolean = false) = {
     <div class="sidebar-main @if(active) {sidebar-main-active}"><a href="@controllers.Application.get_section_link(applicationId, section_num)">
         <div class="sidebar-section">Section @section_num</div><div class="sidebar-sectname">@section_name</div>
         <div class="sidebar-sectq">
             @defining(business.Sections.get_questions(section_name)) { questions =>
                 @for(question <- questions) {
-                    <a href="@controllers.Application.get_section_link(applicationId, section_num)#q@question._1" id="q@(question._1)Link" class="incomplete">@question._1</a>
-                    @if(question != questions.last) {, }
+                    <a href="@controllers.Application.get_section_link(applicationId, section_num)#q@question._1" id="q@(question._1)Link" class="incomplete">@question._1</a>@if(question != questions.last) {, }
                 }
             }
         </div>
     </a></div>
 }
-
 
 <!-- START Sidebar -->
 <div class="col-sm-2">

@@ -4,174 +4,286 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>Human Research Ethics application</title>
   <style type="text/css">
-    .email-container {
-      width: 75%;
-      margin: 0 auto;
+    body {
+      margin: 0;
+      font-family: 'Helvetica', sans-serif;
+      font-size: 13px;
     }
 
-    .header {
-      background: #8AB8E6;
-      width: 100%;
-      padding: 30px;
-      padding-right: 0px !important;
+    .email-container {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 10px; margin-bottom: 10px;
+      border: 1px solid #CCC;
       border-radius: 5px;
-      font-size: 20px;
-      font-weight: 600;
+      padding: 10px 20px 10px 20px;
+      box-shadow: 5px 5px 5px #DDD;
+    }
+
+    #header {
+      width: 100%;
+      height: 60px;
+      background: #8AB8E6;
+      box-shadow: 0 3px 2px #DDD;
+    }
+
+    .header-title {
+      padding: 10px 0px 10px 20px;
+      font-size: 18px !important;
+      font-weight: 500;
+      color: #FFF;
+      float: left;
+    }
+
+    .header-link {
+      padding: 10px 0px 10px 20px;
+      font-size: 15px !important;
+      float: right;
+    }
+
+    .header-link a:link,
+    .header-link a:visited,
+    .header-link a:hover,
+    .header-link a:active {
+      text-decoration: none;
+      color: #FFF;
+    }
+
+    #footer {
+      width: 100%;
+      border-top: 1px solid #CCC;
+    }
+
+    .toolbar-container {
+      width: 90%;
+      margin: 0 auto;
+      padding-top: 10px; padding-bottom: 10px;
+    }
+
+    #table-list {
+      width: 100%;
+      border-spacing: 0 20px;
+    }
+
+    .q_num {
+      width: 3%;
+      text-align: center;
+      border: 1px solid #CCC;
+      padding: 0 7px;
     }
 
     .question {
       width: 30%;
-      font-weight: 600;
-      text-align: right;
-      padding: 15px 5px 15px 1em;
-      margin: 5px;
+      text-align: left;
+      padding: 1em 5px;
+      border-top: 1px solid #CCC;
+      border-bottom: 1px solid #CCC;
     }
 
     .answer {
-      width: 70%;
-      padding: 15px 1em 15px 1em;
-      margin: 5px;
-      border: solid 1px #BBB;
+      width: auto;
+      padding: 1em;
+      border: 1px solid #CCC;
+      border-left: none;
     }
   </style>
 </head>
 <body>
 
+<div id="header">
+  <div class="toolbar-container">
+    <div class="header-title">Human Research Ethics application - Project title</div>
+    <div class="header-link"><a href="" target="_blank">Link to application</a></div>
+  </div>
+</div>
 <div class="email-container">
-<div class="header">Human Research Ethics application - Project title</div>
-<table style="width:100%;">
-  <tr>
-    <td class="question" id="q1">1. Project title</td>
-    <td class="answer" id="q1Ans">project title here.</td>
+<table id="table-list">
+  <tr id="q1">
+    <td class="q_num">1</td>
+    <td class="question">Project title</td>
+    <td class="answer">project title here.</td>
   </tr>
-  <tr>
-    <td class="question" id="q2">2. Project type</td>
-    <td class="answer" id="q2Ans">Undergaduate other than honours (no candidacy required)</td>
+  <tr id="q2">
+    <td class="q_num">2</td>
+    <td class="question">Project type</td>
+    <td class="answer">Undergaduate other than honours (no candidacy required)</td>
   </tr>
-  <tr>
-    <td class="question" id="q3a">3a. Background</td>
-    <td class="answer" id="q3aAns"></td>
+  <tr id="q3a">
+    <td class="q_num">3a</td>
+    <td class="question">Background</td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q3b">3b. Aims and hypothesis</td>
-    <td class="answer" id="q3bAns"></td>
+  <tr id="q3b">
+    <td class="q_num">3b</td>
+    <td class="question">Aims and hypothesis</td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q3c">3c. Methods</td>
-    <td class="answer" id="q3cAns"></td>
+  <tr id="q3c">
+    <td class="q_num">3c</td>
+    <td class="question">Methods</td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q4"></td>
-    <td class="answer" id="q4Ans"></td>
+  <tr id="q4">
+    <td class="q_num">4</td>
+    <td class="question">Principle Investigator</td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q5"></td>
-    <td class="answer" id="q5Ans"></td>
+  <tr id="q5">
+    <td class="q_num">5</td>
+    <td class="question">Co-Investigators</td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q6"></td>
-    <td class="answer" id="q6Ans"></td>
+  <tr id="q6">
+    <td class="q_num">6</td>
+    <td class="question">Contact Person</td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q7">7. Potential harm or risk to participants</td>
-    <td class="answer" id="q7Ans">blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </td>
+  <tr id="q7">
+    <td class="q_num">7</td>
+    <td class="question">Potential harm or risk to participants</td>
+    <td class="answer">blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah bl
+    ah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </td>
   </tr>
-  <tr>
-    <td class="question" id="q8">8. Risk management strategy</td>
-    <td class="answer" id="q8Ans"></td>
+  <tr id="q8">
+    <td class="q_num">8</td>
+    <td class="question">Risk management strategy</td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q9">9. Will participants be given financial or non-financial incentives?</td>
-    <td class="answer" id="q9Ans">
-      <b>Yes</b><br />blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+  <tr id="q9">
+    <td class="q_num">9</td>
+    <td class="question">Will participants be given financial or non-financial incentives?</td>
+    <td class="answer">
+      <b>Yes</b><br />blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+      blah blah blah blah blah blah blah blah blah blah blah blah
     </td>
   </tr>
-  <tr>
-    <td class="question" id="q10"></td>
-    <td class="answer" id="q10Ans"></td>
+  <tr id="q10">
+    <td class="q_num">10</td>
+    <td class="question">Please select how you are going to recruit participants and in the space below describe your recruitment process.</td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q11"></td>
-    <td class="answer" id="q11Ans"></td>
+  <tr id="q11">
+    <td class="q_num">11</td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q12"></td>
-    <td class="answer" id="q12Ans"></td>
+  <tr id="q12">
+    <td class="q_num">12</td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q13"></td>
-    <td class="answer" id="q13Ans"></td>
+  <tr id="q13">
+    <td class="q_num">13</td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q14"></td>
-    <td class="answer" id="q14Ans"></td>
+  <tr id="q13a">
+    <td class="q_num">13a</td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q15"></td>
-    <td class="answer" id="q15Ans"></td>
+  <tr id="q13b">
+    <td class="q_num">13b</td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q16"></td>
-    <td class="answer" id="q16Ans"></td>
+  <tr id="q13c">
+    <td class="q_num">13c</td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q17"></td>
-    <td class="answer" id="q17Ans"></td>
+  <tr id="q14">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q18"></td>
-    <td class="answer" id="q18Ans"></td>
+  <tr id="q15">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q19"></td>
-    <td class="answer" id="q19Ans"></td>
+  <tr id="q16">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q20"></td>
-    <td class="answer" id="q20Ans"></td>
+  <tr id="q17">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q21"></td>
-    <td class="answer" id="q21Ans"></td>
+  <tr id="q18">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q22"></td>
-    <td class="answer" id="q22Ans"></td>
+  <tr id="q19">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q23"></td>
-    <td class="answer" id="q23Ans"></td>
+  <tr id="q20">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q24"></td>
-    <td class="answer" id="q24Ans"></td>
+  <tr id="q21">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q25"></td>
-    <td class="answer" id="q25Ans"></td>
+  <tr id="q22">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q26"></td>
-    <td class="answer" id="q26Ans"></td>
+  <tr id="q23">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q27"></td>
-    <td class="answer" id="q27Ans"></td>
+  <tr id="q24">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q28"></td>
-    <td class="answer" id="q28Ans"></td>
+  <tr id="q25">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q29"></td>
-    <td class="answer" id="q29Ans"></td>
+  <tr id="q26">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
-  <tr>
-    <td class="question" id="q30"></td>
-    <td class="answer" id="q30Ans"></td>
+  <tr id="q27">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
+  </tr>
+  <tr id="q28">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
+  </tr>
+  <tr id="q29">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
+  </tr>
+  <tr id="q30">
+    <td class="q_num"></td>
+    <td class="question"></td>
+    <td class="answer"></td>
   </tr>
 </table>
 </div>
-    
+
+<div id="footer">
+  <div class="toolbar-container">
+    123 abc
+  </div>
+</div>
 </body>
 </html>
