@@ -26,7 +26,7 @@ public class Forms extends Controller {
         return ok(forms_index.render(things));
     }
 
-    @Security.Authenticated
+    @Security.Authenticated(business.Secured.class)
     public static Result viewall() {
         List<EthicsFormModel> forms = (
             EthicsFormModel.find
