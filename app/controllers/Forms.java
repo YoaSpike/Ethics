@@ -38,8 +38,4 @@ public class Forms extends Controller {
 
         return ok(views.html.viewall.render(forms));
     }
-
-    public static Result display_form_progress(Long id) {
-        return ok(id.toString());
-    }
 }
