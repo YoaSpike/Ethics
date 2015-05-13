@@ -24,7 +24,7 @@ public class LoginForm {
 
     public String validate() {
         if (models.UserModel.authenticate(this.email, this.password) == null) {
-              return "Invalid Curtin ID or password";
+              return "Invalid email or password";
         }
         return null; // no error
     }
