@@ -25,10 +25,8 @@
         <div class="sidebar-main"><a href="@controllers.Application.get_section_link(applicationId, 0)">
             <div class="sidebar-section">Ethics Triage</div>
         </a></div>
-        @defining(business.Sections.get_sections_with_numbers) { sections =>
-            @for(a_section <- sections) {
-                @section(a_section._1, a_section._2, a_section._1 == section_num)
-            }
+        @for(a_section <- business.Sections.get_sections_with_numbers()) {
+            @section(a_section._1, a_section._2, a_section._1 == section_num)
         }
     </div>
 </div>
