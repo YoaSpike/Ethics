@@ -1,5 +1,6 @@
 @(applicationId: Long, sectionNum: Integer)
 
+@import b3.vertical.fieldConstructor
 
 @base("Section 1 - Human Research Ethics application - Curtin University") {
 
@@ -9,7 +10,7 @@
             
             <!-- START form -->
             <div class="col-sm-9">
-                <form>
+                @b3.form(controllers.application.routes.Section1.post(applicationId)) {
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title"><b>Section 1 - General information</b></div>
@@ -192,7 +193,7 @@
                             @partials.section_buttons(applicationId, sectionNum)
                         </div>
                     </div>
-                </form>
+                }
             </div>
             <!-- END form -->
 

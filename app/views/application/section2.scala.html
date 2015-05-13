@@ -1,5 +1,7 @@
 @(applicationId: Long, sectionNum: Integer)
 
+@import b3.vertical.fieldConstructor
+
 @base("Section 2 - Human Research Ethics application - Curtin University") {
     
     <!-- START main content -->
@@ -8,7 +10,7 @@
             
             <!-- START form -->
             <div class="col-sm-9">
-                <form>
+                @b3.form(controllers.application.routes.Section2.post(applicationId)) {
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="panel-title">Section 2 - Themes in research ethics: Risk and benefits, consent</div>
@@ -126,7 +128,7 @@
 
                         </div>
                     </div>
-                </form>
+                }
             </div>
             <!-- END form -->
 
