@@ -32,11 +32,11 @@ GET     /forms                      controllers.Forms.index()
 GET     /viewall                    controllers.Forms.viewall()
 
 GET     /accounts/add_user          controllers.Accounts.add_user()
-GET     /accounts/login             controllers.Accounts.login()
+GET     /accounts/login             controllers.Accounts.login(redirect_url: String ?= "")
 GET     /accounts/logout            controllers.Accounts.logout()
 GET     /accounts/user_list         controllers.Accounts.user_list()
 POST    /accounts/add_user          controllers.Accounts.add_user()
-POST    /accounts/login             controllers.Accounts.login_post()
+POST    /accounts/login             controllers.Accounts.login_post(redirect_url: String ?= "")
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

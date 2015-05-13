@@ -38,24 +38,29 @@ public class Accounts extends Controller {
         return getEmail() != null;
     }
 
-    public static Result login() {
+    public static Result login(String redirect_url) {
         if (isLoggedIn()) {
-            return redirect(routes.Application.index());
+            return redirect(
+                redirect_url == null ?
+                routes.Application.index() :
+                redirect_url
+            );
         } else {
-            return ok(login.render(form(LoginForm.class)));
+            return ok(login.render(
+                form(LoginForm.class),
+                redirect_url == null ? "" : redirect_url)
+            );
         }
     }
 
-    public static Result login_post() {
-        if (request().body().isMaxSizeExceeded()) {
-            return badRequest("Too much data!");
-        }
+    public static Result login_post(String redirect_url) {
+        redirect_url = redirect_url == null ? "" : redirect_url;
 
         Form<LoginForm> loginForm = form(LoginForm.class).bindFromRequest();
 
         if (loginForm.hasErrors()) {
-            Logger.debug("Login failed");
-            return badRequest(login.render(loginForm));
+            Logger.debug("Login failed: " + loginForm.errorsAsJson());
+            return badRequest(login.render(loginForm, redirect_url));
 
         } else {
             LoginForm data = loginForm.get();
@@ -64,7 +69,11 @@ public class Accounts extends Controller {
             session().clear();
             session("email", data.email.toString());
 
-            return redirect(routes.Application.index());
+            return redirect(
+                redirect_url == null ?
+                routes.Application.index() :
+                redirect_url
+            );
         }
     }
 

@@ -35,7 +35,7 @@
                       <li><a href="@routes.Forms.viewall()">@controllers.Accounts.getEmail</a></li>
                       <li><a href="@routes.Accounts.logout()">Logout</a></li>
                     } else {
-                      <li><a href="@routes.Accounts.login()">Login</a></li>
+                      <li><a href="@routes.Accounts.login(request.path)">Login</a></li>
                     }
                 </ul>
             </div>
