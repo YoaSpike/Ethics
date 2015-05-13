@@ -26,4 +26,18 @@ public class Section7Form {
 
     @Valid
     String hos_sig;
+
+    @Valid
+    List<CISubForm> cis;
+
+    public static class CISubForm {
+        @Valid
+        String name;
+
+        @Valid
+        DateTime date;
+
+        @Valid
+        String sig;
+    }
 }

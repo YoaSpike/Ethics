@@ -20,7 +20,9 @@ public class Section7 extends Controller {
         if(filledForm.hasErrors()) {
             return badRequest(filledForm.errorsAsJson());
         } else {
-            return ok(filledForm.data().toString());
+            java.util.Map<String,String> data = filledForm.data();
+
+            return ok(play.libs.Json.toJson(data).toString());
         }
     }
 }
