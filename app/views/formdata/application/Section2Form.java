@@ -1,8 +1,8 @@
-package views.formdata;
+package views.formdata.application;
 
 import play.data.validation.*;
 
-public class ThemesForm {
+public class Section2Form {
     // fields
     public String potential_risk_or_harm;
 

@@ -1,4 +1,4 @@
-package views.formdata;
+package views.formdata.application;
 
 public enum AttachmentType {
     PROTOCOL_RESEARCH_PROPOSAL,

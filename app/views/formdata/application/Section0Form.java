@@ -1,10 +1,10 @@
-package views.formdata;
+package views.formdata.application;
 
 import play.data.validation.*;
 
 // POJOs!
-public class EthicsTriageForm {
-    public EthicsTriageForm() {}
+public class Section0Form {
+    public Section0Form() {}
 
     @Constraints.Required
     public boolean interventions_and_therapies = false;
@@ -32,7 +32,7 @@ public class EthicsTriageForm {
 
     public String toString() {
         return String.format(
-            "<EthicsTriageForm %d %d %d %d %d %d %d \"%s\">",
+            "<Section0Form %d %d %d %d %d %d %d \"%s\">",
             ib(interventions_and_therapies),
             ib(human_genetics),
             ib(pregnant_women_or_fetuses),

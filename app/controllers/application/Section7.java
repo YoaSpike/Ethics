@@ -4,7 +4,7 @@ import play.mvc.*;
 import play.data.Form;
 import static play.data.Form.*;
 
-import views.formdata.*;
+import views.formdata.application.*;
 
 
 public class Section7 extends Controller {

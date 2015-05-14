@@ -1,4 +1,4 @@
-package views.formdata;
+package views.formdata.application;
 
 import java.util.List;
 import javax.validation.*;
