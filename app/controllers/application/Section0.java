@@ -4,19 +4,19 @@ import play.mvc.*;
 import play.data.Form;
 import static play.data.Form.*;
 
-import views.formdata.*;
+import views.formdata.application.*;
 
 public class Section0 extends Controller {
-    private static final Form<EthicsTriageForm> triageForm = form(EthicsTriageForm.class);
+    private static final Form<Section0Form> triageForm = form(Section0Form.class);
 
     private static final int section_num = 0;
 
     public static Result get(Long id) {
-        return get(id, (EthicsTriageForm) null);
+        return get(id, (Section0Form) null);
     }
 
-    public static Result get(Long applicationId, EthicsTriageForm data) {
-        Form<EthicsTriageForm> filledTriageForm = triageForm;
+    public static Result get(Long applicationId, Section0Form data) {
+        Form<Section0Form> filledTriageForm = triageForm;
 
         if (data != null) {
             filledTriageForm = filledTriageForm.fill(data);
@@ -33,13 +33,13 @@ public class Section0 extends Controller {
             return badRequest("Too much data!");
         }
 
-        Form<EthicsTriageForm> filledForm = triageForm.bindFromRequest();
+        Form<Section0Form> filledForm = triageForm.bindFromRequest();
         if(filledForm.hasErrors()) {
             System.out.println(triageForm.errorsAsJson());
             return badRequest(views.html.application.section0.render(id, section_num, triageForm));
 
         } else {
-            EthicsTriageForm data = filledForm.get();
+            Section0Form data = filledForm.get();
             System.out.println(data);
 
             return get(id, data);
