@@ -1,24 +1,25 @@
 package views.formdata.application;
 
-import play.data.validation.*;
+import javax.validation.*;
+import play.data.validation.Constraints.*;
 
 // POJOs!
 public class Section0Form {
     public Section0Form() {}
 
-    @Constraints.Required
+    @Valid
     public boolean interventions_and_therapies = false;
-    @Constraints.Required
+    @Valid
     public boolean human_genetics = false;
-    @Constraints.Required
+    @Valid
     public boolean pregnant_women_or_fetuses = false;
-    @Constraints.Required
+    @Valid
     public boolean medically_dependant = false;
-    @Constraints.Required
+    @Valid
     public boolean cognitively_impaired = false;
-    @Constraints.Required
+    @Valid
     public boolean aboriginal_or_torres_strait_islander = false;
-    @Constraints.Required
+    @Valid
     public boolean illegal_activities = false;
     public String justification = null;
 
