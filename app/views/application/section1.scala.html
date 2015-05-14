@@ -24,13 +24,13 @@
                             <div class="form-group">
                                 <label class="main-q" for="projectType" id="q2">2. Please indicate the type of project</label>
                                 <select class="form-control compulsory" id="projectType" name="q2">
-                                    <option value="0">Staff project</option>
-                                    <option value="1">Undergaduate other than honours (no candidacy required)</option>
-                                    <option value="2">Honours (no candidacy required)</option>
-                                    <option value="3">Masters by coursework (no candidacy required)</option>
-                                    <option value="4">Masters by research (candidacy required)</option>
-                                    <option value="5">PhD (candidacy required)</option>
-                                    <option value="6">Other (Specify)</option>
+                                    <option value="STAFF_PROJECT">Staff project</option>
+                                    <option value="UNDERGRADUATE">Undergaduate other than honours (no candidacy required)</option>
+                                    <option value="HONOURS">Honours (no candidacy required)</option>
+                                    <option value="MASTERS_BY_COURSEWORK">Masters by coursework (no candidacy required)</option>
+                                    <option value="MASTERS_BY_RESEARCH">Masters by research (candidacy required)</option>
+                                    <option value="PHD">PhD (candidacy required)</option>
+                                    <option value="OTHER">Other (Specify)</option>
                                 </select>
                             </div>
                             <div class="form-group sub-q" id="projectTypeOthers">
@@ -124,8 +124,8 @@
                                             <td><input type="text" id="ciId" style="width:100%" name="q5"></td>
                                             <td><select style="width:100%">
                                                 <option value="CI">CI</option>
-                                                <option value="Supervisor" name="q5">Supervisor</option>
-                                                <option value="Student" name="q5">Student</option>
+                                                <option value="SUPERVISOR" name="q5">Supervisor</option>
+                                                <option value="STUDENT" name="q5">Student</option>
                                             </select></td>
                                             <td align="center"><input type="checkbox" id="ciConApproved"></td>
                                             <td align="center"><input type="checkbox" id="ciTrainCompleted"></td>
