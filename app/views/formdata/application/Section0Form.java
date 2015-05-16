@@ -5,8 +5,6 @@ import play.data.validation.Constraints.*;
 
 // POJOs!
 public class Section0Form {
-    public Section0Form() {}
-
     @Valid
     public boolean interventions_and_therapies = false;
     @Valid
@@ -22,10 +20,6 @@ public class Section0Form {
     @Valid
     public boolean illegal_activities = false;
     public String justification = null;
-
-    public void setInterventions_and_therapies(boolean val) {
-        this.interventions_and_therapies = val;
-    }
 
     private int ib(boolean val) {
         return val ? 1 : 0;

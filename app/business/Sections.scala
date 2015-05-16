@@ -1,15 +1,17 @@
 package business;
 
+import java.io._
+import java.util.Map.Entry
+
 import org.yaml.snakeyaml.Yaml
 import org.yaml.snakeyaml.constructor.{Constructor, CustomClassLoaderConstructor}
-import java.io._
 
 import scala.beans.BeanProperty
 import scala.collection.JavaConverters._
 import scala.collection.JavaConversions._
 
-object QuestionEntryOrdering extends scala.math.Ordering[java.util.Map.Entry[String,String]] {
-    def compare(xx: java.util.Map.Entry[String,String], yy: java.util.Map.Entry[String,String]) : Int = {
+object QuestionEntryOrdering extends scala.math.Ordering[Entry[String,String]] {
+    def compare(xx: Entry[String,String], yy: Entry[String,String]) : Int = {
         QuestionOrdering.compare(xx.getKey, yy.getKey)
     }
 }
