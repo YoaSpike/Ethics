@@ -33,12 +33,16 @@ public class Application extends Controller {
         email.setFrom("Mister FROM <ethics@lysdev.com>");
         email.addTo("Miss TO <me@mause.me>");
 
+        String raw_html = views.html.unconverted.email_template.render().body();
+
+        raw_html = business.Email.inlineCSS(raw_html);
+
         // email.setBodyText("A text message");
-        email.setBodyHtml(views.html.index.render().body());
+        email.setBodyHtml(raw_html);
 
         MailerPlugin.send(email);
 
-        return ok("Sent " + email);
+        return ok(new play.twirl.api.Html(raw_html));
     }
 
     public static String get_section_link(Long id, Integer num) {
