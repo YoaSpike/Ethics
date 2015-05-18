@@ -50,40 +50,10 @@
 
 } {
 
-    <script src="../../../public/javascripts/global_postscript.js"></script>
     <script type="text/javascript">
-    $(document).ready(function() {
-
-        /* Check if each field has filled in. Set the nav-link as red and bold if incomplete. */
-        $(".compulsory").focusout(function() {
-            var qname = $(this).attr("name");
-            if ($(this).val() != "") {
-                $(this).closest("div").removeClass('has-error');
-                $(this).next(".error-msg").remove();
-            } else {
-                $(this).closest("div").addClass('has-error');
-                if ($(this).next(".error-msg").length == 0)
-                    $('<div class="error-msg">Please fill in the blank.</div>').insertAfter($(this));
-            }
-            if (($(this).attr("name") === "projectTitle") || ($(this).attr("name") === "projectType")) {
-                if ($(this).val() != "") {
-                    $("#"+qname+"Link").removeClass("incomplete");
-                } else {
-                    $("#"+qname+"Link").addClass("incomplete");
-                }
-            } else {
-                var hasCompleted = true;
-                $("[name="+$(this).attr("name")+"]").each(function() {
-                    hasCompleted = hasCompleted & ($(this).val() != "");
-                });
-                if (hasCompleted) {
-                    $("#"+qname+"Link").removeClass("incomplete");
-                } else {
-                    $("#"+qname+"Link").addClass("incomplete");
-                }
-            }
+        $(document).ready(function() {
+            // document ready function here.
         });
-    });
     </script>
 
 }

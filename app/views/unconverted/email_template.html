@@ -60,7 +60,25 @@
       padding-top: 10px; padding-bottom: 10px;
     }
 
-    #table-list {
+    .section-header {
+      border-bottom: 1px solid #CCC;
+      padding-top: 15px;
+    }
+
+    .section_num {
+      display: inline;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .section_name {
+      display: inline;
+      padding-left: 1em;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .section-list {
       width: 100%;
       border-spacing: 0 20px;
     }
@@ -97,7 +115,12 @@
   </div>
 </div>
 <div class="email-container">
-<table id="table-list">
+
+<div class="section-header">
+  <span class="section_num">Section 1</span>
+  <span class="section_name">General information</span>
+</div>
+<table class="section-list">
   <tr id="q1">
     <td class="q_num">1</td>
     <td class="question">Project title</td>
@@ -138,6 +161,13 @@
     <td class="question">Contact Person</td>
     <td class="answer"></td>
   </tr>
+</table>
+
+<div class="section-header">
+  <span class="section_num">Section 2</span>
+  <span class="section_name">Themes in research ethics: Risk and benefits, consent</span>
+</div>
+<table class="section-list">
   <tr id="q7">
     <td class="q_num">7</td>
     <td class="question">Potential harm or risk to participants</td>
@@ -164,115 +194,155 @@
   </tr>
   <tr id="q11">
     <td class="q_num">11</td>
-    <td class="question"></td>
+    <td class="question">Will participants provide consent?</td>
     <td class="answer"></td>
   </tr>
   <tr id="q12">
     <td class="q_num">12</td>
-    <td class="question"></td>
+    <td class="question">Does the research use deception, concealment, incomplete disclosure, limited disclosure, an opt- out approach, or use of information, samples, health information etc., without the specified consent from those persons?</td>
     <td class="answer"></td>
   </tr>
+</table>
+
+<div class="section-header">
+  <span class="section_num">Section 3</span>
+  <span class="section_name">Ethical considerations specific to research methods or fields</span>
+</div>
+<table class="section-list">
   <tr id="q13">
     <td class="q_num">13</td>
-    <td class="question"></td>
+    <td class="question">Is your study a clinical trial?</td>
     <td class="answer"></td>
   </tr>
   <tr id="q13a">
     <td class="q_num">13a</td>
-    <td class="question"></td>
+    <td class="question">Will a placebo/non-treatment group be used?</td>
     <td class="answer"></td>
   </tr>
   <tr id="q13b">
     <td class="q_num">13b</td>
-    <td class="question"></td>
+    <td class="question">Has this trial been registered?</td>
     <td class="answer"></td>
   </tr>
   <tr id="q13c">
     <td class="q_num">13c</td>
-    <td class="question"></td>
+    <td class="question">Are the facilities, expertise and experience available sufficient for the trial to be conducted safely?</td>
+    <td class="answer"></td>
+  </tr>
+  <tr id="q13d">
+    <td class="q_num">13c</td>
+    <td class="question">Does your Participant Information Statement make clear to the participant whether they will have continued access after the trial to treatment they have received during the trial, and on what terms?</td>
     <td class="answer"></td>
   </tr>
   <tr id="q14">
-    <td class="q_num"></td>
-    <td class="question"></td>
+    <td class="q_num">14</td>
+    <td class="question">Does your research use health information that may reveal information that may be important for the health or future health of the donor(s), their blood relatives or their community?</td>
     <td class="answer"></td>
   </tr>
   <tr id="q15">
-    <td class="q_num"></td>
-    <td class="question"></td>
+    <td class="q_num">15</td>
+    <td class="question">Does your research involve human genetics?</td>
     <td class="answer"></td>
   </tr>
+</table>
+
+<div class="section-header">
+  <span class="section_num">Section 4</span>
+  <span class="section_name">Ethical considerations specific to participants</span>
+</div>
+<table class="section-list">
   <tr id="q16">
-    <td class="q_num"></td>
-    <td class="question"></td>
+    <td class="q_num">16</td>
+    <td class="question">Does your research involve women who are pregnant and/or the human fetus?</td>
+    <td class="answer"></td>
+  </tr>
+  <tr id="q16a">
+    <td class="q_num">16a</td>
+    <td class="question">Will steps be taken to ensure that the well-being and care of the woman who is pregnant and her fetus takes precedence over the aims of the research?</td>
+    <td class="answer"></td>
+  </tr>
+  <tr id="q16b">
+    <td class="q_num">16b</td>
+    <td class="question">Will the information about research be separate from information about routine clinical care?</td>
     <td class="answer"></td>
   </tr>
   <tr id="q17">
-    <td class="q_num"></td>
-    <td class="question"></td>
+    <td class="q_num">17</td>
+    <td class="question">Does your research involve children and young people?</td>
+    <td class="answer"></td>
+  </tr>
+  <tr id="q17">
+    <td class="q_num">17a</td>
+    <td class="question">Do you have a Working With Children's (WWC) card?</td>
     <td class="answer"></td>
   </tr>
   <tr id="q18">
-    <td class="q_num"></td>
-    <td class="question"></td>
+    <td class="q_num">18</td>
+    <td class="question">Does your research involve people in dependent or unequal relationships?</td>
     <td class="answer"></td>
   </tr>
   <tr id="q19">
-    <td class="q_num"></td>
-    <td class="question"></td>
+    <td class="q_num">19</td>
+    <td class="question">Does your research involve people highly dependent on medical care who may be unable to give consent?</td>
     <td class="answer"></td>
   </tr>
   <tr id="q20">
-    <td class="q_num"></td>
-    <td class="question"></td>
+    <td class="q_num">20</td>
+    <td class="question">Does your research involve people with a cognitive impairment, an intellectual disability, or a mental illness?</td>
     <td class="answer"></td>
   </tr>
   <tr id="q21">
-    <td class="q_num"></td>
-    <td class="question"></td>
+    <td class="q_num">21</td>
+    <td class="question">Does your research involve people who may be involved in illegal activities?</td>
     <td class="answer"></td>
   </tr>
   <tr id="q22">
-    <td class="q_num"></td>
-    <td class="question"></td>
+    <td class="q_num">22</td>
+    <td class="question">Does your research involve Aboriginal and Torres Strait Islanders?</td>
     <td class="answer"></td>
   </tr>
+  <tr id="q22a">
+    <td class="q_num">22a</td>
+    <td class="question">What is the estimated proportion of Aboriginal and Torres Strait Islanders in the population from which the participants will be recruited?</td>
+    <td class="answer"></td>
+  </tr>
+  <tr id="q22b">
+    <td class="q_num">22b</td>
+    <td class="question">Will Aboriginal and Torres Islander status of participants be recorded?</td>
+    <td class="answer"></td>
+  </tr>
+</table>
+
+<div class="section-header">
+  <span class="section_num">Section 5</span>
+  <span class="section_name">Processes of research governance and ethical review</span>
+</div>
+<table class="section-list">
   <tr id="q23">
-    <td class="q_num"></td>
-    <td class="question"></td>
+    <td class="q_num">23</td>
+    <td class="question">Are there any potential conflicts of interest?</td>
     <td class="answer"></td>
   </tr>
+</table>
+
+<div class="section-header">
+  <span class="section_num">Section 6</span>
+  <span class="section_name">Attachments</span>
+</div>
+<table class="section-list">
   <tr id="q24">
     <td class="q_num"></td>
     <td class="question"></td>
     <td class="answer"></td>
   </tr>
+</table>
+
+<div class="section-header">
+  <span class="section_num">Section 7</span>
+  <span class="section_name">Certification and signatures</span>
+</div>
+<table class="section-list">
   <tr id="q25">
-    <td class="q_num"></td>
-    <td class="question"></td>
-    <td class="answer"></td>
-  </tr>
-  <tr id="q26">
-    <td class="q_num"></td>
-    <td class="question"></td>
-    <td class="answer"></td>
-  </tr>
-  <tr id="q27">
-    <td class="q_num"></td>
-    <td class="question"></td>
-    <td class="answer"></td>
-  </tr>
-  <tr id="q28">
-    <td class="q_num"></td>
-    <td class="question"></td>
-    <td class="answer"></td>
-  </tr>
-  <tr id="q29">
-    <td class="q_num"></td>
-    <td class="question"></td>
-    <td class="answer"></td>
-  </tr>
-  <tr id="q30">
     <td class="q_num"></td>
     <td class="question"></td>
     <td class="answer"></td>

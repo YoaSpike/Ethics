@@ -27,7 +27,7 @@
                                         <li>For psychological based studies risks may be psychological stress due to the assessment; there may be a potential for increased risk of suicidality or self-harm; there may be a potential for worsening of psychological disorder etc.</li>
                                     </ul>
                                 </div>
-                                <textarea class="form-control compulsory" rows="10" name="potential_risk_or_harm"></textarea>
+                                <textarea class="form-control compulsory" rows="10" name="potential_risk_or_harm" data-qid="q7"></textarea>
                             </div>
 
                             <div class="form-group">
@@ -35,7 +35,7 @@
                                 <div class="main-q-desc">
                                     Please outline how you will mitigate the risks identified above and your plan of action for expected adverse events and other identified risks. Please also outline your plan of action for unexpected adverse events. The Human Research Ethics Office will use this information and follow this procedure should an event or complaint occur. Please refer to Adverse Event Guidelines for more information.
                                 </div>
-                                <textarea class="form-control compulsory" rows="10" name="risk_management_strategy" id="riskMgmt"></textarea>
+                                <textarea class="form-control compulsory" rows="10" name="risk_management_strategy" id="riskMgmt" data-qid="q8"></textarea>
                             </div>
 
                             <div class="form-group">
@@ -142,41 +142,10 @@
 
 } {
 
-    <script src="../../../public/javascripts/global_postscript.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         $("#financialYes").hide();
         $("#q9").siblings(".main-q-desc").hide();
-
-        /* Check if each field has filled in. Set the nav-link as red and bold if incomplete. */
-        $(".compulsory").focusout(function() {
-            var qname = $(this).attr("name");
-            if ($(this).val() != "") {
-                $(this).closest("div").removeClass('has-error');
-                $(this).next(".error-msg").remove();
-            } else {
-                $(this).closest("div").addClass('has-error');
-                if ($(this).next(".error-msg").length == 0)
-                    $('<div class="error-msg">Please fill in the blank.</div>').insertAfter($(this));
-            }
-            if (($(this).attr("name") === "projectTitle") || ($(this).attr("name") === "projectType")) {
-                if ($(this).val() != "") {
-                    $("#"+qname+"Link").removeClass("incomplete");
-                } else {
-                    $("#"+qname+"Link").addClass("incomplete");
-                }
-            } else {
-                var hasCompleted = true;
-                $("[name="+$(this).attr("name")+"]").each(function() {
-                    hasCompleted = hasCompleted & ($(this).val() != "");
-                });
-                if (hasCompleted) {
-                    $("#"+qname+"Link").removeClass("incomplete");
-                } else {
-                    $("#"+qname+"Link").addClass("incomplete");
-                }
-            }
-        });
 
         $("[name=financial]").change(function() {
             if ($(this).val() == "true") {

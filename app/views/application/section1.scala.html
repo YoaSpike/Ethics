@@ -18,12 +18,12 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label class="main-q" for="projectTitle" id="q1">1. Project Title</label>
-                                <input type="text" class="form-control compulsory" id="projectTitle" name="q1">
+                                <input type="text" class="form-control compulsory" id="projectTitle" name="q1" data-qid="q1">
                             </div>
 
                             <div class="form-group">
                                 <label class="main-q" for="projectType" id="q2">2. Please indicate the type of project</label>
-                                <select class="form-control compulsory" id="projectType" name="q2">
+                                <select class="form-control compulsory" id="projectType" name="q2" data-qid="q2">
                                     <option value="STAFF_PROJECT">Staff project</option>
                                     <option value="UNDERGRADUATE">Undergaduate other than honours (no candidacy required)</option>
                                     <option value="HONOURS">Honours (no candidacy required)</option>
@@ -42,17 +42,17 @@
                                 <div class="main-q-desc">Give a concise and simple description, in plain language, or the study in each of the sections below.</div>
                                 <div class="form-group sub-q" id="q3a">
                                     <label for="background">3a. Background</label>
-                                    <textarea class="form-control compulsory" rows="5" id="background" name="q3a"></textarea>
+                                    <textarea class="form-control compulsory" rows="5" id="background" name="q3a" data-qid="q3a"></textarea>
                                 </div>
 
                                 <div class="form-group sub-q" id="q3b">
                                     <label for="aims">3b. Aims and hypothesis</label>
-                                    <textarea class="form-control compulsory" rows="3" id="aims" name="q3b"></textarea>
+                                    <textarea class="form-control compulsory" rows="3" id="aims" name="q3b" data-qid="q3b"></textarea>
                                 </div>
 
                                 <div class="form-group sub-q" id="q3c">
                                     <label for="methods">3c. Methods</label>
-                                    <textarea class="form-control compulsory" rows="5" id="methods" name="q3c"></textarea>
+                                    <textarea class="form-control compulsory" rows="5" id="methods" name="q3c" data-qid="q3c"></textarea>
                                 </div>
 
                             <div class="main-q" id="q4">4. Principle Investigator</div>
@@ -62,31 +62,31 @@
                                         <div class="col-xs-6">
                                             <div class="form-group">
                                                 <label for="piName">Name (include title)</label>
-                                                <input type="text" class="form-control compulsory" id="piName" name="pi.name">
+                                                <input type="text" class="form-control compulsory" id="piName" name="pi.name" data-qid="q4">
                                             </div>
                                         </div>
                                         <div class="col-xs-6">
                                             <div class="form-group">
                                                 <label for="piId">Staff ID</label>
-                                                <input type="text" class="form-control compulsory" id="piId" name="pi.id">
+                                                <input type="text" class="form-control compulsory" id="piId" name="pi.id" data-qid="q4">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="piArea">School, Center or Area</label>
-                                        <input type="text" class="form-control compulsory" id="piArea" name="pi.area">
+                                        <input type="text" class="form-control compulsory" id="piArea" name="pi.area" data-qid="q4">
                                     </div>
                                     <div class="row">
                                         <div class="col-xs-6">
                                             <div class="form-group">
                                                 <label for="piTel">Telephone</label>
-                                                <input type="text" class="form-control compulsory" id="piTel" name="pi.telephone">
+                                                <input type="text" class="form-control compulsory" id="piTel" name="pi.telephone" data-qid="q4">
                                             </div>
                                         </div>
                                         <div class="col-xs-6">
                                             <div class="form-group">
                                                 <label for="piEmail">Email</label>
-                                                <input type="text" class="form-control compulsory" id="piEmail" name="pi.email">
+                                                <input type="text" class="form-control compulsory" id="piEmail" name="pi.email" data-qid="q4">
                                             </div>
                                         </div>
                                     </div>
@@ -147,31 +147,31 @@
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="cpName">Name (include title)</label>
-                                            <input type="text" class="form-control compulsory" id="cpName" name="q6">
+                                            <input type="text" class="form-control compulsory" id="cpName" name="q6" data-qid="q6">
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="cpId">Staff ID</label>
-                                            <input type="text" class="form-control compulsory" id="cpId" name="q6">
+                                            <input type="text" class="form-control compulsory" id="cpId" name="q6" data-qid="q6">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="cpArea">School, Centre or Area</label>
-                                    <input type="text" class="form-control compulsory" id="cpArea" name="q6">
+                                    <input type="text" class="form-control compulsory" id="cpArea" name="q6" data-qid="q6">
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="cpTel">Telephone</label>
-                                            <input type="text" class="form-control compulsory" id="cpTel" name="q6">
+                                            <input type="text" class="form-control compulsory" id="cpTel" name="q6" data-qid="q6">
                                         </div>
                                     </div>
                                     <div class="col-xs-6">
                                         <div class="form-group">
                                             <label for="cpEmail">Email</label>
-                                            <input type="text" class="form-control compulsory" id="cpEmail" name="q6">
+                                            <input type="text" class="form-control compulsory" id="cpEmail" name="q6" data-qid="q6">
                                         </div>
                                     </div>
                                 </div>
@@ -193,7 +193,6 @@
     <!-- END main content -->
 
 } {
-    <script src="../../../public/javascripts/global_postscript.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
         /* Show "Other types" if project type is "Other". */
@@ -203,24 +202,6 @@
                 $('#projectTypeOthers').show();
             } else {
                 $('#projectTypeOthers').hide();
-            }
-        });
-
-        /* Check if each field has filled in. Set the nav-link as red and bold if incomplete. */
-        $(".compulsory").focusout(function() {
-            var qname = $(this).attr("name");
-            if ($(this).val() != "") {
-                $(this).closest("div").removeClass('has-error');
-                $(this).next(".error-msg").remove();
-            } else {
-                $(this).closest("div").addClass('has-error');
-                if ($(this).next(".error-msg").length == 0)
-                    $('<div class="error-msg">Please fill in the blank.</div>').insertAfter($(this));
-            }
-            if ($(this).val() != "") {
-                $("#"+qname+"Link").removeClass("incomplete");
-            } else {
-                $("#"+qname+"Link").addClass("incomplete");
             }
         });
     });
