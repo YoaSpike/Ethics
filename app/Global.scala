@@ -29,18 +29,18 @@ class Global extends GlobalSettings {
         // val users = models.UserModel.find.all
         // if (users.size != 0) throw new Error("Restart application to load new fixtures")
 
-        val folder = new File("app/fixtures")
+        // val folder = new File("app/fixtures")
 
-        if (folder == null || !folder.canRead()) {
-            play.Logger.error("Couldn't load fixtures")
+        // if (folder == null || !folder.canRead()) {
+        //     play.Logger.error("Couldn't load fixtures")
 
-        } else {
-            play.Logger.info("Loading fixtures")
+        // } else {
+        //     play.Logger.info("Loading fixtures")
 
-            disable_integrity()
-            load_models(folder)
-            enable_integrity()
-        }
+        //     disable_integrity()
+        //     load_models(folder)
+        //     enable_integrity()
+        // }
     }
 
     def exec(s: String) {
