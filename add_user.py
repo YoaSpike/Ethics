@@ -1,10 +1,12 @@
 import requests
 
 r = requests.post(
-    'http://localhost:9000/add_user',
+    # 'http://localhost:9000'
+    'https://yoaspike.herokuapp.com'
+    '/accounts/add_user',
     data={
-        'curtin_id': '17690579',
-        'password': 'burp'
+        'email': input('email: '),
+        'password': input('password: ')
     }
 )
 print(r)
