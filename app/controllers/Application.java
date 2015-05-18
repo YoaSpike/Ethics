@@ -33,7 +33,7 @@ public class Application extends Controller {
         email.setFrom("Mister FROM <ethics@lysdev.com>");
         email.addTo("Miss TO <me@mause.me>");
 
-        String raw_html = views.html.unconverted.email_template.render().body();
+        String raw_html = views.html.email_template.render().body();
 
         raw_html = business.Email.inlineCSS(raw_html);
 
