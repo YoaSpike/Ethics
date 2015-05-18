@@ -45,15 +45,11 @@ object Email {
         da.getStyleSheets() // load the author style sheets
 
         // Compute the styles
-        System.err.println("Computing style...")
         da.stylesToDomInherited()
 
         // Save the output
         val baos = new ByteArrayOutputStream()
-        val os = new PrintStream(baos)
-        val out = new NormalOutput(doc)
-        out.dumpTo(os)
-        os.close()
+        new NormalOutput(doc).dumpTo(baos)
 
         baos.toString
     }

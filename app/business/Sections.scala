@@ -29,7 +29,7 @@ object QuestionOrdering extends scala.math.Ordering[String] {
     }
 
     def get_val(q: String) : Int = {
-        val inter = (int: String) => Integer.parseInt(int) * 10
+        val inter = Integer.parseInt(_: String) * 10
 
         q match {
             case RE(int, null)  => inter(int)
