@@ -22,21 +22,18 @@ public class ApplicationModel extends Model{
 		this.id = id;
 	}
 
-	//Needed to conbine inherited classes
-	/*@Column(name="Important_ID")*/
-	/*@OneToOne(mappedBy = "ApplicationModel")*/
 	@Id
 	@Valid
 	public int id;
 	
-	@OneToMany(optional=false, cascade=CascadeType.ALL,
-		 mappedBy="applicationModel", targetEntity=UserModel.class)
+	@ManyToOne(optional=false, cascade=CascadeType.ALL)
 	public UserModel userModel;
 	
-    /*@OneToOne(optional=false)
-    @JoinColumn(name="curtinId")*/
-    public Section3 section3;
-    public Section4 section4;
+	@OneToOne
+	public Section3Model section3;
+
+	@OneToOne
+    public Section4Model section4;
 
 	public String toString() {
         return String.format(

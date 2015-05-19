@@ -11,18 +11,26 @@ import play.data.validation.*;
 
 @Entity
 @Table(name="Section3")
-public class Section3 extends Model{
+public class Section3Model extends Model{
 	
-	public Section3(){
+	public Section3Model(){
 		super();
 	}
 
-	public Section3(int id){
+	public Section3Model(int id){
 		
 	} 
 
-	public static Finder<Integer,Section3> find = new Finder<Integer,Section3>(
-        Integer.class, Section3.class
+	@Id
+	@Valid
+	public int id;
+
+	@OneToOne(optional=false, cascade=CascadeType.ALL,
+		 mappedBy="section3", targetEntity=ApplicationModel.class)
+	public ApplicationModel applicationModel;
+
+	public static Finder<Integer,Section3Model> find = new Finder<Integer,Section3Model>(
+        Integer.class, Section3Model.class
     );
 
 	@Constraints.Required

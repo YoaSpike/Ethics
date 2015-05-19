@@ -29,17 +29,12 @@ public class TestingModel extends Controller{
 			UserModel userModel = new UserModel(20);
 			//userModel.id = 20;
 
-			//userModel.applicationModel = new ApplicationModel();
-
-			//userModel.section3 = new Section3(userModel.id);
-			//userModel.section4 = new Section4(userModel.id);
-
 			//Section3 section3 = new Section3();
 
 			UserModel user = UserModel.find.byId("20");
 
-			String text = new String(user.section3.willAPlaceboBeUsedGroupByUsedText13a);
+			
 
-			return ok(text);
+			return ok("Sup");
 		}
 }
