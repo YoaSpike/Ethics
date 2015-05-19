@@ -12,25 +12,49 @@ import org.mindrot.jbcrypt.BCrypt;
 
 
 @Entity
+@Table(name="UserModel")
 public class UserModel extends Model {
     public static final long serialVersionUID = 0;
 
-    public UserModel(String id) { this(Integer.parseInt(id)); }
-    public UserModel(int    id) { this.id = id; }
-    public UserModel()          { super(); }
+    public UserModel(String id) { 
+        this(Integer.parseInt(id)); 
+        //this.applicationModel = new ApplicationModel(
+        //this.section3 = new Section3(Integer.parseInt(id));
+        //this.section4 = new Section4(Integer.parseInt(id));
+        
+
+    public UserModel(int    id) { 
+        this.id = id;
+        //this.section3 = new Section3(id);
+        //this.section4 = new Section4(id);
+         }
+
+    public UserModel(){
+        super(); 
+        //this.section3 = new Section3();
+        //this.section4 = new Section4();
+        }
 
     public String toString() {
         return String.format(
-            "<User %s %s>",
+            "<User %d %s %s>",
+			/*Testing - added this.id & %d*/
+			this.id,
             this.curtin_id,
             this.name
         );
     }
-
+    /*Primary key id here with applicationModel id*/
     @Id
+    @Column(name="userId")
     public Integer id;
 
+    @OneToMany(optional=false)
+    @JoinColumn(name="curtinId") //used curtinId othwise get deplicate column error
+    public ApplicationModel applicationModel;
+
     @Constraints.Required
+    @Column(name="id")
     public String curtin_id;
 
     @Constraints.Required
@@ -41,7 +65,7 @@ public class UserModel extends Model {
 
     @Constraints.Required
     public String hashed_password;
-
+	
     public static Finder<String,UserModel> find = new Finder<String,UserModel>(
         String.class, UserModel.class
     );
