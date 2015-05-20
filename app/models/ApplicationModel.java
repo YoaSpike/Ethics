@@ -30,6 +30,12 @@ public class ApplicationModel extends Model{
 	public UserModel userModel;
 	
 	@OneToOne
+	public Section1Model section1;
+
+	@OneToOne
+	public Section2Model section2;
+
+	@OneToOne
 	public Section3Model section3;
 
 	@OneToOne

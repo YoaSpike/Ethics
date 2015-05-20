@@ -31,13 +31,11 @@ public class UserModel extends Model {
     public String toString() {
         return String.format(
             "<User %d %s %s>",
-			/*Testing - added this.id & %d*/
 			this.id,
             this.curtin_id,
             this.name
         );
     }
-    /*Primary key id here with applicationModel id*/
     @Id
     public Integer id;
 

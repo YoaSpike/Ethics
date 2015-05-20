@@ -38,24 +38,26 @@ public class Section1Model extends Model{
         Integer.class, Section1Model.class
     );
 
-	//@Constraints.Required
+	@Constraints.Required
 	public String projectTitle = null;
 
-	public String name1, name2, name3, name4, name5 = null;
+	public String name1 = null, name2 = null, name3 = null,
+		 name4 = null, name5 = null;
 
-	//public String 
-	public String school1, school2, school3, school4, school5 = null;
+	public String school1 = null, school2 = null, school3 = null,
+		 school4 = null, school5 = null;
 
-	public int staffStudentID1, staffStudentID2, staffStudentID3, 
-		staffStudentID4, staffStudentID5 = 0;
+	public int staffStudentID1 = 0, staffStudentID2 = 0, staffStudentID3 = 0, 
+		staffStudentID4 = 0, staffStudentID5 = 0;
 
-	public Role role1, role2, role3, role4, role5 = null;
+	public Role role1 = null, role2 = null, role3 = null, 
+		role4 = null, role5 = null;
 	
-	public boolean candidacy1, candidacy2, candidacy3, candidacy4,
-		candidacy5 = false;
+	public boolean candidacy1 = false, candidacy2 = false, candidacy3 = false, 
+		candidacy4 = false, candidacy5 = false;
 
-	public boolean integrityTrainingComplete1, integrityTrainingComplete12, 
-		integrityTrainingComplete3, integrityTrainingComplete4, 
+	public boolean integrityTrainingComplete1 = false, integrityTrainingComplete12 = false, 
+		integrityTrainingComplete3 = false, integrityTrainingComplete4 = false, 
 		integrityTrainingComplete5 = false;	
 
 	public boolean contactUsePricipalInvestigator6 = false;
