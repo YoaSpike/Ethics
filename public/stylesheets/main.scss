@@ -14,15 +14,13 @@ $border-color-grey: #CCC;
 
 #footer>.container {
     margin-top: 15px;
-}
-
-#footer .container ul {
-    list-style: none;
-}
-
-#footer .container ul li {
-    display: inline;
-    padding-right: 10px;
+    ul {
+        list-style: none;
+        li {
+            display: inline;
+            padding-right: 10px;
+        }
+    }
 }
 
 /************ START Nav-siderbar ************/
@@ -64,11 +62,10 @@ $border-color-grey: #CCC;
     color : #999;
 }
 
-a.incomplete:link,
-a.incomplete:visited,
-a.incomplete:hover,
-a.incomplete:active {
-    color: #999;
+a.incomplete {
+    &:link, &:visited, &:hover, &:active {
+        color: #999;
+    }
 }
 
 a.incomplete:hover,
@@ -84,31 +81,34 @@ a.incomplete:active {
     font-weight: 600;
 }
 
-.main-q {
-    font-weight: 600;
-    font-size: 16px;
-    margin: 2em 0em 0em 0em;
+.main-q-wrapper {
+    main-q {
+        font-weight: 600;
+        font-size: 16px;
+        margin: 2em 0em 0em 0em;
+    }
 }
 
 .main-q-desc {
     margin: 0em 0em 1em 2em;
     padding: 0px 5px 0px 5px;
-    font-size: 13px;
-    color: #555;
-    border-style: double;
-    border-width: 3px;
-    border-color: #eee;
+    border: 3px double #EEE;
     border-top: none;
     border-bottom: none;
     border-right: none;
+    font-size: 13px;
+    font-style: italic;
+    color: #555;
 }
 
-.sub-q {
+.sub-q-wrapper {
     margin-left: 2em;
 }
 
 .option-label {
     font-weight: normal !important;
+    margin: 0 !important;
+    font-size: 14px;
 }
 
 .inline {

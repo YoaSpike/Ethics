@@ -4,160 +4,194 @@
 
 @base("Section " + sectionNum) {
 
-    <!-- START main content -->
-    <div class="row">
-        <div class="container">
+  <!-- START main content -->
+  <div class="row">
+    <div class="container">
 
-            <!-- START form -->
-            <div class="col-sm-9">
-                @b3.form(controllers.application.routes.Section2.post(applicationId)) {
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title">Section 2 - Themes in research ethics: Risk and benefits, consent</div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <label class="main-q" for="potentialHarm" id="q7">7. Potential harm or risk to participants</label>
-                                <div class="main-q-desc">
-                                    Outline the potential risks to participants. If potential risks are identified please explain how this research justifies the burden and risk to participants (NS 2.1).<br />
-                                    Consider illness or injury, potential side effects, but also include potential embarrassment, economic loss, exposure to prosecution, anything stressful, noxious or unpleasant, and complaints. Ensure you address these in your Participant Information Statement.<br />
-                                    Some examples of risks/expected adverse events (See Adverse Event Guidelines for more information) may include:<br />
-                                    <ul>
-                                        <li>For a drug-intervention clinical trial there will be side effects of the drug.</li>
-                                        <li>For psychological based studies risks may be psychological stress due to the assessment; there may be a potential for increased risk of suicidality or self-harm; there may be a potential for worsening of psychological disorder etc.</li>
-                                    </ul>
-                                </div>
-                                <textarea class="form-control compulsory" rows="10" name="potential_risk_or_harm" data-qid="q7"></textarea>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="main-q" for="riskMgmt" id="q8">8. Risk management strategy</label>
-                                <div class="main-q-desc">
-                                    Please outline how you will mitigate the risks identified above and your plan of action for expected adverse events and other identified risks. Please also outline your plan of action for unexpected adverse events. The Human Research Ethics Office will use this information and follow this procedure should an event or complaint occur. Please refer to Adverse Event Guidelines for more information.
-                                </div>
-                                <textarea class="form-control compulsory" rows="10" name="risk_management_strategy" id="riskMgmt" data-qid="q8"></textarea>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="main-q" id="q9">9. Will participants be given financial or non-financial incentives?</label>
-                                <div class="row" style="width:50%;">
-                                    <div class="col-sm-6" style="text-align:center;">
-                                        <label class="option-label"><input type="radio" name="given_incentives" value="true" class="compulsory"> Yes</label>
-                                    </div>
-                                    <div class="col-sm-6" style="text-align:center;">
-                                        <label class="option-label"><input type="radio" name="given_incentives" value="false" class="compulsory"> No</label>
-                                    </div>
-                                </div>
-                                <div class="main-q-desc">
-                                    Please provide details below. If a prize is used please indicate the prize and the chances of winning this prize in the space below and in the Participant Information Statement. Please refer to the Competitions Toolkit for further guidance on prizes. Details of the incentives should not be detailed on the recruitment material; however this information may be included in the Participants Information Statement.
-                                </div>
-                                <textarea class="form-control" rows="7" name="incentives_details" id="q9text" name="q9"></textarea>
-                            </div>
-
-                            <div class="form-group" id="q10">
-                                <label class="main-q">10. Please select how you are going to recruit participants (select all that apply) and in the space below describe your recruitment process.</label>
-                                <div class="main-q-desc">When you are describing your recruitment processes please indicate who is going to talk to the potential participants, how they contact the researcher or the researcher contacts them etc. If you are using telephone calls, flyers, social media, radio announcements etc., please provide a copy of the information and/or a transcript. If you are using any form of print media (e.g. flyers, newsletters, social media etc.) you need to put the ethics approval number and the Curtin logo on the document. Please refer to the Curtin Brand website for information on advertising.</div>
-                                <div class="row" style="margin-bottom:1em;">
-                                    <div class="col-xs-6 input-group-sm">
-                                        <input type="checkbox"> Database/medical records<br /><input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-xs-6 input-group-sm">
-                                        <input type="checkbox"> Snowball recruitment or word of mouth etc.<br /><input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row" style="margin-bottom:1em;">
-                                    <div class="col-xs-6 input-group-sm">
-                                        <input type="checkbox"> Social media including Facebook, Yammer, LinkedIn, Twitter etc.<br /><input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-xs-6 input-group-sm">
-                                        <input type="checkbox"> Print media including flyers, newspapers, newsletters etc.<br /><input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row" style="margin-bottom:1em;">
-                                    <div class="col-xs-6 input-group-sm">
-                                        <input type="checkbox"> Classroom or hospital or clinic or community groups etc.<br /><input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-xs-6 input-group-sm">
-                                        <input type="checkbox"> Radio/television<br /><input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row" style="margin-bottom:1em;">
-                                    <div class="col-xs-12 input-group-sm">
-                                        <input type="checkbox"> Other<br /><input type="text" class="form-control">
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="form-group">
-                                <label class="main-q" id="q11">11. Will participants provide consent?</label>
-                                <div class="main-q-desc">
-                                    Please provide a copy of the Participant Information Statement and Consent Forms. If you are recruiting children provide a Parent Information Statement and Consent Form, and a Child Information Statement and Assent Form if appropriate. If you are using secondary data and therefore consent is not required, select "no" and provide an explanation in the space below.
-                                </div>
-                                <div class="row" style="width:50%;">
-                                    <div class="col-sm-6" style="text-align:center;">
-                                        <label class="option-label"><input type="radio" name="q11yn" value="true"> Yes</label>
-                                    </div>
-                                    <div class="col-sm-6" style="text-align:center;">
-                                        <label class="option-label"><input type="radio" name="q11yn" value="false"> No</label>
-                                    </div>
-                                </div>
-                                <textarea class="form-control" rows="7" id="q11text" name="q11"></textarea>
-                            </div>
-
-
-                            <div class="form-group">
-                                <label class="main-q" id="q12">12. Does the research use deception, concealment, incomplete disclosure, limited disclosure, an opt- out approach, or use of information, samples, health information etc., without the specified consent from those persons? (NS 2.3)</label>
-                                <div class="row" style="width:50%;">
-                                    <div class="col-sm-6" style="text-align:center;">
-                                        <label class="option-label"><input type="radio" name="q12yn" value="true"> Yes</label>
-                                    </div>
-                                    <div class="col-sm-6" style="text-align:center;">
-                                        <label class="option-label"><input type="radio" name="q12yn" value="false"> No</label>
-                                    </div>
-                                </div>
-                                <div class="main-q-desc">
-                                    Please detail the methods below. Please describe how this method is essential to the research aims and how participants will be de-briefed after the study.
-                                </div>
-                                <textarea class="form-control" rows="7" id="q12text" name="q12"></textarea>
-                            </div>
-
-
-                            <hr />
-                            @partials.section_buttons(applicationId, sectionNum)
-
-                        </div>
-                    </div>
-                }
+      <!-- START form -->
+      <div class="col-sm-9">
+        @b3.form(controllers.application.routes.Section2.post(applicationId)) {
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title">Section 2 - Themes in research ethics: Risk and benefits, consent</div>
             </div>
-            <!-- END form -->
+            <div class="panel-body">
 
-            <!-- START Sidebar -->
-            @partials.sidebar(applicationId, sectionNum)
-            <!-- END Sidebar -->
+              <div class="form-group main-q-wrapper" id="q7">
+                <label class="main-q">7. Potential harm or risk to participants</label>
+                <div class="main-q-desc">
+                  Outline the potential risks to participants. If potential risks are identified please explain how this research justifies the burden and risk to participants (NS 2.1).<br />
+                  Consider illness or injury, potential side effects, but also include potential embarrassment, economic loss, exposure to prosecution, anything stressful, noxious or unpleasant, and complaints. Ensure you address these in your Participant Information Statement.<br />
+                  Some examples of risks/expected adverse events (See Adverse Event Guidelines for more information) may include:<br />
+                  <ul>
+                    <li>For a drug-intervention clinical trial there will be side effects of the drug.</li>
+                    <li>For psychological based studies risks may be psychological stress due to the assessment; there may be a potential for increased risk of suicidality or self-harm; there may be a potential for worsening of psychological disorder etc.</li>
+                  </ul>
+                </div>
+                <textarea class="form-control compulsory" rows="10" name="potential_risk_or_harm" data-qid="q7"></textarea>
+              </div>
 
-        </div>
+
+              <div class="form-group main-q-wrapper" id="q8">
+                <label class="main-q">8. Risk management strategy</label>
+                <div class="main-q-desc">
+                  Please outline how you will mitigate the risks identified above and your plan of action for expected adverse events and other identified risks. Please also outline your plan of action for unexpected adverse events. The Human Research Ethics Office will use this information and follow this procedure should an event or complaint occur. Please refer to Adverse Event Guidelines for more information.
+                </div>
+                <textarea class="form-control compulsory" rows="10" name="risk_management_strategy" data-qid="q8"></textarea>
+              </div>
+
+
+              <div class="form-group main-q-wrapper" id="q9">
+                <label class="main-q">9. Will participants be given financial or non-financial incentives?</label>
+                <div class="row" style="width:50%;">
+                  <div class="col-sm-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="given_incentives" value="false" onchange="toggleTA(this,false);"> No</label>
+                  </div>
+                  <div class="col-sm-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="given_incentives" value="true" onchange="toggleTA(this,true);"> Yes</label>
+                  </div>
+                </div>
+                <div class="ta-group init-hidden">
+                  <div class="main-q-desc">
+                    Please provide details below. If a prize is used please indicate the prize and the chances of winning this prize in the space below and in the Participant Information Statement. Please refer to the Competitions Toolkit for further guidance on prizes. Details of the incentives should not be detailed on the recruitment material; however this information may be included in the Participants Information Statement.
+                  </div>
+                  <textarea class="form-control" rows="7" name="incentives_details" name="q9"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group main-q-wrapper" id="q10">
+                <label class="main-q">10. Please select how you are going to recruit participants (select all that apply) and in the space below describe your recruitment process.</label>
+                  <div class="main-q-desc">When you are describing your recruitment processes please indicate who is going to talk to the potential participants, how they contact the researcher or the researcher contacts them etc. If you are using telephone calls, flyers, social media, radio announcements etc., please provide a copy of the information and/or a transcript. If you are using any form of print media (e.g. flyers, newsletters, social media etc.) you need to put the ethics approval number and the Curtin logo on the document. Please refer to the Curtin Brand website for information on advertising.</div>
+
+                <div class="row" style="margin-bottom:15px;">
+                  <div class="col-xs-6">
+                    <div class="sub-q-wrapper">
+                      <label class="sub-q"><input type="checkbox"> Database/medical records</label>
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="col-xs-6">
+                    <div class="sub-q-wrapper">
+                      <label class="sub-q"><input type="checkbox"> Snowball recruitment or word of mouth etc.</label>
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row" style="margin-bottom:15px;">
+                  <div class="col-xs-6">
+                    <div class="sub-q-wrapper">
+                      <label class="sub-q"><input type="checkbox"> Social media including Facebook, Yammer, LinkedIn, Twitter etc.</label>
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="sub-q-wrapper">
+                      <label class="sub-q"><input type="checkbox"> Print media including flyers, newspapers, newsletters etc.</label>
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row" style="margin-bottom:15px;">
+                  <div class="col-xs-6">
+                    <div class="sub-q-wrapper">
+                      <label class="sub-q"><input type="checkbox"> Classroom or hospital or clinic or community groups etc.</label>
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="sub-q-wrapper">
+                      <label class="sub-q"><input type="checkbox"> Radio/television</label>
+                      <input type="text" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="row" style="margin-bottom:15px;">
+                  <div class="col-xs-12">
+                    <div class="sub-q-wrapper">
+                     <label class="sub-q"><input type="checkbox"> Other</label>
+                     <input type="text" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="form-group main-q-wrapper" id="q11">
+                <label class="main-q">11. Will participants provide consent?</label>
+                  <div class="main-q-desc">Please provide a copy of the Participant Information Statement and Consent Forms. If you are recruiting children provide a Parent Information Statement and Consent Form, and a Child Information Statement and Assent Form if appropriate. If you are using secondary data and therefore consent is not required, select "no" and provide an explanation in the space below.</div>
+                <div class="row" style="width:50%;">
+                  <div class="col-sm-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q11yn" value="false" onchange="toggleTA(this,true);switchDesc(this,'desc-no');"> No</label>
+                  </div>
+                  <div class="col-sm-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q11yn" value="true" onchange="toggleTA(this,true);switchDesc(this,'desc-yes');"> Yes</label>
+                  </div>
+                </div>
+                <div class="ta-group init-hidden">
+                  <div class="main-q-desc init-hidden" name="desc-no">Please address section 2.3 of the National Statement below.</div>
+                  <div class="main-q-desc init-hidden" name="desc-yes">Please describe below how you will obtain consent.</div>
+                  <textarea class="form-control" rows="7" name="q11"></textarea>
+                </div>
+              </div>
+
+
+              <div class="form-group main-q-wrapper" id="q12">
+                <label class="main-q">12. Does the research use deception, concealment, incomplete disclosure, limited disclosure, an opt- out approach, or use of information, samples, health information etc., without the specified consent from those persons? (NS 2.3)</label>
+                <div class="row" style="width:50%;">
+                  <div class="col-sm-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q12yn" value="false" onchange="toggleTA(this,false);"> No</label>
+                  </div>
+                  <div class="col-sm-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q12yn" value="true" onchange="toggleTA(this,true);"> Yes</label>
+                  </div>
+                </div>
+                <div class="ta-group init-hidden">
+                  <div class="main-q-desc">
+                    Please detail the methods below. Please describe how this method is essential to the research aims and how participants will be de-briefed after the study.
+                  </div>
+                  <textarea class="form-control" rows="7" name="q12"></textarea>
+                </div>
+              </div>
+
+
+              <hr />
+              @partials.section_buttons(applicationId, sectionNum)
+
+            </div>
+          </div>
+        }
+      </div>
+      <!-- END form -->
+
+      <!-- START Sidebar -->
+      @partials.sidebar(applicationId, sectionNum)
+      <!-- END Sidebar -->
+
     </div>
-    <!-- END main content -->
+  </div>
+  <!-- END main content -->
 
 } {
 
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $("#financialYes").hide();
-        $("#q9").siblings(".main-q-desc").hide();
+  <script type="text/javascript">
+  $(document).ready(function() {
+    $("#financialYes").hide();
+    $("#q9").siblings(".main-q-desc").hide();
 
-        $("[name=financial]").change(function() {
-            if ($(this).val() == "true") {
-                $("#q9").siblings(".main-q-desc").show();
-                $("#financialYes").show();
-                $("#financialYes").addClass("compulsory");
-            } else {
-                $("#q9").siblings(".main-q-desc").hide();
-                $("#financialYes").hide();
-            }
-        });
+    $("[name=financial]").change(function() {
+      if ($(this).val() == "true") {
+        $("#q9").siblings(".main-q-desc").show();
+        $("#financialYes").show();
+        $("#financialYes").addClass("compulsory");
+      } else {
+        $("#q9").siblings(".main-q-desc").hide();
+        $("#financialYes").hide();
+      }
     });
-    </script>
+  });
+  </script>
 
 }

@@ -1,4 +1,12 @@
+$(".init-hidden").each(function() {
+    var qid = $(this).attr("id");
+    $(this).hide();
+    $("#"+qid+"Link").css("text-decoration", "line-through");
+});
+
+
 $(document).ready(function() {
+
     $(".compulsory").focusout(function() {
         // Each input contains attribute: data-qid="#"
         var qid = $(this).data("qid");
@@ -22,3 +30,37 @@ $(document).ready(function() {
         }
     });
 });
+
+/**
+ * Function that only called be main questions to unhide child questions.
+ * This will show() the child question with class ".init-hidden", as well as adding text-decoration
+ * to the representing question links on the sidebar. (decided by toShow)
+ * 
+ * @param  {[type]} e      Element that calls the function. (should be a radio button of main-q)
+ * @param  {[type]} toShow Boolean value indicates to show child questions or not.
+ * @return {[type]}        None
+ */
+function toggleSub(e, toShow) {
+
+    $(e).closest('.main-q-wrapper').children(".sub-q-wrapper").each(function() {
+        var qid = $(this).attr("id");
+
+        $(this).toggle(toShow);
+        if (toShow) {
+            $("#"+qid+"Link").css("text-decoration", "none");
+        } else {
+            $("#"+qid+"Link").css("text-decoration", "line-through");
+        }
+    });
+}
+
+function toggleTA(e, toShow) {
+    console.log("Toggling " + $(e).closest(".form-group").attr("id"));
+    $(e).closest(".form-group").children(".ta-group").toggle(toShow);
+}
+
+function switchDesc(e, yn) {
+var tagroup = $(e).closest(".form-group").children(".ta-group");
+tagroup.children(".main-q-desc").hide();
+tagroup.children("[name="+yn+"]").show();
+}
