@@ -4,56 +4,58 @@
 
 @base("Section " + sectionNum) {
 
-    <!-- START main content -->
-    <div class="row">
-        <div class="container">
+  <!-- START main content -->
+  <div class="row">
+    <div class="container">
 
-            <!-- START form -->
-            <div class="col-sm-9">
-                @b3.form(controllers.application.routes.Section5.post(applicationId)) {
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title">Section 5 - Processes of research governmance and ethical review</div>
-                        </div>
-                        <div class="panel-body">
-
-                            <div class="form-group">
-                                <label class="main-q" id="q23">23. Are there any potential conflicts of interest?</label>
-                                <div class="row" style="width:50%;">
-                                    <div class="col-xs-6" style="text-align:center;">
-                                        <label class="option-label"><input type="radio" name="q23" value="yes"> Yes</label>
-                                    </div>
-                                    <div class="col-xs-6" style="text-align:center;">
-                                        <label class="option-label"><input type="radio" name="q23" value="no"> No</label>
-                                    </div>
-                                </div>
-                                <div class="main-q-desc">Please describe in the space below.</div>
-                                <textarea class="form-control" rows="20" name="q23text"></textarea>
-                            </div>
-
-                            <hr />
-                            @partials.section_buttons(applicationId, sectionNum)
-
-                        </div> <!-- END main panel body -->
-                    </div>
-                }
+      <!-- START form -->
+      <div class="col-sm-9">
+        @b3.form(controllers.application.routes.Section5.post(applicationId)) {
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <div class="panel-title">Section 5 - Processes of research governmance and ethical review</div>
             </div>
-            <!-- END form panel -->
+            <div class="panel-body">
 
-            <!-- START Sidebar -->
-            @partials.sidebar(applicationId, sectionNum)
-            <!-- END Sidebar -->
+              <div class="form-group main-q-wrapper" id="q23">
+                <label class="main-q">23. Are there any potential conflicts of interest?</label>
+                <div class="row" style="width:50%;">
+                  <div class="col-xs-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q23" value="no" onchange="toggleTA(this,false);"> No</label>
+                  </div>
+                  <div class="col-xs-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q23" value="yes" onchange="toggleTA(this,true);"> Yes</label>
+                  </div>
+                </div>
+                <div class="ta-group init-hidden">
+                  <div class="main-q-desc">Please describe in the space below.</div>
+                  <textarea class="form-control" rows="20" name="q23text"></textarea>
+                </div>
+              </div>
 
-        </div>
+              <hr />
+              @partials.section_buttons(applicationId, sectionNum)
+
+            </div> <!-- END main panel body -->
+          </div>
+        }
+      </div>
+      <!-- END form panel -->
+
+      <!-- START Sidebar -->
+      @partials.sidebar(applicationId, sectionNum)
+      <!-- END Sidebar -->
+
     </div>
-    <!-- END main content -->
+  </div>
+  <!-- END main content -->
 
 } {
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // document ready function here.
-        });
-    </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // document ready function here.
+    });
+  </script>
 
 }
