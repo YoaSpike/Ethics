@@ -9,14 +9,11 @@ import play.db.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
 
+import business.application.Role;
+
 @Entity
 @Table(name="Section1")
 public class Section1Model extends Model{
-
-	public enum Role{
-		CI, supervisor, student
-	}
-
 	public Section1Model(){
 		super();
 	}

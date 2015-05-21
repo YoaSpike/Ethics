@@ -5,18 +5,6 @@ import java.util.List;
 import javax.validation.*;
 import play.data.validation.Constraints.*;
 
-enum ProjectType {
-    STAFF_PROJECT,
-    UNDERGRADUATE,
-    HONOURS,
-    MASTERS_BY_COURSEWORK,
-    MASTERS_BY_RESEARCH,
-    PHD,
-    OTHER;
-};
-enum Role {CI, SUPERVISOR, STUDENT;};
-
-
 public class Section1Form {
     @Valid
     public String project_title;
