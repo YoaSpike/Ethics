@@ -15,10 +15,10 @@ import models.*;
 
 public class Forms extends Controller {
     public static Result index() {
-        List<EthicsFormModel> things = (
-            EthicsFormModel.find
+        List<ApplicationModel> things = (
+            ApplicationModel.find
             .where()
-                .eq("owner", controllers.Accounts.getCurrentUser())
+                .eq("userModel", controllers.Accounts.getCurrentUser())
             .query()
             .findList()
         );
@@ -28,10 +28,10 @@ public class Forms extends Controller {
 
     @Security.Authenticated(business.Secured.class)
     public static Result viewall() {
-        List<EthicsFormModel> forms = (
-            EthicsFormModel.find
+        List<ApplicationModel> forms = (
+            ApplicationModel.find
             .where()
-                .eq("owner", controllers.Accounts.getCurrentUser())
+                .eq("userModel", controllers.Accounts.getCurrentUser())
             .query()
             .findList()
         );

@@ -11,6 +11,7 @@ import business.EthicsFormState;
 
 
 @Entity
+@Table(name="EthicsTriageModel")
 public class EthicsTriageModel extends Model {
     public static final long serialVersionUID = 0;
 

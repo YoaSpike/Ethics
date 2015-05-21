@@ -49,4 +49,8 @@ public class ApplicationModel extends Model{
         );
 	}
 	
+	public static Finder<Integer,ApplicationModel> find = new Finder<Integer,ApplicationModel>(
+        Integer.class, ApplicationModel.class
+    );
+
 };

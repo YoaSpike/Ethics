@@ -1,8 +1,8 @@
-@(forms: List[models.EthicsFormModel])
+@(forms: List[models.ApplicationModel])
 
 @base("Your submitted forms") {
     @for(form <- forms) {
-        @form.owner - @form.state - @form.ethicsTriage
+        @form.userModel - @form.section1 - @form.section2
         <br/>
     }
 } {
