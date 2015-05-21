@@ -22,16 +22,19 @@ import models.*;
 
 
 public class EthicsApplication extends Controller {
+    @Security.Authenticated(business.Secured.class)
     public static Result application_summary(Long id) {
         return ok("Summararily");
     }
 
     private static final Form<NewApplicationForm> newApplicationForm = form(NewApplicationForm.class);
 
+    @Security.Authenticated(business.Secured.class)
     public static Result new_get() {
         return ok(views.html.application.new_application.render(newApplicationForm));
     }
 
+    @Security.Authenticated(business.Secured.class)
     public static Result new_post() {
 
         Form<NewApplicationForm> filledForm = newApplicationForm.bindFromRequest();
