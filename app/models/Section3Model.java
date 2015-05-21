@@ -12,7 +12,7 @@ import play.data.validation.*;
 @Entity
 @Table(name="Section3")
 public class Section3Model extends Model{
-	
+
 	public Section3Model(){
 		super();
 	}
@@ -20,7 +20,7 @@ public class Section3Model extends Model{
 	public Section3Model(int id){
 		super();
 		this.id = id;
-	} 
+	}
 
 	@Id
 	@Valid
@@ -47,11 +47,11 @@ public class Section3Model extends Model{
 	public String facilitiesExpertiseSufficient13cText = null;
 
 	public boolean doesYourStatementMakeClear13d = false;
-	
+
 	@Constraints.Required
 	public boolean doesYourResearchUseHealthInformation14 = false;
 	public String doesYourResearchUseHealthInformationText14 = null;
-	
+
 	@Constraints.Required
 	public boolean doesYourResearchInvolveHumanGenetics15 = false;
 	public String doesYourResearchInvolveHumanGeneticsText15 = null;

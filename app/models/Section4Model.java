@@ -29,7 +29,7 @@ public class Section4Model extends Model{
 	@OneToOne(optional=false, cascade=CascadeType.ALL,
 		 mappedBy="section4", targetEntity=ApplicationModel.class)
 	public ApplicationModel applicationModel;
-	
+
 	public static Finder<Integer,Section4Model> find = new Finder<Integer,Section4Model>(
         Integer.class, Section4Model.class
     );
@@ -43,7 +43,7 @@ public class Section4Model extends Model{
 
 	public boolean informationAboutResearchBeSeparate16b = false;
 	public String informationAboutResearchBeSeparate16bText = null;
-	
+
 	@Constraints.Required
 	public boolean researchInvolveChildren17 = false;
 	public String researchInvolveChildren17Text = null;
@@ -72,7 +72,7 @@ public class Section4Model extends Model{
 	public String researchInvolveAboriginal22Text = null;
 
 	public String estimatedProportionOfAboriginal22a = null;
-	
+
 	public boolean aboriginalStatusOfParticipant22b = false;
 	public String aboriginalStatusOfParticipant22bText = null;
 }

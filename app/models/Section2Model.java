@@ -20,7 +20,7 @@ public class Section2Model extends Model{
 	public Section2Model(int id){
 		super();
 		this.id = id;
-	} 
+	}
 
 	@Id
 	@Valid
@@ -36,10 +36,10 @@ public class Section2Model extends Model{
 
     @Constraints.Required
     public String potentialHarmOrRisk7Text = null;
-   	
+
    	@Constraints.Required
     public String riskManagementStrategy = null;
-    
+
     @Constraints.Required
     public boolean willParticipantsBeGiveFinancial9 = false;
     public String willParticipantsBeGiveFinancial9Text = null;
@@ -68,7 +68,7 @@ public class Section2Model extends Model{
     @Constraints.Required
     public boolean willParticipantsProvideConsent11 = false;
     public String willParticipantsProvideConsent11Text = null;
-   
+
     @Constraints.Required
     public boolean doesTheResearchUseDeception12 = false;
     public String doesTheResearchUseDeception12Text = null;

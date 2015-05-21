@@ -21,7 +21,7 @@ public class Section1Model extends Model{
 	public Section1Model(int id){
 		super();
 		this.id = id;
-	} 
+	}
 
 	@Id
 	@Valid
@@ -44,18 +44,18 @@ public class Section1Model extends Model{
 	public String school1 = null, school2 = null, school3 = null,
 		 school4 = null, school5 = null;
 
-	public int staffStudentID1 = 0, staffStudentID2 = 0, staffStudentID3 = 0, 
+	public int staffStudentID1 = 0, staffStudentID2 = 0, staffStudentID3 = 0,
 		staffStudentID4 = 0, staffStudentID5 = 0;
 
-	public Role role1 = null, role2 = null, role3 = null, 
+	public Role role1 = null, role2 = null, role3 = null,
 		role4 = null, role5 = null;
-	
-	public boolean candidacy1 = false, candidacy2 = false, candidacy3 = false, 
+
+	public boolean candidacy1 = false, candidacy2 = false, candidacy3 = false,
 		candidacy4 = false, candidacy5 = false;
 
-	public boolean integrityTrainingComplete1 = false, integrityTrainingComplete12 = false, 
-		integrityTrainingComplete3 = false, integrityTrainingComplete4 = false, 
-		integrityTrainingComplete5 = false;	
+	public boolean integrityTrainingComplete1 = false, integrityTrainingComplete12 = false,
+		integrityTrainingComplete3 = false, integrityTrainingComplete4 = false,
+		integrityTrainingComplete5 = false;
 
 	public boolean contactUsePricipalInvestigator6 = false;
 
