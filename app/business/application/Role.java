@@ -1,3 +1,3 @@
 package business.application;
 
-enum Role {CI, SUPERVISOR, STUDENT;};
+public enum Role {CI, SUPERVISOR, STUDENT;};
