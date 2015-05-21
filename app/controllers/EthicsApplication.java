@@ -17,6 +17,7 @@ import static play.data.Form.*;
 import views.html.*;
 import views.html.forms.*;
 import views.formdata.*;
+import views.formdata.application.*;
 import models.*;
 
 
@@ -25,10 +26,23 @@ public class EthicsApplication extends Controller {
         return ok("Summararily");
     }
 
+    private static final Form<NewApplicationForm> newApplicationForm = form(NewApplicationForm.class);
+
     public static Result new_get() {
+        return ok(views.html.application.new_application.render(newApplicationForm));
+    }
+
+    public static Result new_post() {
+
+        Form<NewApplicationForm> filledForm = newApplicationForm.bindFromRequest();
+        if(filledForm.hasErrors()) {
+            return ok(views.html.application.new_application.render(filledForm));
+        }
+
     	UserModel user = controllers.Accounts.getCurrentUser();
 
     	ApplicationModel app = new ApplicationModel();
+        app.name = filledForm.get().name;
     	app.userModel = user;
 
     	// app.section0 = new Section0Model();

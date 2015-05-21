@@ -25,7 +25,10 @@ public class ApplicationModel extends Model{
 	@Id
 	@Valid
 	public int id;
-	
+
+	@Valid
+	public String name;
+
 	@ManyToOne(optional=false, cascade=CascadeType.ALL)
 	public UserModel userModel;
 	
