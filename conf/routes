@@ -8,7 +8,7 @@ GET     /                           controllers.Application.index()
 GET     /pdftest                    controllers.PDF.pdftest()
 GET     /emailtest                  controllers.Application.emailtest()
 
-#GET 	/application/new					
+GET 	/application/new					controllers.EthicsApplication.new_get()
 
 GET     /application/$id<[0-9]+>/           controllers.EthicsApplication.application_summary(id: Long)
 GET     /application/$id<[0-9]+>/section0   controllers.application.Section0.get(id: Long)
