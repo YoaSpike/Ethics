@@ -29,7 +29,7 @@
 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><div class="btn btn-success btn-xs">+ New application</div></a></li>
+                    <li><a href="@routes.EthicsApplication.new_get()"><div class="btn btn-success btn-xs">+ New application</div></a></li>
 
                     @if(controllers.Accounts.isLoggedIn()) {
                       <li><a href="@routes.Forms.viewall()">@controllers.Accounts.getEmail</a></li>
