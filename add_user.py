@@ -1,9 +1,13 @@
 import requests
 
+q = input('Online? [Y/N] ')
+BASE = (
+    'http://localhost:9000' if q.lower() in {'n', 'nay', 'no'}
+    else 'https://yoaspike.herokuapp.com'
+)
+
 r = requests.post(
-    # 'http://localhost:9000'
-    'https://yoaspike.herokuapp.com'
-    '/accounts/add_user',
+    BASE + '/accounts/add_user',
     data={
         'email': input('email: '),
         'password': input('password: ')
