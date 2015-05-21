@@ -5,6 +5,10 @@ import java.util.List;
 import javax.validation.*;
 import play.data.validation.Constraints.*;
 
+import business.application.Role;
+import business.application.ProjectType;
+
+
 public class Section1Form {
     @Valid
     public String project_title;
