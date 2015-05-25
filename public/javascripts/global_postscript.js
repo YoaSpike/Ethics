@@ -39,12 +39,8 @@ $(document).ready(function() {
     });
 });
 
-function showMenu() {
-    $("#menu > .panel-body").slideToggle(200);
-}
-
-function showSidebar() {
-    $("#sidebar > .panel-body").slideToggle(200);
+function showBody(e) {
+    $(e).siblings(".panel-body").slideToggle(200);
 }
 
 /**
