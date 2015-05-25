@@ -1,30 +1,50 @@
 @(applicationId: Long, section_num: Integer)
 
 @section(section_num: Integer, section_name: String, active: Boolean = false) = {
-    <div class="sidebar-main @if(active) {sidebar-main-active}"><a href="@controllers.Application.get_section_link(applicationId, section_num)">
-        <div class="sidebar-section">Section @section_num</div><div class="sidebar-sectname">@section_name</div>
-        <div class="sidebar-sectq">
-            @defining(business.Sections.get_questions(section_name)) { questions =>
-                @for(question <- questions) {
-                    <a href="@controllers.Application.get_section_link(applicationId, section_num)#q@question._1" id="q@(question._1)Link" class="incomplete">@question._1</a>@if(question != questions.last) {, }
-                }
-            }
-        </div>
-    </a></div>
+  <div class="sidebar-main @if(active) {sidebar-main-active}">
+    <a href="@controllers.Application.get_section_link(applicationId, section_num)" class="sidebar-main-link">
+      <div class="sidebar-sectnum">Section @section_num</div>
+      <div class="sidebar-sectname">@section_name</div>
+      <div class="sidebar-sectq">
+        @defining(business.Sections.get_questions(section_name)) { questions =>
+          @for(question <- questions) {
+            <a href="@controllers.Application.get_section_link(applicationId, section_num)#q@question._1" id="q@(question._1)Link" class="incomplete">@question._1</a>@if(question != questions.last) {, }
+          }
+        }
+      </div>
+    </a>
+  </div>
 }
 
 <!-- START Sidebar -->
-<div class="col-sm-2">
-    <div class="panel panel-default" id="sidebar">
-        <div class="panel-heading">
-            <div class="panel-title">Navigation</div>
-        </div>
-        <div class="sidebar-main"><a href="@controllers.Application.get_section_link(applicationId, 0)">
-            <div class="sidebar-section">Ethics Triage</div>
-        </a></div>
-        @for(a_section <- business.Sections.get_sections_with_numbers()) {
-            @section(a_section._1, a_section._2, a_section._1 == section_num)
-        }
+
+<div class="col-sm-3">
+
+  <div class="panel panel-info" id="menu">
+    <div class="panel-heading" onclick="showMenu();">
+      <div class="panel-title">Menu</div>
     </div>
+    <div class="panel-body">
+      <button class="btn btn-info">Save</button>
+    </div>
+  </div>
+
+  <div class="panel panel-info" id="sidebar">
+    <div class="panel-heading" onclick="showSidebar();">
+      <div class="panel-title">
+        Navigation
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="sidebar-main">
+        <a href="@controllers.Application.get_section_link(applicationId, 0)" class="sidebar-main-link">
+          <div class="sidebar-sectnum">Ethics Triage</div>
+        </a>
+      </div>
+      @for(a_section <- business.Sections.get_sections_with_numbers()) {
+        @section(a_section._1, a_section._2, a_section._1 == section_num)
+      }
+    </div>
+  </div>
 </div>
 <!-- END Sidebar -->

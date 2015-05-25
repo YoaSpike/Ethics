@@ -3,10 +3,15 @@
 @if(current != 0) {
     <a
         href="@controllers.Application.get_section_link(applicationId, current - 1)"
-        class="btn btn-info pull-left">&#60; Previous section</a>
+        class="btn btn-primary pull-left">&#60; Previous section</a>
 }
 @if(current != 7) {
     <a
         href="@controllers.Application.get_section_link(applicationId, current + 1)"
-        class="btn btn-info pull-right">Next section &#62;</a>
+        class="btn btn-primary pull-right">Next section &#62;</a>
+}
+@if(current == 7) {
+    <a
+        href="#"
+        class="btn btn-success pull-right">Submit &#62;</a>
 }

@@ -29,7 +29,7 @@
 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><div class="btn btn-success btn-xs">+ New application</div></a></li>
+                    <li><a href="#"><div class="btn btn-primary btn-xs">+ New application</div></a></li>
 
                     @if(controllers.Accounts.isLoggedIn()) {
                       <li><a href="@routes.Forms.viewall()">@controllers.Accounts.getEmail</a></li>
@@ -48,13 +48,14 @@
     <!-- END main content -->
 
     <!-- START footer -->
-    <div class="navbar navbar-default" id="footer">
+    <div id="footer">
         <div class="container">
-            <ul>
-                <li>Curtin University</li>
-                <li>Human Ethics Office</li>
-                <li>Help</li>
-                <li>About</li>
+            <ul id="sitemap">
+                <li><a href="http://www.curtin.edu.au/">Curtin University</a></li>
+                <li><a href="http://research.curtin.edu.au/research-integrity-ethics/human-research-ethics/">Human Ethics Office</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="/">Home</a></li>
             </ul>
         </div>
     </div>

@@ -5,212 +5,210 @@
 @base("Section " + sectionNum) {
 
   <!-- START main content -->
-  <div class="row">
-    <div class="container">
+  <div class="container">
 
-      <!-- START form -->
-      <div class="col-sm-9">
-        @b3.form(controllers.application.routes.Section4.post(applicationId)) {
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <div class="panel-title">Section 4 - Ethical considerations specific to participants</div>
-            </div>
-            <div class="panel-body">
-
-              <div class="form-group main-q-wrapper" id="q16">
-                <label class="main-q">16. Does your research involve women who are pregnant and/or the human fetus?</label>
-                <div class="row" style="width:50%;">
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q16" value="no" onchange="toggleSub(this,false);"> No</label>
-                  </div>
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q16" value="yes" onchange="toggleSub(this,true);"> Yes</label>
-                  </div>
-                </div>
-
-                <div class="form-group sub-q-wrapper init-hidden" id="q16a">
-                  <label class="sub-q">16a. Will steps be taken to ensure that the well-being and care of the woman who is pregnant and her fetus takes precedence over the aims of the research?</label>
-                  <div class="row" style="width:50%;">
-                    <div class="col-xs-6" style="text-align:center;">
-                      <label class="option-label"><input type="radio" name="q16a" value="no" onchange="toggleTA(this,true);switchDesc(this,'desc-no');"> No</label>
-                    </div>
-                    <div class="col-xs-6" style="text-align:center;">
-                      <label class="option-label"><input type="radio" name="q16a" value="yes" onchange="toggleTA(this,true);switchDesc(this,'desc-yes');"> Yes</label>
-                    </div>
-                  </div>
-                  <div class="ta-group init-hidden">
-                    <div class="main-q-desc init-hidden" name="desc-no">Please justify why below.</div>
-                    <div class="main-q-desc init-hidden" name="desc-yes">Please outline the procedures below.</div>
-                    <textarea class="form-control" rows="5" name="q16atext"></textarea>
-                  </div>
-                </div>
-
-                <div class="form-group sub-q-wrapper init-hidden" id="q16b">
-                  <label class="sub-q">16b. Will the information about research be separate from information about routine clinical care?</label>
-                  <div class="row" style="width:50%;">
-                    <div class="col-xs-6" style="text-align:center;">
-                      <label class="option-label"><input type="radio" name="q16b" value="no" onchange="toggleTA(this,true);"> No</label>
-                    </div>
-                    <div class="col-xs-6" style="text-align:center;">
-                      <label class="option-label"><input type="radio" name="q16b" value="yes" onchange="toggleTA(this,false);"> Yes</label>
-                    </div>
-                  </div>
-                  <div class="ta-group init-hidden">
-                    <div class="main-q-desc">Please justify why the information will not be provided separately to the paricipant below.</div>
-                    <textarea class="form-control" rows="5" name="q16btext"></textarea>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group main-q-wrapper" id="q17">
-                <label class="main-q">17. Does your research involve children and young people?</label>
-                <div class="row" style="width:50%;">
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q17" value="no" onchange="toggleSub(this,false);toggleTA(this,false);"> No</label>
-                  </div>
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q17" value="yes" onchange="toggleSub(this,true);toggleTA(this,true);"> Yes</label>
-                  </div>
-                </div>
-                <div class="ta-group init-hidden">
-                  <div class="main-q-desc">Address why participation of children or young people is indispensible to this research; and how this study has been designed to be appropriate for children or young people.</div>
-                  <textarea class="form-control" rows="5" name="q17text"></textarea>
-                </div>
-
-                <div class="form-group sub-q-wrapper init-hidden" id="q17a">
-                  <label class="sub-q">17a. Do you have a Working With Children's (WWC) card?</label>
-                  <div class="row" style="width:50%;">
-                    <div class="col-xs-6" style="text-align:center;">
-                      <label class="option-label"><input type="radio" name="q17a" value="no" onchange="toggleTA(this,true);switchDesc(this,'desc-no');"> No</label>
-                    </div>
-                    <div class="col-xs-6" style="text-align:center;">
-                      <label class="option-label"><input type="radio" name="q17a" value="yes" onchange="toggleTA(this,true);switchDesc(this,'desc-yes');"> Yes</label>
-                    </div>
-                  </div>
-                  <div class="ta-group init-hidden">
-                    <div class="main-q-desc init-hidden" name="desc-no">It is a legal requirement to have a WWC's card. Please arrange to submit your WWC application and provide a receipt or a have a card BEFORE you submit this ethics application. Ethics approval will not be given without a WWC.</div>
-                    <div class="main-q-desc init-hidden" name="desc-yes">Please attach a copy to your application.</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="form-group main-q-wrapper" id="q18">
-                <label class="main-q">18. Does your research involve people in dependent or unequal relationships?</label>
-                  <div class="main-q-desc">For example: teachers and their students, health care professionals and their patients, employers and their employees.</div>
-                <div class="row" style="width:50%;">
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q18" value="no" onchange="toggleTA(this,false);"> No</label>
-                  </div>
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q18" value="yes" onchange="toggleTA(this,true);"> Yes</label>
-                  </div>
-                </div>
-                <div class="ta-group init-hidden">
-                  <div class="main-q-desc">Describe the dependent relationship between the participants and the researcher, members of the research team and/or any person involved in the recruitment/consent process; how will the process of obtaining consent enable persons in dependent relationships to give voluntary consent; if a participant choose to withdraw from the research, how will the ongoing dependent relationship with the participant be maintained?</div>
-                  <textarea class="form-control" rows="5" name="q18text"></textarea>
-                </div>
-              </div>
-
-              <div class="form-group main-q-wrapper" id="q19">
-                <label class="main-q">19. Does your research involve people highly dependent on medical care who may be unable to give consent?</label>
-                  <div class="main-q-desc">For example: patients in the emergency department or intensive care, unconscious people, terminal care.</div>
-                <div class="row" style="width:50%;">
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q19" value="no" onchange="toggleTA(this,false);"> No</label>
-                  </div>
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q19" value="yes" onchange="toggleTA(this,true);"> Yes</label>
-                  </div>
-                </div>
-                <div class="ta-group init-hidden">
-                  <div class="main-q-desc">In the space below describe the recruitment/consent process; and how participation in research is in the best interest of the participant?</div>
-                  <textarea class="form-control" rows="5" name="q19text"></textarea>
-                </div>
-              </div>
-
-              <div class="form-group main-q-wrapper" id="q20">
-                <label class="main-q">20. Does your research involve people with a cognitive impairment, an intellectual disability, or a mental illness?</label>
-                <div class="row" style="width:50%;">
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q20" value="no" onchange="toggleTA(this,false);"> No</label>
-                  </div>
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q20" value="yes" onchange="toggleTA(this,true);"> Yes</label>
-                  </div>
-                </div>
-                <div class="ta-group init-hidden">
-                  <div class="main-q-desc">Describe the nature of the intellectual or mental impairment e.g. permanent, temporary or fluctuating; describe how the consent process will take into account the nature of the impairment.</div>
-                  <textarea class="form-control" rows="5" name="q19text"></textarea>
-                </div>
-              </div>
-
-              <div class="form-group main-q-wrapper" id="q21">
-                <label class="main-q">21. Does your research involve people who may be involved in illegal activities?</label>
-                <div class="row" style="width:50%;">
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q21" value="yes"> Yes</label>
-                  </div>
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q21" value="no"> No</label>
-                  </div>
-                </div>
-                <div class="ta-group init-hidden">
-                  <div class="main-q-desc">Please justify how the risk of discovery of illegal activities is justified by the benefits of the reseach.</div>
-                  <textarea class="form-control" rows="5" name="q19text"></textarea>
-                </div>
-              </div>
-
-              <div class="form-group main-q-wrapper" id="q22">
-                <label class="main-q">22. Does your research involve Aboriginal and Torres Strait Islanders?</label>
-                  <div class="main-q-desc">Note: If your research will incidentally involve Aboriginal and Torres Strait Islanders because your study is on the general population you do not need to fill in this section. Complete this section if you are specifically targeting recruitment of Aboriginal and Torres Strait Islanders, or there is a potential for a high number of Aboriginal and Torres Strait Islanders to be recruited.</div>
-                <div class="row" style="width:50%;">
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q22" value="no" onchange="toggleSub(this,false);"> No</label>
-                  </div>
-                  <div class="col-xs-6" style="text-align:center;">
-                    <label class="option-label"><input type="radio" name="q22" value="yes" onchange="toggleSub(this,true);"> Yes</label>
-                  </div>
-                </div>
-
-                <div class="form-group sub-q-wrapper init-hidden" id="q22a">
-                  <label class="sub-q">22a. What is the estimated proportion of Aboriginal and Torres Strait Islanders in the population from which the participants will be recruited?</label>
-                  <div class="ta-group">
-                    <textarea class="form-control" rows="5" name="q22atext"></textarea>
-                  </div>
-                </div>
-
-                <div class="form-group sub-q-wrapper init-hidden" id="q22b">
-                  <label class="sub-q">22b. Will Aboriginal and Torres Islander status of participants be recorded?</label>
-                  <div class="row" style="width:50%;">
-                    <div class="col-xs-6" style="text-align:center;">
-                      <label class="option-label"><input type="radio" name="q22b" value="no" onchange="toggleTA(this,true);"> No</label>
-                    </div>
-                    <div class="col-xs-6" style="text-align:center;">
-                      <label class="option-label"><input type="radio" name="q22b" value="yes" onchange="toggleTA(this,true);"> Yes</label>
-                    </div>
-                  </div>
-                  <div class="ta-group init-hidden">
-                    <div class="main-q-desc">Please justify below.</div>
-                    <textarea class="form-control" rows="5" name="q22btext"></textarea>
-                  </div>
-                </div>
-              </div>
-
-
-              <hr />
-              @partials.section_buttons(applicationId, sectionNum)
-
-            </div> <!-- END main panel body -->
+    <!-- START form -->
+    <div class="col-sm-9">
+      @b3.form(controllers.application.routes.Section4.post(applicationId)) {
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="panel-title">Section 4 - Ethical considerations specific to participants</div>
           </div>
-        }
-      </div>
-      <!-- END form panel -->
+          <div class="panel-body">
 
-      <!-- START Sidebar -->
-      @partials.sidebar(applicationId, sectionNum)
-      <!-- END Sidebar -->
+            <div class="form-group main-q-wrapper" id="q16">
+              <label class="main-q">16. Does your research involve women who are pregnant and/or the human fetus?</label>
+              <div class="row" style="width:50%;">
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q16" value="no" onchange="toggleSub(this,false);"> No</label>
+                </div>
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q16" value="yes" onchange="toggleSub(this,true);"> Yes</label>
+                </div>
+              </div>
 
+              <div class="form-group sub-q-wrapper init-hidden" id="q16a">
+                <label class="sub-q">16a. Will steps be taken to ensure that the well-being and care of the woman who is pregnant and her fetus takes precedence over the aims of the research?</label>
+                <div class="row" style="width:50%;">
+                  <div class="col-xs-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q16a" value="no" onchange="toggleTA(this,true);switchDesc(this,'desc-no');"> No</label>
+                  </div>
+                  <div class="col-xs-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q16a" value="yes" onchange="toggleTA(this,true);switchDesc(this,'desc-yes');"> Yes</label>
+                  </div>
+                </div>
+                <div class="ta-group init-hidden">
+                  <div class="main-q-desc init-hidden" name="desc-no">Please justify why below.</div>
+                  <div class="main-q-desc init-hidden" name="desc-yes">Please outline the procedures below.</div>
+                  <textarea class="form-control" rows="5" name="q16atext"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group sub-q-wrapper init-hidden" id="q16b">
+                <label class="sub-q">16b. Will the information about research be separate from information about routine clinical care?</label>
+                <div class="row" style="width:50%;">
+                  <div class="col-xs-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q16b" value="no" onchange="toggleTA(this,true);"> No</label>
+                  </div>
+                  <div class="col-xs-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q16b" value="yes" onchange="toggleTA(this,false);"> Yes</label>
+                  </div>
+                </div>
+                <div class="ta-group init-hidden">
+                  <div class="main-q-desc">Please justify why the information will not be provided separately to the paricipant below.</div>
+                  <textarea class="form-control" rows="5" name="q16btext"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group main-q-wrapper" id="q17">
+              <label class="main-q">17. Does your research involve children and young people?</label>
+              <div class="row" style="width:50%;">
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q17" value="no" onchange="toggleSub(this,false);toggleTA(this,false);"> No</label>
+                </div>
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q17" value="yes" onchange="toggleSub(this,true);toggleTA(this,true);"> Yes</label>
+                </div>
+              </div>
+              <div class="ta-group init-hidden">
+                <div class="main-q-desc">Address why participation of children or young people is indispensible to this research; and how this study has been designed to be appropriate for children or young people.</div>
+                <textarea class="form-control" rows="5" name="q17text"></textarea>
+              </div>
+
+              <div class="form-group sub-q-wrapper init-hidden" id="q17a">
+                <label class="sub-q">17a. Do you have a Working With Children's (WWC) card?</label>
+                <div class="row" style="width:50%;">
+                  <div class="col-xs-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q17a" value="no" onchange="toggleTA(this,true);switchDesc(this,'desc-no');"> No</label>
+                  </div>
+                  <div class="col-xs-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q17a" value="yes" onchange="toggleTA(this,true);switchDesc(this,'desc-yes');"> Yes</label>
+                  </div>
+                </div>
+                <div class="ta-group init-hidden">
+                  <div class="main-q-desc init-hidden" name="desc-no">It is a legal requirement to have a WWC's card. Please arrange to submit your WWC application and provide a receipt or a have a card BEFORE you submit this ethics application. Ethics approval will not be given without a WWC.</div>
+                  <div class="main-q-desc init-hidden" name="desc-yes">Please attach a copy to your application.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group main-q-wrapper" id="q18">
+              <label class="main-q">18. Does your research involve people in dependent or unequal relationships?</label>
+                <div class="main-q-desc">For example: teachers and their students, health care professionals and their patients, employers and their employees.</div>
+              <div class="row" style="width:50%;">
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q18" value="no" onchange="toggleTA(this,false);"> No</label>
+                </div>
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q18" value="yes" onchange="toggleTA(this,true);"> Yes</label>
+                </div>
+              </div>
+              <div class="ta-group init-hidden">
+                <div class="main-q-desc">Describe the dependent relationship between the participants and the researcher, members of the research team and/or any person involved in the recruitment/consent process; how will the process of obtaining consent enable persons in dependent relationships to give voluntary consent; if a participant choose to withdraw from the research, how will the ongoing dependent relationship with the participant be maintained?</div>
+                <textarea class="form-control" rows="5" name="q18text"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group main-q-wrapper" id="q19">
+              <label class="main-q">19. Does your research involve people highly dependent on medical care who may be unable to give consent?</label>
+                <div class="main-q-desc">For example: patients in the emergency department or intensive care, unconscious people, terminal care.</div>
+              <div class="row" style="width:50%;">
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q19" value="no" onchange="toggleTA(this,false);"> No</label>
+                </div>
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q19" value="yes" onchange="toggleTA(this,true);"> Yes</label>
+                </div>
+              </div>
+              <div class="ta-group init-hidden">
+                <div class="main-q-desc">In the space below describe the recruitment/consent process; and how participation in research is in the best interest of the participant?</div>
+                <textarea class="form-control" rows="5" name="q19text"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group main-q-wrapper" id="q20">
+              <label class="main-q">20. Does your research involve people with a cognitive impairment, an intellectual disability, or a mental illness?</label>
+              <div class="row" style="width:50%;">
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q20" value="no" onchange="toggleTA(this,false);"> No</label>
+                </div>
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q20" value="yes" onchange="toggleTA(this,true);"> Yes</label>
+                </div>
+              </div>
+              <div class="ta-group init-hidden">
+                <div class="main-q-desc">Describe the nature of the intellectual or mental impairment e.g. permanent, temporary or fluctuating; describe how the consent process will take into account the nature of the impairment.</div>
+                <textarea class="form-control" rows="5" name="q19text"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group main-q-wrapper" id="q21">
+              <label class="main-q">21. Does your research involve people who may be involved in illegal activities?</label>
+              <div class="row" style="width:50%;">
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q21" value="yes"> Yes</label>
+                </div>
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q21" value="no"> No</label>
+                </div>
+              </div>
+              <div class="ta-group init-hidden">
+                <div class="main-q-desc">Please justify how the risk of discovery of illegal activities is justified by the benefits of the reseach.</div>
+                <textarea class="form-control" rows="5" name="q19text"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group main-q-wrapper" id="q22">
+              <label class="main-q">22. Does your research involve Aboriginal and Torres Strait Islanders?</label>
+                <div class="main-q-desc">Note: If your research will incidentally involve Aboriginal and Torres Strait Islanders because your study is on the general population you do not need to fill in this section. Complete this section if you are specifically targeting recruitment of Aboriginal and Torres Strait Islanders, or there is a potential for a high number of Aboriginal and Torres Strait Islanders to be recruited.</div>
+              <div class="row" style="width:50%;">
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q22" value="no" onchange="toggleSub(this,false);"> No</label>
+                </div>
+                <div class="col-xs-6" style="text-align:center;">
+                  <label class="option-label"><input type="radio" name="q22" value="yes" onchange="toggleSub(this,true);"> Yes</label>
+                </div>
+              </div>
+
+              <div class="form-group sub-q-wrapper init-hidden" id="q22a">
+                <label class="sub-q">22a. What is the estimated proportion of Aboriginal and Torres Strait Islanders in the population from which the participants will be recruited?</label>
+                <div class="ta-group">
+                  <textarea class="form-control" rows="5" name="q22atext"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group sub-q-wrapper init-hidden" id="q22b">
+                <label class="sub-q">22b. Will Aboriginal and Torres Islander status of participants be recorded?</label>
+                <div class="row" style="width:50%;">
+                  <div class="col-xs-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q22b" value="no" onchange="toggleTA(this,true);"> No</label>
+                  </div>
+                  <div class="col-xs-6" style="text-align:center;">
+                    <label class="option-label"><input type="radio" name="q22b" value="yes" onchange="toggleTA(this,true);"> Yes</label>
+                  </div>
+                </div>
+                <div class="ta-group init-hidden">
+                  <div class="main-q-desc">Please justify below.</div>
+                  <textarea class="form-control" rows="5" name="q22btext"></textarea>
+                </div>
+              </div>
+            </div>
+
+
+            <hr />
+            @partials.section_buttons(applicationId, sectionNum)
+
+          </div> <!-- END main panel body -->
+        </div>
+      }
     </div>
+    <!-- END form panel -->
+
+    <!-- START Sidebar -->
+    @partials.sidebar(applicationId, sectionNum)
+    <!-- END Sidebar -->
+
   </div>
   <!-- END main content -->
 

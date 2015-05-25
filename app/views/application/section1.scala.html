@@ -4,232 +4,229 @@
 
 @base("Section " + sectionNum) {
 
-  <!-- START main content -->
-  <div class="row">
-    <div class="container">
+  <div class="container">
 
-      <!-- START form -->
-      <div class="col-sm-9">
-        @b3.form(controllers.application.routes.Section1.post(applicationId)) {
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <div class="panel-title"><b>Section 1 - General information</b></div>
-            </div>
-            <div class="panel-body">
-
-              <div class="form-group main-q-wrapper" id="q1">
-                <label class="main-q">1. Project Title</label>
-                <input type="text" class="form-control compulsory" name="q1" data-qid="q1">
-              </div>
-
-
-              <div class="form-group main-q-wrapper" id="q2">
-                <label class="main-q">2. Please indicate the type of project</label>
-                <select class="form-control compulsory" name="q2" data-qid="q2">
-                  <option value="STAFF_PROJECT">Staff project</option>
-                  <option value="UNDERGRADUATE">Undergaduate other than honours (no candidacy required)</option>
-                  <option value="HONOURS">Honours (no candidacy required)</option>
-                  <option value="MASTERS_BY_COURSEWORK">Masters by coursework (no candidacy required)</option>
-                  <option value="MASTERS_BY_RESEARCH">Masters by research (candidacy required)</option>
-                  <option value="PHD">PhD (candidacy required)</option>
-                  <option value="OTHER">Other (Specify)</option>
-                </select>
-                <div class="form-group sub-q-wrapper" id="projectTypeOthers">
-                  <label class="sub-q">If other specify:</label>
-                  <input type="text" class="form-control" name="typeOthers">
-                </div>
-              </div>
-              
-
-              <div class="main-q-wrapper" id="q3">
-                <label class="main-q">3. Project Summary</label>
-                  <div class="main-q-desc">Give a concise and simple description, in plain language, or the study in each of the sections below.</div>
-                <div class="form-group sub-q-wrapper" id="q3a">
-                  <label class="sub-q">3a. Background</label>
-                  <textarea class="form-control compulsory" rows="5" name="q3a" data-qid="q3a"></textarea>
-                </div>
-
-                <div class="form-group sub-q-wrapper" id="q3b">
-                  <label class="sub-q">3b. Aims and hypothesis</label>
-                  <textarea class="form-control compulsory" rows="3" name="q3b" data-qid="q3b"></textarea>
-                </div>
-
-                <div class="form-group sub-q-wrapper" id="q3c">
-                  <label class="sub-q">3c. Methods</label>
-                  <textarea class="form-control compulsory" rows="5" name="q3c" data-qid="q3c"></textarea>
-                </div>
-              </div>
-
-
-              <div class="main-q-wrapper" id="q4">
-                <label class="main-q">4. Principle Investigator</label>
-                  <div class="main-q-desc">The principal investigator must be a Curtin staff member. If this application is for a student project the principal investigator must be one of the student's supervisors.</div>
-                
-                <div class="row">
-                  <div class="col-xs-6">
-                    <div class="form-group sub-q-wrapper">
-                      <label class="sub-q">Name (include title)</label>
-                      <input type="text" class="form-control compulsory" name="pi.name" data-qid="q4">
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <div class="form-group sub-q-wrapper">
-                      <label class="sub-q">Staff ID</label>
-                      <input type="text" class="form-control compulsory" name="pi.id" data-qid="q4">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-xs-12">
-                    <div class="form-group sub-q-wrapper">
-                      <label class="sub-q">School, Center or Area</label>
-                      <input type="text" class="form-control compulsory" name="pi.area" data-qid="q4">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-xs-6">
-                    <div class="form-group sub-q-wrapper">
-                      <label class="sub-q">Telephone</label>
-                      <input type="text" class="form-control compulsory" name="pi.telephone" data-qid="q4">
-                    </div>
-                  </div>
-                  <div class="col-xs-6">
-                    <div class="form-group sub-q-wrapper">
-                      <label class="sub-q">Email</label>
-                      <input type="text" class="form-control compulsory" name="pi.email" data-qid="q4">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-xs-12">
-                    <div class="sub-q-wrapper">
-                      <div class="col-xs-8">
-                        <label class="sub-q">SOL Research Integrity Professional Development Program training complete (NOTE: this is a requirement of approval)</label>
-                      </div>
-                      <div class="col-xs-4">
-                        <label class="option-label">
-                          <input type="radio" name="ripdp" value="yes" data-qid="q4"> Yes - certificate attached
-                        </label><br />
-                        <label class="option-label">
-                          <input type="radio" name="ripdp" value="no" data-qid="q4"> No
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="main-q-wrapper" id="q5">
-                <label class="main-q">5. Co-Investigators</label>
-                <div class="sub-q-wrapper">
-                  <table class="table table-condensed table-responsive table-center" id="ciTable">
-                    <thead>
-                      <tr>
-                        <td width="21%">Name (include title)</td>
-                        <td width="23%">School, Centre, Area,<br />University or Institution</td>
-                        <td width="14%">Staff ID or Student ID</td>
-                        <td width="17%">Role</td>
-                        <td width="10%">Candidacy approved</td>
-                        <td width="15%">Research Integrity training complete</td>
-                        <td></td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr name="ciRow">
-                        <td><input type="text" style="width:100%;" name="q5"></td>
-                        <td><input type="text" style="width:100%" name="q5"></td>
-                        <td><input type="text" style="width:100%" name="q5"></td>
-                        <td><select style="width:100%">
-                          <option value="CI">CI</option>
-                          <option value="SUPERVISOR" name="q5">Supervisor</option>
-                          <option value="STUDENT" name="q5">Student</option>
-                        </select></td>
-                        <td align="center"><input type="checkbox"></td>
-                        <td align="center"><input type="checkbox"></td>
-                        <td><a onclick="removeCIRow(this)" style="cursor:pointer;text-decoration:none;">X</a></td>
-                      </tr>
-                    </tbody>
-                    <tfoot>
-                      <tr>
-                        <td colspan="7"><center><div class="btn btn-default btn-xs" onclick="addCIRow();">Click to add one more Co-Investigator</div></center></td>
-                      </tr>
-                    </tfoot>
-                  </table>
-                </div>
-              </div>
-
-              <div class="main-q-wrapper" id="q6">
-                <label class="main-q inline">6. Contact Person</label>
-                <label class="option-label">
-                  <input type="checkbox" name="piAsCP" value="yes" onchange="fillCP();"> Tick to use Principal Investigator details
-                </label>
-
-                <div class="row">
-                  <div class="col-xs-6">
-                    <div class="form-group sub-q-wrapper">
-                      <label class="sub-q">Name (include title)</label>
-                      <input type="text" class="form-control compulsory" name="q6" data-qid="q6">
-                    </div>
-                  </div>
-
-                  <div class="col-xs-6">
-                    <div class="form-group sub-q-wrapper">
-                      <label class="sub-q">Staff ID</label>
-                      <input type="text" class="form-control compulsory" name="q6" data-qid="q6">
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="row">
-                  <div class="col-xs-12">
-                    <div class="form-group sub-q-wrapper">
-                      <label class="sub-q">School, Centre or Area</label>
-                      <input type="text" class="form-control compulsory" name="q6" data-qid="q6">
-                    </div>
-                  </div>
-                </div>
-
-
-                <div class="row">
-                  <div class="col-xs-6">
-                    <div class="form-group sub-q-wrapper">
-                      <label class="sub-q">Telephone</label>
-                      <input type="text" class="form-control compulsory" name="q6" data-qid="q6">
-                    </div>
-                  </div>
-
-                  <div class="col-xs-6">
-                    <div class="form-group sub-q-wrapper">
-                      <label class="sub-q">Email</label>
-                      <input type="text" class="form-control compulsory" name="q6" data-qid="q6">
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              
-              <hr />
-              @partials.section_buttons(applicationId, sectionNum)
-            </div>
+    <!-- START form -->
+    <div class="col-sm-9">
+      @b3.form(controllers.application.routes.Section1.post(applicationId)) {
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title"><b>Section 1 - General information</b></div>
           </div>
-        }
-      </div> <!-- End form column -->
-      <!-- END form -->
+          <div class="panel-body">
 
-      <!-- START Sidebar -->
-      @partials.sidebar(applicationId, sectionNum)
-      <!-- END Sidebar -->
+            <div class="form-group main-q-wrapper" id="q1">
+              <label class="main-q">1. Project Title</label>
+              <input type="text" class="form-control compulsory" name="q1" data-qid="q1">
+            </div>
 
-    </div>
+
+            <div class="form-group main-q-wrapper" id="q2">
+              <label class="main-q">2. Please indicate the type of project</label>
+              <select class="form-control compulsory" name="q2" data-qid="q2">
+                <option value="STAFF_PROJECT">Staff project</option>
+                <option value="UNDERGRADUATE">Undergaduate other than honours (no candidacy required)</option>
+                <option value="HONOURS">Honours (no candidacy required)</option>
+                <option value="MASTERS_BY_COURSEWORK">Masters by coursework (no candidacy required)</option>
+                <option value="MASTERS_BY_RESEARCH">Masters by research (candidacy required)</option>
+                <option value="PHD">PhD (candidacy required)</option>
+                <option value="OTHER">Other (Specify)</option>
+              </select>
+              <div class="form-group sub-q-wrapper" id="projectTypeOthers">
+                <label class="sub-q">If other specify:</label>
+                <input type="text" class="form-control" name="typeOthers">
+              </div>
+            </div>
+            
+
+            <div class="main-q-wrapper" id="q3">
+              <label class="main-q">3. Project Summary</label>
+                <div class="main-q-desc">Give a concise and simple description, in plain language, or the study in each of the sections below.</div>
+              <div class="form-group sub-q-wrapper" id="q3a">
+                <label class="sub-q">3a. Background</label>
+                <textarea class="form-control compulsory" rows="5" name="q3a" data-qid="q3a"></textarea>
+              </div>
+
+              <div class="form-group sub-q-wrapper" id="q3b">
+                <label class="sub-q">3b. Aims and hypothesis</label>
+                <textarea class="form-control compulsory" rows="3" name="q3b" data-qid="q3b"></textarea>
+              </div>
+
+              <div class="form-group sub-q-wrapper" id="q3c">
+                <label class="sub-q">3c. Methods</label>
+                <textarea class="form-control compulsory" rows="5" name="q3c" data-qid="q3c"></textarea>
+              </div>
+            </div>
+
+
+            <div class="main-q-wrapper" id="q4">
+              <label class="main-q">4. Principle Investigator</label>
+                <div class="main-q-desc">The principal investigator must be a Curtin staff member. If this application is for a student project the principal investigator must be one of the student's supervisors.</div>
+              
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="form-group sub-q-wrapper">
+                    <label class="sub-q">Name (include title)</label>
+                    <input type="text" class="form-control compulsory pi" name="pi.name" data-qid="q4">
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <div class="form-group sub-q-wrapper">
+                    <label class="sub-q">Staff ID</label>
+                    <input type="text" class="form-control compulsory pi" name="pi.id" data-qid="q4">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group sub-q-wrapper">
+                    <label class="sub-q">School, Center or Area</label>
+                    <input type="text" class="form-control compulsory pi" name="pi.area" data-qid="q4">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="form-group sub-q-wrapper">
+                    <label class="sub-q">Telephone</label>
+                    <input type="text" class="form-control compulsory pi" name="pi.telephone" data-qid="q4">
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <div class="form-group sub-q-wrapper">
+                    <label class="sub-q">Email</label>
+                    <input type="text" class="form-control compulsory pi" name="pi.email" data-qid="q4">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="sub-q-wrapper">
+                    <div class="col-xs-8">
+                      <label class="sub-q">SOL Research Integrity Professional Development Program training complete (NOTE: this is a requirement of approval)</label>
+                    </div>
+                    <div class="col-xs-4">
+                      <label class="option-label">
+                        <input type="radio" name="ripdp" value="yes" data-qid="q4"> Yes - certificate attached
+                      </label><br />
+                      <label class="option-label">
+                        <input type="radio" name="ripdp" value="no" data-qid="q4"> No
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-q-wrapper" id="q5">
+              <label class="main-q">5. Co-Investigators</label>
+              <div class="sub-q-wrapper">
+                <table class="table table-condensed table-responsive table-center" id="ciTable">
+                  <thead>
+                    <tr>
+                      <td width="21%">Name (include title)</td>
+                      <td width="23%">School, Centre, Area,<br />University or Institution</td>
+                      <td width="14%">Staff ID or Student ID</td>
+                      <td width="17%">Role</td>
+                      <td width="10%">Candidacy approved</td>
+                      <td width="15%">Research Integrity training complete</td>
+                      <td></td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr name="ciRow">
+                      <td><input type="text" style="width:100%;" name="q5"></td>
+                      <td><input type="text" style="width:100%" name="q5"></td>
+                      <td><input type="text" style="width:100%" name="q5"></td>
+                      <td><select style="width:100%">
+                        <option value="CI">CI</option>
+                        <option value="SUPERVISOR" name="q5">Supervisor</option>
+                        <option value="STUDENT" name="q5">Student</option>
+                      </select></td>
+                      <td align="center"><input type="checkbox"></td>
+                      <td align="center"><input type="checkbox"></td>
+                      <td><a onclick="removeCIRow(this)" style="cursor:pointer;text-decoration:none;">X</a></td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="7"><center><div class="btn btn-default btn-xs" onclick="addCIRow();">Click to add one more Co-Investigator</div></center></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+            <div class="main-q-wrapper" id="q6">
+              <label class="main-q inline">6. Contact Person</label>
+              <label class="option-label">
+                <input type="checkbox" name="piAsCP" value="yes" onchange="fillCP();"> Tick to use Principal Investigator details
+              </label>
+
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="form-group sub-q-wrapper">
+                    <label class="sub-q">Name (include title)</label>
+                    <input type="text" class="form-control compulsory cp" name="cp.name" data-qid="q6">
+                  </div>
+                </div>
+
+                <div class="col-xs-6">
+                  <div class="form-group sub-q-wrapper">
+                    <label class="sub-q">Staff ID</label>
+                    <input type="text" class="form-control compulsory cp" name="cp.id" data-qid="q6">
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="form-group sub-q-wrapper">
+                    <label class="sub-q">School, Centre or Area</label>
+                    <input type="text" class="form-control compulsory cp" name="cp.area" data-qid="q6">
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="form-group sub-q-wrapper">
+                    <label class="sub-q">Telephone</label>
+                    <input type="text" class="form-control compulsory cp" name="cp.telephone" data-qid="q6">
+                  </div>
+                </div>
+
+                <div class="col-xs-6">
+                  <div class="form-group sub-q-wrapper">
+                    <label class="sub-q">Email</label>
+                    <input type="text" class="form-control compulsory cp" name="cp.email" data-qid="q6">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            
+            <hr />
+            @partials.section_buttons(applicationId, sectionNum)
+          </div>
+        </div>
+      }
+    </div> <!-- End form column -->
+    <!-- END form -->
+
+    <!-- START Sidebar -->
+    @partials.sidebar(applicationId, sectionNum)
+    <!-- END Sidebar -->
+
   </div>
-  <!-- END main content -->
 
 } {
+
   <script type="text/javascript">
   $(document).ready(function() {
     /* Show "Other types" if project type is "Other". */
@@ -244,25 +241,10 @@
   });
 
   function fillCP() {
-    var checked = $('#piAsCP').is(':checked');
-    if (checked) {
-      $('#cpName').val($('#piName').val());
-      $('#cpId').val($('#piId').val());
-      $('#cpArea').val($('#piArea').val());
-      $('#cpTel').val($('#piTel').val());
-      $('#cpEmail').val($('#piEmail').val());
-    } else {
-      $('#cpName').val("");
-      $('#cpId').val("");
-      $('#cpArea').val("");
-      $('#cpTel').val("");
-      $('#cpEmail').val("");
-    }
-    $('#cpName').prop('disabled', checked);
-    $('#cpId').prop('disabled', checked);
-    $('#cpArea').prop('disabled', checked);
-    $('#cpTel').prop('disabled', checked);
-    $('#cpEmail').prop('disabled', checked);
+    $(".pi").each(function() {
+      var attribute = $(this).attr("name").split(".");
+      $("[name='cp."+attribute[attribute.length-1]+"']").val($(this).val());
+    });
   }
 
   function addCIRow() {

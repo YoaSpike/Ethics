@@ -1,80 +1,79 @@
 $border-color-grey: #CCC;
+$bootstrap-primary: #2563AB;
+$bootstrap-info: #D0E8F6;
+$border-main: 1px solid #EEE;
 
 #header.navbar {
     background: none;
     border: none;
 }
 
-#footer.navbar {
-    background: none;
-    border: none;
-    border-top: 1px solid #EEEEEE;
-    margin-top: 20px;
-}
-
-#footer>.container {
-    margin-top: 15px;
-    ul {
-        list-style: none;
-        li {
+#footer {
+    border-top: $border-main;
+    .container {
+        padding-top: 20px;
+        #sitemap li {
+            list-style: none;
             display: inline;
-            padding-right: 10px;
+            padding-right: 15px;
         }
     }
 }
 
-/************ START Nav-siderbar ************/
-
 #sidebar {
-    width: 20em;
+    .panel-heading {&:hover {cursor: pointer;}}
+    .panel-body {padding: 0px;}
 
     .sidebar-main {
-        padding: 7px 0px 7px 10px;
-        font-size: 15px;
-        font-weight: 500;
-        color: #000;
+        padding: 5px;
+        .sidebar-sectnum {color: lighten($bootstrap-primary, 30);}
+        .sidebar-sectname {
+            padding-left: 1em;
+            font-size: 12px;
+            color: saturate(lighten($bootstrap-primary, 30),10%);
+        }
+        .sidebar-sectq {
+            display: none;  //Hide onload, toggle by jQuery hover event.
+            margin-left: 1em;
+            font-size: 13px;
+            color: #999;
+            a.incomplete {
+                color: #999;
+                &:hover, &:active {text-decoration: underline;}
+            }
+        }
+        &:hover {
+            .sidebar-sectnum, .sidebar-sectname {color: $bootstrap-primary;}
+            a:hover {text-decoration: none;}
+        }
+    }
+
+    .sidebar-main-active {
+        background-color: lighten($bootstrap-info,7);
+        .sidebar-sectnum {
+            color: $bootstrap-primary;
+            font-weight: bold;
+        }
+        .sidebar-sectname {color: lighten($bootstrap-primary, 15);}
+        .sidebar-sectq {display: block;}  //Always show on active section.
     }
 }
 
-.sidebar-main a:link,
-.sidebar-main a:visited,
-.sidebar-main a:hover,
-.sidebar-main a:active {
-    color: #000;
-    text-decoration: none;
-}
+#menu {
+    .panel-heading {&:hover {cursor: pointer;}}
+    .panel-body {
+        display: none;
+        padding: 10px;
+    }
 
-.sidebar-main-active {
-    background-color: #FFF4C5;
-}
-
-#sidebar .sidebar-sectname {
-    padding-left: 1em;
-    font-size: 12px;
-    font-weight: normal;
-    color: #555;
-}
-
-.sidebar-sectq {
-    margin: 0 1em 0 1em;
-    font-size: 13px;
-    font-weight: normal;
-    color : #999;
-}
-
-a.incomplete {
-    &:link, &:visited, &:hover, &:active {
-        color: #999;
+    .btn {
+        width: 100%;
     }
 }
 
-a.incomplete:hover,
-a.incomplete:active {
-    text-decoration: underline;
+.panel {
+    box-shadow: 2px 2px 1px #EFEFEF;
 }
-
-/************ END sidebar ************/
-
 
 .panel-title {
     text-align: center;
@@ -82,10 +81,10 @@ a.incomplete:active {
 }
 
 .main-q-wrapper {
-    main-q {
+    .main-q {
         font-weight: 600;
         font-size: 16px;
-        margin: 2em 0em 0em 0em;
+        margin: 15px 0em 7px 0em;
     }
 }
 
@@ -111,25 +110,9 @@ a.incomplete:active {
     font-size: 14px;
 }
 
-.inline {
-    display: inline;
-}
-
-.table-center tr td,th {
-    text-align: center;
-}
-
 #ciTable td {
     font-size: 12px;
     vertical-align: middle;
-}
-
-th {
-    vertical-align: middle;
-}
-
-.table-smallertext td,th {
-    font-size: 14px;
 }
 
 .has-error .error-msg {
@@ -137,3 +120,11 @@ th {
     font-size: 12px;
     padding-left: 1em;
 }
+
+/* Global styles */
+
+.table-center tr td,th {text-align: center;}
+.table-smallertext td,th {font-size: 14px;}
+th {vertical-align: middle;}
+.btn {box-shadow: 2px 2px 1px #EFEFEF;}
+.inline {display: inline;}

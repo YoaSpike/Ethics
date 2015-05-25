@@ -2,67 +2,69 @@
   background: none;
   border: none; }
 
-#footer.navbar {
-  background: none;
-  border: none;
-  border-top: 1px solid #EEEEEE;
-  margin-top: 20px; }
-
-#footer > .container {
-  margin-top: 15px; }
-  #footer > .container ul {
-    list-style: none; }
-    #footer > .container ul li {
+#footer {
+  border-top: 1px solid #EEE; }
+  #footer .container {
+    padding-top: 20px; }
+    #footer .container #sitemap li {
+      list-style: none;
       display: inline;
-      padding-right: 10px; }
+      padding-right: 15px; }
 
-/************ START Nav-siderbar ************/
-#sidebar {
-  width: 20em; }
-  #sidebar .sidebar-main {
-    padding: 7px 0px 7px 10px;
-    font-size: 15px;
-    font-weight: 500;
-    color: #000; }
+#sidebar .panel-heading:hover {
+  cursor: pointer; }
+#sidebar .panel-body {
+  padding: 0px; }
+#sidebar .sidebar-main {
+  padding: 5px; }
+  #sidebar .sidebar-main .sidebar-sectnum {
+    color: #85b1e4; }
+  #sidebar .sidebar-main .sidebar-sectname {
+    padding-left: 1em;
+    font-size: 12px;
+    color: #7db0ec; }
+  #sidebar .sidebar-main .sidebar-sectq {
+    display: none;
+    margin-left: 1em;
+    font-size: 13px;
+    color: #999; }
+    #sidebar .sidebar-main .sidebar-sectq a.incomplete {
+      color: #999; }
+      #sidebar .sidebar-main .sidebar-sectq a.incomplete:hover, #sidebar .sidebar-main .sidebar-sectq a.incomplete:active {
+        text-decoration: underline; }
+  #sidebar .sidebar-main:hover .sidebar-sectnum, #sidebar .sidebar-main:hover .sidebar-sectname {
+    color: #2563AB; }
+  #sidebar .sidebar-main:hover a:hover {
+    text-decoration: none; }
+#sidebar .sidebar-main-active {
+  background-color: #eef7fc; }
+  #sidebar .sidebar-main-active .sidebar-sectnum {
+    color: #2563AB;
+    font-weight: bold; }
+  #sidebar .sidebar-main-active .sidebar-sectname {
+    color: #4689d7; }
+  #sidebar .sidebar-main-active .sidebar-sectq {
+    display: block; }
 
-.sidebar-main a:link,
-.sidebar-main a:visited,
-.sidebar-main a:hover,
-.sidebar-main a:active {
-  color: #000;
-  text-decoration: none; }
+#menu .panel-heading:hover {
+  cursor: pointer; }
+#menu .panel-body {
+  display: none;
+  padding: 10px; }
+#menu .btn {
+  width: 100%; }
 
-.sidebar-main-active {
-  background-color: #FFF4C5; }
+.panel {
+  box-shadow: 2px 2px 1px #EFEFEF; }
 
-#sidebar .sidebar-sectname {
-  padding-left: 1em;
-  font-size: 12px;
-  font-weight: normal;
-  color: #555; }
-
-.sidebar-sectq {
-  margin: 0 1em 0 1em;
-  font-size: 13px;
-  font-weight: normal;
-  color: #999; }
-
-a.incomplete:link, a.incomplete:visited, a.incomplete:hover, a.incomplete:active {
-  color: #999; }
-
-a.incomplete:hover,
-a.incomplete:active {
-  text-decoration: underline; }
-
-/************ END sidebar ************/
 .panel-title {
   text-align: center;
   font-weight: 600; }
 
-.main-q-wrapper main-q {
+.main-q-wrapper .main-q {
   font-weight: 600;
   font-size: 16px;
-  margin: 2em 0em 0em 0em; }
+  margin: 15px 0em 7px 0em; }
 
 .main-q-desc {
   margin: 0em 0em 1em 2em;
@@ -83,25 +85,29 @@ a.incomplete:active {
   margin: 0 !important;
   font-size: 14px; }
 
-.inline {
-  display: inline; }
-
-.table-center tr td, th {
-  text-align: center; }
-
 #ciTable td {
   font-size: 12px;
   vertical-align: middle; }
-
-th {
-  vertical-align: middle; }
-
-.table-smallertext td, th {
-  font-size: 14px; }
 
 .has-error .error-msg {
   color: red;
   font-size: 12px;
   padding-left: 1em; }
+
+/* Global styles */
+.table-center tr td, th {
+  text-align: center; }
+
+.table-smallertext td, th {
+  font-size: 14px; }
+
+th {
+  vertical-align: middle; }
+
+.btn {
+  box-shadow: 2px 2px 1px #EFEFEF; }
+
+.inline {
+  display: inline; }
 
 /*# sourceMappingURL=main.css.map */

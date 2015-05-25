@@ -29,7 +29,23 @@ $(document).ready(function() {
             $("#"+qid+"Link").addClass("incomplete");
         }
     });
+
+    $(".sidebar-main").hover(function() {
+        $(this).children(".sidebar-sectq").slideDown(200);
+    }, function() {
+        if (!$(this).hasClass("sidebar-main-active")) {
+            $(this).children(".sidebar-sectq").slideUp(200);
+        }
+    });
 });
+
+function showMenu() {
+    $("#menu > .panel-body").slideToggle(200);
+}
+
+function showSidebar() {
+    $("#sidebar > .panel-body").slideToggle(200);
+}
 
 /**
  * Function that only called be main questions to unhide child questions.

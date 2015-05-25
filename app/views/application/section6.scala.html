@@ -3,105 +3,103 @@
 @import b3.vertical.fieldConstructor
 
 @base("Section " + sectionNum) {
-    <!-- START main content -->
-    <div class="row">
-        <div class="container">
-            <!-- START form -->
-            <div class="col-sm-9">
-                @b3.form(controllers.application.routes.Section6.post(applicationId), 'enctype -> "multipart/form-data") {
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="panel-title">Section 6 - Attachments</div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="main-q">Please select the attachments to include as part of your application:</div>
-                            <table class="table table-default" id="attachmentTable">
-                                <thead>
-                                    <tr>
-                                        <th style="width:60%;">Type</th>
-                                        <th style="width:10%;">Version</th>
-                                        <th style="width:10%;">Date</th>
-                                        <th style="width:20%">Attachment</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr name="attachment"> <!-- name is for later duplication -->
-                                        <td class="input-group-sm">
-                                            <select name="attachments[0].type" class="form-control">
-                                                <option value="PROTOCOL_RESEARCH_PROPOSAL">Protocol/research proposal</option>
-                                                <option value="RECRUITMENT_MATERIAL">Recruitment material</option>
-                                                <option value="PARTICIPANT_INFORMATION_STATEMENT_AND_CONSENT_FORMS">Participant Information statement and consent form/s</option>
-                                                <option value="PARENT_INFORMATION_STATEMENT_AND_CONSENT_FORMS">Parent Information statement and consent form/s</option>
-                                                <option value="CHILD_INFORMATION_STATEMENT_AND_ASSENT_FORMS">Child Information statement and assent form/s</option>
-                                                <option value="QUESTIONAIRES_SURVEY_INSTRUMENTS">Questionaires/survey instrucments</option>
-                                                <option value="TRANSLATIONS_WHERE_LANGUAGES_OTHER_THAN_ENGLISH_ARE_USED">Translations where languages other than English are used</option>
-                                                <option value="RECRUITMENT_MATERIALS">Recruitment materials</option>
-                                                <option value="INVESTIGATOR_BROCHURE_OR_PRODUCT_INFORMATION">Investigator brochure or Product Information (for drug intervention studies)</option>
-                                                <option value="WORKING_WITH_CHILDRENS_CARD">Working with Children's Card</option>
-                                                <option value="SOL">SOL Research Integrity Professional Development Program training certificate/s</option>
-                                            </select>
-                                        </td>
-                                        <td class="input-group-sm">
-                                            <input type="text" name="attachments[0].version" class="form-control" placeholder="Version">
-                                        </td>
-                                        <td class="input-group-sm">
-                                            <input type="date" name="attachments[0].date" class="form-control">
-                                        </td>
-                                        <td style="font-size:11px;vertical-align:middle;">
-                                            <input type="file" name="attachments[0].file">
-                                        </td>
+  <!-- START main content -->
+  <div class="container">
+    <!-- START form -->
+    <div class="col-sm-9">
+      @b3.form(controllers.application.routes.Section6.post(applicationId), 'enctype -> "multipart/form-data") {
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="panel-title">Section 6 - Attachments</div>
+          </div>
+          <div class="panel-body">
+            <div class="main-q">Please select the attachments to include as part of your application:</div>
+            <table class="table table-default" id="attachmentTable">
+              <thead>
+                <tr>
+                  <th style="width:60%;">Type</th>
+                  <th style="width:10%;">Version</th>
+                  <th style="width:10%;">Date</th>
+                  <th style="width:20%">Attachment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr name="attachment"> <!-- name is for later duplication -->
+                  <td class="input-group-sm">
+                    <select name="attachments[0].type" class="form-control">
+                      <option value="PROTOCOL_RESEARCH_PROPOSAL">Protocol/research proposal</option>
+                      <option value="RECRUITMENT_MATERIAL">Recruitment material</option>
+                      <option value="PARTICIPANT_INFORMATION_STATEMENT_AND_CONSENT_FORMS">Participant Information statement and consent form/s</option>
+                      <option value="PARENT_INFORMATION_STATEMENT_AND_CONSENT_FORMS">Parent Information statement and consent form/s</option>
+                      <option value="CHILD_INFORMATION_STATEMENT_AND_ASSENT_FORMS">Child Information statement and assent form/s</option>
+                      <option value="QUESTIONAIRES_SURVEY_INSTRUMENTS">Questionaires/survey instrucments</option>
+                      <option value="TRANSLATIONS_WHERE_LANGUAGES_OTHER_THAN_ENGLISH_ARE_USED">Translations where languages other than English are used</option>
+                      <option value="RECRUITMENT_MATERIALS">Recruitment materials</option>
+                      <option value="INVESTIGATOR_BROCHURE_OR_PRODUCT_INFORMATION">Investigator brochure or Product Information (for drug intervention studies)</option>
+                      <option value="WORKING_WITH_CHILDRENS_CARD">Working with Children's Card</option>
+                      <option value="SOL">SOL Research Integrity Professional Development Program training certificate/s</option>
+                    </select>
+                  </td>
+                  <td class="input-group-sm">
+                    <input type="text" name="attachments[0].version" class="form-control" placeholder="Version">
+                  </td>
+                  <td class="input-group-sm">
+                    <input type="date" name="attachments[0].date" class="form-control">
+                  </td>
+                  <td style="font-size:11px;vertical-align:middle;">
+                    <input type="file" name="attachments[0].file">
+                  </td>
 
-                                        <input type="hidden" name="attachments[0].idx" value="0" />
-                                    </tr>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <td colspan="4" style="text-align:center;"><a class="btn btn-default btn-sm" onclick="addAttachment();">Click to add one more attachment</a></td>
-                                    </tr>
-                                </tfoot>
-                            </table>
+                  <input type="hidden" name="attachments[0].idx" value="0" />
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4" style="text-align:center;"><a class="btn btn-default btn-sm" onclick="addAttachment();">Click to add one more attachment</a></td>
+                </tr>
+              </tfoot>
+            </table>
 
-                            <input type="submit" />
+            <input type="submit" />
 
-                            <hr />
-                            @partials.section_buttons(applicationId, sectionNum)
-                        </div> <!-- END main panel body -->
-                    </div>
-
-                }
-            </div>
-            <!-- END form panel -->
-
-            <!-- START Sidebar -->
-            @partials.sidebar(applicationId, sectionNum)
-            <!-- END Sidebar -->
-
+            <hr />
+            @partials.section_buttons(applicationId, sectionNum)
+          </div> <!-- END main panel body -->
         </div>
+
+      }
     </div>
-    <!-- END main content -->
+    <!-- END form panel -->
+
+    <!-- START Sidebar -->
+    @partials.sidebar(applicationId, sectionNum)
+    <!-- END Sidebar -->
+
+  </div>
+  <!-- END main content -->
 } {
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // document ready function here.
-        });
+  <script type="text/javascript">
+    $(document).ready(function() {
+      // document ready function here.
+    });
 
-    function addAttachment() {
-        var idx = $("#attachmentTable > tbody > tr").length;
-        console.log(idx);
-        // for the form parsing to work more work is going to have to be done here
-        var el = $("<tr name='attachment' id='" + idx + "'>" + $("[name=attachment]").html() + "</tr>");
+  function addAttachment() {
+    var idx = $("#attachmentTable > tbody > tr").length;
+    console.log(idx);
+    // for the form parsing to work more work is going to have to be done here
+    var el = $("<tr name='attachment' id='" + idx + "'>" + $("[name=attachment]").html() + "</tr>");
 
-        var pertinent = $.merge($("select", el), $("input[type!=submit]", el));
+    var pertinent = $.merge($("select", el), $("input[type!=submit]", el));
 
-        pertinent.each(function(_, el) {
-            el.name = "attachments[" + idx + "]." + el.name.split('.')[1];
-        });
+    pertinent.each(function(_, el) {
+      el.name = "attachments[" + idx + "]." + el.name.split('.')[1];
+    });
 
-        $("input[type=hidden]", el).each(function(_, el) {
-            el.value = idx;
-        });
+    $("input[type=hidden]", el).each(function(_, el) {
+      el.value = idx;
+    });
 
-        $("#attachmentTable > tbody").append(el);
-    }
-    </script>
+    $("#attachmentTable > tbody").append(el);
+  }
+  </script>
 }
