@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.List;
+
 import play.*;
 import play.mvc.*;
 import play.Logger;
@@ -17,14 +19,21 @@ import models.*;
 public class Accounts extends Controller {
     public static UserModel getCurrentUser() {
         if (isLoggedIn()) {
-            return (
+            List<UserModel> users = (
                 UserModel.find
                 .where()
                     .eq("email", getEmail())
                 .query()
                 .findList()
-                .get(0)
             );
+
+            if (users.size() == 0) {
+                play.Logger.error("A user existed that does not longer");
+                throw new Error("A user existed that does not longer");
+            } else {
+                return users.get(0);
+            }
+
         } else {
             return null;
         }

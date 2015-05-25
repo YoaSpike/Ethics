@@ -25,10 +25,19 @@ public class ApplicationModel extends Model{
 	@Id
 	@Valid
 	public int id;
-	
+
+	@Valid
+	public String name;
+
 	@ManyToOne(optional=false, cascade=CascadeType.ALL)
 	public UserModel userModel;
 	
+	@OneToOne
+	public Section1Model section1;
+
+	@OneToOne
+	public Section2Model section2;
+
 	@OneToOne
 	public Section3Model section3;
 
@@ -43,4 +52,8 @@ public class ApplicationModel extends Model{
         );
 	}
 	
+	public static Finder<Integer,ApplicationModel> find = new Finder<Integer,ApplicationModel>(
+        Integer.class, ApplicationModel.class
+    );
+
 };

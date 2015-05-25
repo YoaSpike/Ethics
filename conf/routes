@@ -8,6 +8,9 @@ GET     /                           controllers.Application.index()
 GET     /pdftest                    controllers.PDF.pdftest()
 GET     /emailtest                  controllers.Application.emailtest()
 
+GET 	/application/new					controllers.EthicsApplication.new_get()
+POST    /application/new                    controllers.EthicsApplication.new_post()
+
 GET     /application/$id<[0-9]+>/           controllers.EthicsApplication.application_summary(id: Long)
 GET     /application/$id<[0-9]+>/section0   controllers.application.Section0.get(id: Long)
 GET     /application/$id<[0-9]+>/section1   controllers.application.Section1.get(id: Long)
@@ -27,6 +30,7 @@ POST    /application/$id<[0-9]+>/section5   controllers.application.Section5.pos
 POST    /application/$id<[0-9]+>/section6   controllers.application.Section6.post(id: Long)
 POST    /application/$id<[0-9]+>/section7   controllers.application.Section7.post(id: Long)
 
+GET		/testModel					controllers.TestingModel.testApplicationModel()
 
 GET     /forms                      controllers.Forms.index()
 GET     /viewall                    controllers.Forms.viewall()

@@ -33,8 +33,6 @@ public class TestingModel extends Controller{
 
 			UserModel user = UserModel.find.byId("20");
 
-			
-
 			return ok("Sup");
 		}
 }

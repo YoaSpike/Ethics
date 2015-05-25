@@ -12,14 +12,15 @@ import play.data.validation.*;
 @Entity
 @Table(name="Section3")
 public class Section3Model extends Model{
-	
+
 	public Section3Model(){
 		super();
 	}
 
 	public Section3Model(int id){
-		
-	} 
+		super();
+		this.id = id;
+	}
 
 	@Id
 	@Valid
@@ -36,25 +37,22 @@ public class Section3Model extends Model{
 	@Constraints.Required
 	public boolean isYourStudyAClinicalTrail13 = false;
 
-	public boolean willAPlaceboBeUsedGroupByUsed13a;
+	public boolean willAPlaceboBeUsedGroupByUsed13a  = false;
+	public String willAPlaceboBeUsedGroupByUsedText13a = null;
 
-	public String willAPlaceboBeUsedGroupByUsedText13a = "hello";
+	public boolean hasThisTrailBeenRegistered13b = false;
+	public String hasThisTrailBeenRegisteredText13b = null;
 
-	public boolean hasThisTrailBeenRegistered13b;
+	public boolean facilitiesExpertiseSufficient13c = false;
+	public String facilitiesExpertiseSufficient13cText = null;
 
-	public String hasThisTrailBeenRegisteredText13b;
+	public boolean doesYourStatementMakeClear13d = false;
 
-	public boolean areTheFacilitiesExpertiseAndExperienceAvailableSufficient13c;
+	@Constraints.Required
+	public boolean doesYourResearchUseHealthInformation14 = false;
+	public String doesYourResearchUseHealthInformationText14 = null;
 
-	public String areTheFacilitiesExpertiseAndExperienceAvailableSufficientText13c;
-
-	public boolean doesYourParticipantInformationStatementMakeClear13d;
-
-	public boolean doesYourResearchUseHealthInformation14;
-
-	public String doesYourResearchUseHealthInformationText14;
-
-	public boolean doesYourResearchInvolveHumanGenetics15;
-
-	public String doesYourResearchInvolveHumanGeneticsText15;
+	@Constraints.Required
+	public boolean doesYourResearchInvolveHumanGenetics15 = false;
+	public String doesYourResearchInvolveHumanGeneticsText15 = null;
 }

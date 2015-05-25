@@ -1,0 +1,28 @@
+@(form: Form[views.formdata.application.NewApplicationForm])
+
+@import b3.vertical.fieldConstructor
+
+@base("New Application") {
+
+    <div class="row">
+        <div class="container" style="width:70%;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title"><b>New Application</b></div>
+                </div>
+                <div class="panel-body">
+                    @b3.form(routes.EthicsApplication.new_post(), 'class -> "form-inline col-md-12") {
+                        <div class="form-group col-md-12">
+                            @b3.text(form("name"), 'placeholder -> "Application Name")
+                            @b3.submit('class -> "btn btn-default") { New }
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+
+} {
+    @* postScript *@
+}
+
