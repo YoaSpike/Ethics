@@ -30,22 +30,22 @@ public class Section7Model extends Model{
         Integer.class, Section7Model.class
     );
 	
-	public String[] coInvestigatorNames = new String[6];
-	public String[] coInvestigatorSigs = new String[6];
-	public Date[] coInvestigatorSigDates = new Date[6];
+	// public String[] coInvestigatorNames = new String[6];
+	// public String[] coInvestigatorSigs = new String[6];
+	// public Date[] coInvestigatorSigDates = new Date[6];
 	
-	@Constraints.required
+	@Constraints.Required
 	public String principleInvestigatorName;
-	@Constraints.required
+	@Constraints.Required
 	public Date principleInvestigatorSigDate;
-	@Constraints.required
+	@Constraints.Required
 	public String principleInvestigatorSig;
 	
-	@Constraints.required
+	@Constraints.Required
 	public String hosName;
-	@Constraints.required
+	@Constraints.Required
 	public Date hosSigDate;
-	@Constraints.required
+	@Constraints.Required
 	public String hosSig;
 	
 }
