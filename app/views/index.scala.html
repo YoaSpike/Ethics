@@ -1,21 +1,26 @@
 @()
 
 @base("Ethics") {
-  <div class="row">
-    <div class="container">
-      <div class="panel panel-default">
-          <div class="panel-heading">
-              <div class="panel-title"><b>Application for Ethical Approval for a Research Project Involving Humans</b></div>
-          </div>
-          <div class="panel-body">
-            <div class="col-md-12">
-              <blockquote>
-                <p>All research on humans conducted on Curtin University campus, or by Curtin University staff or students must be approved by the Curtin Human Research Ethics Committee before it can commence. Non-compliance with this requirement represents research misconduct which will be investigated.</p>
-                <footer><cite title="Human Research Ethics Office">Human Research Ethics Office</cite></footer>
-              </blockquote>
-              This system allows you to submit an application for your project online.
+  <div class="container">
+    <div id="index-panel" class="jumbotron">
+      <div class="wrapper">
+        <center><h3>Application for Ethical Approval for a Research Project Involving Humans</h3></center>
+        <div class="index-panel-content">
+          <blockquote>
+            <p>
+              All research on humans conducted on Curtin University campus, or by Curtin University staff or students must be approved by the Curtin Human Research Ethics Committee before it can commence. Non-compliance with this requirement represents research misconduct which will be investigated.
+            </p>
+            <div style="align:right;">
+              <footer>
+                <cite title="Human Research Ethics Office">Human Research Ethics Office</cite>
+              </footer>
             </div>
-          </div>
+          </blockquote>
+          <div class="index-panel-next">
+            <span>This system allows you to submit an application for your project online.</span>
+            <a id="next-button" href="@routes.EthicsApplication.new_get()" class="btn btn-success pull-right">Create new application &#62;</a>
+          </div><div class="point-right"></div>
+        </div>
       </div>
     </div>
   </div>

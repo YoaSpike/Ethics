@@ -71,6 +71,51 @@ $border-main: 1px solid #EEE;
     }
 }
 
+#index-panel {
+    display: table;
+    background-color: transparent;
+    height: 500px;
+    .wrapper {
+        display: table-cell;
+        vertical-align: middle;
+        blockquote {
+            margin: 40px 40px;
+            font-family: serif;
+            p {
+                color: lighten(black, 40);
+                font-size: 17px;
+            }
+        }
+        .index-panel-next {
+            display: table;
+            padding: 10px 15px;
+            border-radius: 5px;
+            background-color: $bootstrap-info;
+            width: 100%;
+            margin: 0 auto;
+            span {
+                display: table-cell;
+                vertical-align: middle;
+                font-size: 16px;
+                color: darken($bootstrap-primary, 6);
+            }
+            #next-button {
+                display: table-cell;
+                vertical-align: middle;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+#new_application {
+    align: center;
+    input {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
 .panel {
     box-shadow: 2px 2px 1px #EFEFEF;
 }
@@ -126,5 +171,5 @@ $border-main: 1px solid #EEE;
 .table-center tr td,th {text-align: center;}
 .table-smallertext td,th {font-size: 14px;}
 th {vertical-align: middle;}
-.btn {box-shadow: 2px 2px 1px #EFEFEF;}
+.btn {box-shadow: -2px 2px 1px #EFEFEF;}
 .inline {display: inline;}

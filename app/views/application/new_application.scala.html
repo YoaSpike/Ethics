@@ -4,25 +4,22 @@
 
 @base("New Application") {
 
-    <div class="row">
-        <div class="container" style="width:70%;">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="panel-title"><b>New Application</b></div>
-                </div>
-                <div class="panel-body">
-                    @b3.form(routes.EthicsApplication.new_post(), 'class -> "form-inline col-md-12") {
-                        <div class="form-group col-md-12">
-                            @b3.text(form("name"), 'placeholder -> "Application Name")
-                            @b3.submit('class -> "btn btn-default") { New }
-                        </div>
-                    }
-                </div>
-            </div>
+  <div class="container" style="width:70%;">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title"><b>New Application</b></div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group" id="new_application">
+        @b3.form(routes.EthicsApplication.new_post()) {
+            @b3.text(form("name"), 'placeholder -> "Enter application name", 'class-> "form-control input-lg")
+            <span align="center">@b3.submit('class -> "btn btn-primary") {Start Application}}</span>
         </div>
+      </div>
     </div>
+  </div>
 
 } {
-    @* postScript *@
+  @* postScript *@
 }
 
