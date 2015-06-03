@@ -7,7 +7,11 @@ import play.mvc.Http.*;
 public class Secured extends Security.Authenticator {
     @Override
     public String getUsername(Context ctx) {
-        return controllers.Accounts.getCurrentUser() != null;
+        if (controllers.Accounts.getCurrentUser() != null) {
+            return ctx.session().get("email");
+        } else {
+            return null;
+        }
     }
 
     @Override
