@@ -62,7 +62,6 @@ $border-main: 1px solid #EEE;
 #menu {
     .panel-heading {&:hover {cursor: pointer;}}
     .panel-body {
-        display: none;
         padding: 10px;
     }
 
@@ -86,18 +85,13 @@ $border-main: 1px solid #EEE;
                 font-size: 17px;
             }
         }
-        .index-panel-next {
+        #alert_next {
             display: table;
-            padding: 10px 15px;
-            border-radius: 5px;
-            background-color: $bootstrap-info;
             width: 100%;
             margin: 0 auto;
             span {
                 display: table-cell;
                 vertical-align: middle;
-                font-size: 16px;
-                color: darken($bootstrap-primary, 6);
             }
             #next-button {
                 display: table-cell;
