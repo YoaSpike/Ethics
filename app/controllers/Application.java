@@ -26,6 +26,10 @@ public class Application extends Controller {
         return ok(views.html.index.render());
     }
 
+    public static Result about() {
+        return ok(views.html.about.render());
+    }
+
     public static Result emailtest() {
         Email email = new Email();
 
