@@ -1,6 +1,6 @@
 @(applicationId: Long, section_num: Integer)
 
-<!-- START Sidebar -->
+@import b3.vertical.fieldConstructor
 
 <div class="col-sm-3">
 
@@ -9,7 +9,7 @@
       <div class="panel-title">Menu</div>
     </div>
     <div class="panel-body">
-      <button class="btn btn-info">Save</button>
+      @b3.submit('onclick -> "document.forms[0].submit()", 'class -> "btn btn-info") {Save}
     </div>
   </div>
 
