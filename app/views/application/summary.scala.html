@@ -1,0 +1,24 @@
+@(applicationId: Long, app: models.ApplicationModel)
+
+@import b3.vertical.fieldConstructor
+
+@base("New Application") {
+
+  <div class="container" style="width:70%;">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <div class="panel-title"><b>@app.name - Application Summary</b></div>
+      </div>
+      <div class="panel-body">
+
+          @for(a_section <- business.Sections.get_sections_with_numbers()) {
+            @partials.section(applicationId, a_section._1, a_section._2, false)
+          }
+
+      </div>
+    </div>
+  </div>
+
+} {
+  @* postScript *@
+}

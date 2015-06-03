@@ -24,7 +24,18 @@ import models.*;
 public class EthicsApplication extends Controller {
     @Security.Authenticated(business.Secured.class)
     public static Result application_summary(Long id) {
-        return ok("Summararily");
+        List<ApplicationModel> apps = (
+            ApplicationModel.find
+            .where()
+                .eq("id", id)
+            .query()
+            .findList()
+        );
+        if (apps.size() == 0) {
+            return badRequest("No such application");
+        } else {
+            return ok(views.html.application.summary.render(id, apps.get(0)));
+        }
     }
 
     private static final Form<NewApplicationForm> newApplicationForm = form(NewApplicationForm.class);
