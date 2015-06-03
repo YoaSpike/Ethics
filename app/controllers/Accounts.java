@@ -29,7 +29,7 @@ public class Accounts extends Controller {
 
             if (users.size() == 0) {
                 play.Logger.error("A user existed that does not longer");
-                throw new Error("A user existed that does not longer");
+                return null;
             } else {
                 return users.get(0);
             }
