@@ -49,7 +49,6 @@
 #menu .panel-heading:hover {
   cursor: pointer; }
 #menu .panel-body {
-  display: none;
   padding: 10px; }
 #menu .btn {
   width: 100%; }
@@ -67,19 +66,14 @@
       #index-panel .wrapper blockquote p {
         color: #666666;
         font-size: 17px; }
-    #index-panel .wrapper .index-panel-next {
+    #index-panel .wrapper #alert_next {
       display: table;
-      padding: 10px 15px;
-      border-radius: 5px;
-      background-color: #D0E8F6;
       width: 100%;
       margin: 0 auto; }
-      #index-panel .wrapper .index-panel-next span {
+      #index-panel .wrapper #alert_next span {
         display: table-cell;
-        vertical-align: middle;
-        font-size: 16px;
-        color: #205492; }
-      #index-panel .wrapper .index-panel-next #next-button {
+        vertical-align: middle; }
+      #index-panel .wrapper #alert_next #next-button {
         display: table-cell;
         vertical-align: middle;
         box-shadow: none; }
