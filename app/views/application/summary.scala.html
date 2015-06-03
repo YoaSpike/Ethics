@@ -11,9 +11,13 @@
       </div>
       <div class="panel-body">
 
-          @for(a_section <- business.Sections.get_sections_with_numbers()) {
-            @partials.section(applicationId, a_section._1, a_section._2, false)
-          }
+            <ul>
+                @for(a_section <- business.Sections.get_sections_with_numbers()) {
+                    <li>
+                        <a href="@controllers.Application.get_section_link(applicationId, a_section._1)">@a_section._2</a>
+                    </li>
+                }
+            </ul>
 
       </div>
     </div>
