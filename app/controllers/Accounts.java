@@ -117,12 +117,11 @@ public class Accounts extends Controller {
             return badRequest(loginForm.errorsAsJson());
 
         } else {
-            models.UserModel mod = new models.UserModel();
             AddUserForm data = loginForm.get();
+
+            models.UserModel mod = new models.UserModel();
+
             mod.email = data.email;
-
-            String password = data.password;
-
             mod.hashed_password = BCrypt.hashpw(
                 data.password,
                 BCrypt.gensalt()
