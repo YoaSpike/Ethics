@@ -20,7 +20,7 @@ libraryDependencies ++= Seq(
   "org.xhtmlrenderer" % "flying-saucer-pdf" % "9.0.7",
   "it.innove" % "play2-pdf" % "1.1.3",
   "com.typesafe.play" %% "play-mailer" % "2.4.0",
-  "postgresql" % "postgresql" % "9.1-901-1.jdbc4"
+  ""org.postgresql" % "postgresql" % "42.3.4"
   ,"net.sourceforge.htmlcleaner" % "htmlcleaner" % "2.10"
   ,"net.sf.cssbox" % "cssbox" % "4.8"
 )
